@@ -1,3565 +1,712 @@
- /* =========================================================
-   ZAMALEK — PERFORMANCE OPTIMIZED CSS
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-:root {
-    --red: #ff1744;
-    --red-dark: #8b001f;
-    --blue: #00c8ff;
-    --purple: #8a2be2;
-    --pink: #ff00a8;
-    --white: #ffffff;
-    --gray: #9a9a9a;
-    --dark: #050507;
-}
-
-body {
-    background:
-        radial-gradient(circle at 10% 10%, rgba(255, 0, 80, .10), transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(0, 190, 255, .07), transparent 25%),/* ===== FORCE PRODUCT IMAGES ===== */
-
-.product-image {
-    display: block !important;
-    position: relative !important;
-    width: 100% !important;
-    height: 390px !important;
-    overflow: hidden !important;
-    background: #111 !important;
-}
-
-.product-image img {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    object-fit: contain !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    z-index: 999 !important;
-
-    transform: none !important;
-    filter: none !important;
-}
-
-.product-image::before,
-.product-image::after {
-    display: none !important;
-}
-
-.details-image {
-    display: block !important;
-    position: relative !important;
-}
-
-.details-image img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-        radial-gradient(circle at 50% 80%, rgba(130, 0, 255, .06), transparent 30%),
-        #030305;
-
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    position: relative;
-
-    animation: pageEnter .6s ease;
-}
-
-/* =========================================================
-   GLOBAL PERFORMANCE
-========================================================= */
-
-img {
-    max-width: 100%;
-}
-
-button,
-a,
-select,
-input,
-textarea {
-    -webkit-tap-highlight-color: transparent;
-}
-
-.anime-character,
-.hero-kanji,
-.hero-energy,
-.cursor-glow,
-.power-effect,
-body::before,
-body::after {
-    will-change: transform;
-}
-
-/* =========================================================
-   BACKGROUND ATMOSPHERE
-========================================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: -20%;
-    z-index: -10;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            rgba(255, 0, 70, .14),
-            transparent 22%
-        ),
-        radial-gradient(
-            circle at 80% 25%,
-            rgba(0, 180, 255, .11),
-            transparent 20%
-        ),
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(140, 0, 255, .09),
-            transparent 25%
-        );
-
-    filter: blur(30px);
-    animation: colorUniverse 18s ease-in-out infinite alternate;
-    pointer-events: none;
-}
-
-@keyframes colorUniverse {
-    0% {
-        transform: translate3d(-2%, -2%, 0) scale(1);
-    }
-
-    50% {
-        transform: translate3d(2%, 2%, 0) scale(1.05);
-    }
-
-    100% {
-        transform: translate3d(-1%, 3%, 0) scale(1.03);
-    }
-}
-
-/* =========================================================
-   HUGE BACKGROUND CHARACTERS
-========================================================= */
-
-body::after {
-    content: "力  魂  自由  熱血  無限";
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-    transform:
-        translate3d(-50%, -50%, 0)
-        rotate(-8deg);
-
-    width: 180%;
-    white-space: nowrap;
-
-    font-size: clamp(100px, 15vw, 260px);
-    font-weight: 900;
-    letter-spacing: 45px;
-
-    color: rgba(255,255,255,.018);
-
-    z-index: -9;
-    pointer-events: none;
-
-    animation: kanjiMove 28s linear infinite;
-}
-
-@keyframes kanjiMove {
-    0% {
-        transform:
-            translate3d(-55%, -50%, 0)
-            rotate(-8deg);
-    }
-
-    50% {
-        transform:
-            translate3d(-45%, -48%, 0)
-            rotate(-4deg);
-    }
-
-    100% {
-        transform:
-            translate3d(-55%, -50%, 0)
-            rotate(-8deg);
-    }
-}
-
-/* =========================================================
-   PAGE
-========================================================= */
-
-@keyframes pageEnter {
-    from {
-        opacity: 0;
-        filter: blur(4px);
-    }
-
-    to {
-        opacity: 1;
-        filter: blur(0);
-    }
-}
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    position: relative;
-    z-index: 100;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 28px 65px;
-
-    background: rgba(5,5,8,.82);
-
-    /* أخف من backdrop-filter القديم */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    border-bottom: 1px solid rgba(255,255,255,.06);
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.3);
-
-    animation: headerAppear .7s cubic-bezier(.2,.8,.2,1);
-}
-
-@keyframes headerAppear {
-    from {
-        opacity: 0;
-        transform: translate3d(0,-40px,0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0,0,0);
-    }
-}
-
-header h1 {
-    font-size: 34px;
-    letter-spacing: 8px;
-    font-weight: 900;
-    position: relative;
-
-    background:
-        linear-gradient(
-            90deg,
-            white,
-            #ff1744,
-            #00c8ff,
-            white
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: logoGradient 8s linear infinite;
-}
-
-@keyframes logoGradient {
-    0% {
-        background-position: 0%;
-    }
-
-    100% {
-        background-position: 300%;
-    }
-}
-
-/* =========================================================
-   NAV
-========================================================= */
-
-nav {
-    display: flex;
-    gap: 35px;
-}
-
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 2px;
-    position: relative;
-
-    transition:
-        color .25s ease,
-        transform .25s ease;
-}
-
-nav a::before {
-    content: "";
-
-    position: absolute;
-
-    width: 0;
-    height: 1px;
-
-    left: 0;
-    bottom: -8px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--red),
-            var(--blue)
-        );
-
-    transition: width .25s ease;
-}
-
-nav a:hover {
-    color: white;
-    transform: translate3d(0,-2px,0);
-}
-
-nav a:hover::before {
-    width: 100%;
-}
-
-/* =========================================================
-   CART
-========================================================= */
-
-.cart {
-    cursor: pointer;
-
-    padding: 10px 15px;
-
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 30px;
-
-    background: rgba(255,255,255,.04);
-
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
-}
-
-.cart:hover {
-    transform: scale(1.05);
-    border-color: var(--red);
-
-    box-shadow:
-        0 0 18px rgba(255,23,68,.22);
-}
-
-#cart-count {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 23px;
-    height: 23px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--red),
-            var(--pink)
-        );
-
-    color: white;
-
-    border-radius: 50%;
-    font-size: 12px;
-
-    box-shadow:
-        0 0 10px rgba(255,23,68,.4);
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    min-height: 90vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    position: relative;
-    overflow: hidden;
-
-    padding: 50px 20px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.08),
-            rgba(0,0,0,.65)
-        );
-
-    isolation: isolate;
-}
-
-/* =========================================================
-   HERO GRID
-========================================================= */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        );
-
-    background-size: 60px 60px;
-
-    mask-image:
-        radial-gradient(
-            circle,
-            black 20%,
-            transparent 75%
-        );
-
-    animation: gridMove 22s linear infinite;
-
-    pointer-events: none;
-}
-
-@keyframes gridMove {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 60px 60px;
-    }
-}
-
-/* =========================================================
-   HERO GIANT CHARACTER
-========================================================= */
-
-.hero::after {
-    content: "影";
-
-    position: absolute;
-
-    right: 4%;
-    top: 5%;
-
-    font-size: clamp(220px, 35vw, 600px);
-    font-weight: 900;
-
-    color: rgba(255,23,68,.035);
-
-    text-shadow:
-        0 0 50px rgba(255,0,60,.05);
-
-    animation: giantShadow 12s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-@keyframes giantShadow {
-    0%,100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(8deg);
-    }
-
-    50% {
-        transform:
-            translate3d(0,-20px,0)
-            rotate(-3deg);
-    }
-}
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
-.hero h2 {
-    position: relative;
-    z-index: 5;
-
-    font-size: clamp(55px, 9vw, 125px);
-    font-weight: 900;
-
-    letter-spacing: 12px;
-    line-height: .95;
-
-    background:
-        linear-gradient(
-            100deg,
-            #fff 0%,
-            #fff 35%,
-            #ff1744 50%,
-            #00c8ff 65%,
-            #fff 100%
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation:
-        heroTitle 1s cubic-bezier(.17,.67,.3,1.2),
-        titleGradient 8s linear infinite;
-
-    filter:
-        drop-shadow(0 0 18px rgba(255,0,70,.14));
-
-    will-change: transform;
-}
-
-@keyframes heroTitle {
-    0% {
-        opacity: 0;
-
-        transform:
-            translate3d(0,70px,0)
-            scale(.65);
-    }
-
-    60% {
-        transform:
-            translate3d(0,-6px,0)
-            scale(1.04);
-    }
-
-    100% {
-        opacity: 1;
-
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-    }
-}
-
-@keyframes titleGradient {
-    0% {
-        background-position: 0%;
-    }
-
-    100% {
-        background-position: 300%;
-    }
-}
-
-.hero h2::after {
-    content: "";
-
-    display: block;
-
-    width: 180px;
-    height: 3px;
-
-    margin: 30px auto;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--red),
-            var(--blue),
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px var(--red);
-
-    animation:
-        linePower 3s ease infinite alternate;
-}
-
-@keyframes linePower {
-    from {
-        width: 120px;
-        opacity: .6;
-    }
-
-    to {
-        width: 210px;
-        opacity: 1;
-    }
-}
-
-.hero p {
-    position: relative;
-    z-index: 5;
-
-    max-width: 650px;
-
-    color: #aaa;
-
-    font-size: 20px;
-    line-height: 1.8;
-    letter-spacing: 3px;
-
-    animation: heroText 1.2s ease;
-}
-
-@keyframes heroText {
-    from {
-        opacity: 0;
-        transform: translate3d(0,20px,0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0,0,0);
-    }
-}
-
-/* =========================================================
-   SHOP BUTTON
-========================================================= */
-
-.shop-btn {
-    position: relative;
-    z-index: 5;
-
-    margin-top: 35px;
-
-    padding: 18px 55px;
-
-    border: 1px solid rgba(255,255,255,.2);
-
-    background:
-        linear-gradient(
-            135deg,
-            white,
-            #ddd
-        );
-
-    color: black;
-
-    font-size: 15px;
-    font-weight: 900;
-    letter-spacing: 3px;
-
-    cursor: pointer;
-    overflow: hidden;
-
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-}
-
-.shop-btn::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.7),
-            transparent
-        );
-
-    transform:
-        translate3d(-120%,0,0)
-        skewX(-20deg);
-
-    transition: transform .5s ease;
-}
-
-.shop-btn:hover::before {
-    transform:
-        translate3d(120%,0,0)
-        skewX(-20deg);
-}
-
-.shop-btn:hover {
-    background:
-        linear-gradient(
-            135deg,
-            var(--red),
-            var(--pink)
-        );
-
-    color: white;
-
-    transform:
-        translate3d(0,-4px,0)
-        scale(1.03);
-
-    box-shadow:
-        0 12px 35px rgba(255,23,68,.25);
-}
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
-
-.products {
-    position: relative;
-
-    padding: 130px 60px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(255,0,70,.025),
-            transparent
-        );
-
-    border-top:
-        1px solid rgba(255,255,255,.04);
-}
-
-.products h2 {
-    position: relative;
-    z-index: 5;
-
-    text-align: center;
-
-    font-size: clamp(35px, 5vw, 60px);
-
-    letter-spacing: 7px;
-
-    margin-bottom: 70px;
-
-    text-transform: uppercase;
-
-    background:
-        linear-gradient(
-            90deg,
-            white,
-            #ff1744,
-            #00c8ff,
-            white
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation:
-        titleGradient 9s linear infinite;
-}
-
-.products h2::after,
-.about h2::after,
-.contact h2::after {
-    content: "";
-
-    display: block;
-
-    width: 80px;
-    height: 3px;
-
-    margin: 20px auto;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--red),
-            var(--blue)
-        );
-
-    box-shadow:
-        0 0 10px var(--red);
-}
-
-/* =========================================================
-   PRODUCTS BACKGROUND
-========================================================= */
-
-.products::before {
-    content: "戦";
-
-    position: absolute;
-
-    right: -100px;
-    top: 20px;
-
-    font-size: 600px;
-    font-weight: 900;
-
-    color: rgba(0,200,255,.018);
-
-    animation:
-        battleFloat 14s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-@keyframes battleFloat {
-    0%,100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(5deg);
-    }
-
-    50% {
-        transform:
-            translate3d(0,-15px,0)
-            rotate(-5deg);
-    }
-}
-
-/* =========================================================
-   PRODUCT CONTAINER
-========================================================= */
-
-.product-container {
-    position: relative;
-    z-index: 5;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 35px;
-
-    flex-wrap: wrap;
-}
-
-/* =========================================================
-   PRODUCT CARD
-========================================================= */
-
-.product-card {
-    width: 300px;
-
-    padding: 12px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.065),
-            rgba(255,255,255,.012)
-        );
-
-    border: 1px solid rgba(255,255,255,.09);
-
-    /* أخف بكثير */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.45);
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-
-    animation:
-        cardAppear .7s ease both;
-
-    transform-style: preserve-3d;
-    perspective: 800px;
-}
-
-.product-card:nth-child(1) {
-    animation-delay: .08s;
-}
-
-.product-card:nth-child(2) {
-    animation-delay: .16s;
-}
-
-.product-card:nth-child(3) {
-    animation-delay: .24s;
-}
-
-@keyframes cardAppear {
-    from {
-        opacity: 0;
-
-        transform:
-            translate3d(0,50px,0)
-            scale(.92);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-    }
-}
-
-/* =========================================================
-   CARD BORDER
-========================================================= */
-
-.product-card::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -1px;
-
-    background:
-        linear-gradient(
-            135deg,
-            transparent 30%,
-            var(--red),
-            transparent 60%,
-            var(--blue)
-        );
-
-    opacity: 0;
-
-    z-index: -1;
-
-    transition:
-        opacity .3s ease;
-}
-
-.product-card:hover::before {
-    opacity: 1;
-}
-
-/* =========================================================
-   CARD NUMBER
-========================================================= */
-
-.product-card::after {
-    content: "01";
-
-    position: absolute;
-
-    right: 20px;
-    top: 15px;
-
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 3px;
-
-    color: rgba(255,255,255,.4);
-
-    z-index: 10;
-}
-
-.product-card:nth-child(2)::after {
-    content: "02";
-}
-
-.product-card:nth-child(3)::after {
-    content: "03";
-}
-
-/* =========================================================
-   PRODUCT HOVER
-========================================================= */
-
-.product-card:hover {
-    transform:
-        translate3d(0,-10px,0)
-        scale(1.02);
-
-    border-color:
-        rgba(255,23,68,.45);
-
-    box-shadow:
-        0 25px 55px rgba(0,0,0,.65),
-        0 0 30px rgba(255,23,68,.08);
-}
-
-.product-card:hover h3 {
-    color: white;
-
-    text-shadow:
-        0 0 10px rgba(255,23,68,.25);
-}
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.product-image {
-    width: 100%;
-    height: 390px;
-
-    position: relative;
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle,
-            #27272c,
-            #09090b
-        );
-}
-
-.product-image::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,23,68,.10),
-            transparent 40%,
-            rgba(0,200,255,.07)
-        );
-
-    z-index: 1;
-    pointer-events: none;
-}
-
-.product-image::after {
-    content: "";
-
-    position: absolute;
-
-    top: -100%;
-    left: -100%;
-
-    width: 50%;
-    height: 300%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.14),
-            transparent
-        );
-
-    transform: rotate(25deg);
-
-    transition:
-        left .55s ease,
-        top .55s ease;
-
-    z-index: 3;
-}
-
-.product-card:hover .product-image::after {
-    left: 150%;
-    top: -50%;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    transition:
-        transform .45s ease;
-
-    position: relative;
-    z-index: 2;
-
-    will-change: transform;
-}
-
-.product-card:hover .product-image img {
-    transform:
-        scale(1.07)
-        translate3d(0,-3px,0);
-}
-
-/* =========================================================
-   PRODUCT TEXT
-========================================================= */
-
-.product-card h3 {
-    margin-top: 22px;
-
-    font-size: 20px;
-    letter-spacing: 1px;
-}
-
-.product-card p {
-    margin-top: 10px;
-
-    color: #aaa;
-
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* =========================================================
-   OPTIONS
-========================================================= */
-
-.product-options,
-.quantity-selector {
-    margin-top: 18px;
-}
-
-.product-options label,
-.quantity-selector label {
-    display: block;
-
-    margin-bottom: 7px;
-
-    color: #888;
-
-    font-size: 12px;
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.product-options select,
-.product-quantity {
-    width: 100%;
-
-    padding: 12px;
-
-    background:
-        rgba(0,0,0,.7);
-
-    color: white;
-
-    border: 1px solid #333;
-
-    outline: none;
-
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
-}
-
-.product-options select:focus,
-.product-quantity:focus {
-    border-color: var(--red);
-
-    box-shadow:
-        0 0 12px rgba(255,23,68,.12);
-}
-
-/* =========================================================
-   PRODUCT BUTTONS
-========================================================= */
-
-.product-card button {
-    width: 100%;
-
-    padding: 14px;
-
-    margin-top: 20px;
-
-    border: none;
-
-    background: white;
-
-    color: black;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.product-card button:hover {
-    background:
-        linear-gradient(
-            90deg,
-            var(--red),
-            var(--pink)
-        );
-
-    color: white;
-
-    transform:
-        translate3d(0,-2px,0);
-
-    box-shadow:
-        0 8px 25px rgba(255,23,68,.22);
-}
-
-.buy-now {
-    background: #19191d !important;
-
-    color: white !important;
-
-    border:
-        1px solid #333 !important;
-}
-
-.buy-now:hover {
-    background:
-        linear-gradient(
-            90deg,
-            #4215ff,
-            #00c8ff
-        ) !important;
-
-    box-shadow:
-        0 8px 25px rgba(0,180,255,.18) !important;
-}
-
-/* =========================================================
-   PRODUCT DETAILS
-========================================================= */
-
-.product-details {
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 100px 30px;
-
-    background:
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(255,0,70,.08),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(0,190,255,.07),
-            transparent 30%
-        ),
-        #050507;
-}
-
-.product-details.active {
-    display: block;
-
-    animation:
-        detailOpen .45s ease;
-}
-
-@keyframes detailOpen {
-    from {
-        opacity: 0;
-
-        transform:
-            translate3d(0,25px,0)
-            scale(.97);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-    }
-}
-
-.details-container {
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 70px;
-}
-
-.details-image {
-    width: 52%;
-    height: 650px;
-
-    background:
-        radial-gradient(
-            circle,
-            #29292e,
-            #08080a
-        );
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-        0 25px 65px rgba(0,0,0,.6);
-}
-
-.details-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-}
-
-.details-info {
-    width: 48%;
-}
-
-.details-info h2 {
-    font-size:
-        clamp(35px, 5vw, 60px);
-
-    line-height: 1;
-
-    margin-bottom: 20px;
-}
-
-.details-price {
-    font-size: 28px;
-
-    font-weight: bold;
-
-    color: var(--red);
-
-    text-shadow:
-        0 0 12px rgba(255,23,68,.2);
-
-    margin-bottom: 25px;
-}
-
-#details-description {
-    color: #999;
-
-    line-height: 1.9;
-
-    font-size: 16px;
-
-    margin-bottom: 30px;
-}
-
-.details-info select,
-#details-quantity {
-    width: 100%;
-
-    padding: 14px;
-
-    margin-bottom: 10px;
-
-    background: #0d0d10;
-
-    color: white;
-
-    border: 1px solid #333;
-}
-
-.details-info button {
-    width: 100%;
-
-    padding: 15px;
-
-    margin-top: 12px;
-
-    border: none;
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-#details-add {
-    background: white;
-    color: black;
-}
-
-#details-add:hover {
-    background: var(--red);
-
-    color: white;
-
-    box-shadow:
-        0 0 20px rgba(255,23,68,.22);
-}
-
-#details-buy {
-    background:
-        linear-gradient(
-            90deg,
-            #1717ff,
-            #00c8ff
-        );
-
-    color: white;
-}
-
-#details-buy:hover {
-    transform:
-        translate3d(0,-2px,0);
-
-    box-shadow:
-        0 0 25px rgba(0,200,255,.22);
-}
-
-#close-details {
-    background: transparent !important;
-
-    color: #888 !important;
-
-    border:
-        1px solid #333 !important;
-}
-
-#close-details:hover {
-    color: white !important;
-
-    border-color: white !important;
-
-    background:
-        rgba(255,255,255,.04) !important;
-}
-
-/* =========================================================
-   CART
-========================================================= */
-
-.cart-box {
-    position: fixed;
-
-    top: 0;
-    right: -430px;
-
-    width: 410px;
-    height: 100vh;
-
-    padding: 35px;
-
-    z-index: 1000;
-
-    overflow-y: auto;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(30,30,36,.98),
-            rgba(5,5,8,.99)
-        );
-
-    /* تقليل blur */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    border-left:
-        1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-        -20px 0 60px rgba(0,0,0,.55);
-
-    transition:
-        right .35s cubic-bezier(.17,.67,.3,1.2);
-}
-
-.cart-box.active {
-    right: 0;
-
-    box-shadow:
-        -15px 0 60px rgba(255,0,70,.06);
-}
-
-.cart-box h2 {
-    font-size: 32px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 35px;
-}
-
-.cart-item {
-    padding: 18px 0;
-
-    border-bottom:
-        1px solid #29292d;
-}
-
-.cart-total {
-    margin-top: 30px;
-
-    font-size: 23px;
-
-    color: var(--red);
-}
-
-.quantity-controls {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 12px;
-}
-
-.quantity-controls button {
-    width: auto;
-
-    padding: 6px 12px;
-
-    margin: 0;
-
-    background: white;
-
-    color: black;
-
-    border: none;
-
-    cursor: pointer;
-}
-
-.remove-btn {
-    width: auto !important;
-
-    padding: 7px 12px !important;
-
-    margin-top: 10px !important;
-
-    background: #29292d !important;
-
-    color: #aaa !important;
-}
-
-#checkout-btn {
-    width: 100%;
-
-    margin-top: 18px;
-
-    padding: 15px;
-
-    border: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--red),
-            var(--pink)
-        );
-
-    color: white;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-#checkout-btn:hover {
-    transform:
-        translate3d(0,-2px,0);
-
-    box-shadow:
-        0 10px 30px rgba(255,23,68,.22);
-}
-
-#close-cart {
-    width: 100%;
-
-    margin-top: 25px;
-
-    padding: 13px;
-
-    background: transparent;
-
-    color: #aaa;
-
-    border: 1px solid #333;
-
-    cursor: pointer;
-}
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 140px 30px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0c0c10,
-            #08080b
-        );
-
-    border-top:
-        1px solid rgba(255,255,255,.04);
-}
-
-.about::before {
-    content: "無限";
-
-    position: absolute;
-
-    left: -30px;
-    top: 10px;
-
-    font-size: 300px;
-    font-weight: 900;
-
-    color: rgba(255,0,70,.018);
-
-    animation:
-        infinityMove 14s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-@keyframes infinityMove {
-    0%,100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(-10deg);
-    }
-
-    50% {
-        transform:
-            translate3d(0,-15px,0)
-            rotate(-5deg);
-    }
-}
-
-.about h2,
-.contact h2 {
-    position: relative;
-
-    font-size: 50px;
-
-    letter-spacing: 6px;
-
-    margin-bottom: 30px;
-}
-
-.about p {
-    position: relative;
-
-    max-width: 750px;
-
-    margin: auto;
-
-    color: #999;
-
-    font-size: 18px;
-
-    line-height: 2;
-}
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 140px 30px;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(0,180,255,.045),
-            transparent 35%
-        );
-
-    border-top:
-        1px solid rgba(255,255,255,.04);
-}
-
-.contact::after {
-    content: "自由";
-
-    position: absolute;
-
-    right: -20px;
-    bottom: -50px;
-
-    font-size: 300px;
-    font-weight: 900;
-
-    color: rgba(0,200,255,.018);
-
-    animation:
-        freedomMove 14s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-@keyframes freedomMove {
-    0%,100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(8deg);
-    }
-
-    50% {
-        transform:
-            translate3d(0,-15px,0)
-            rotate(-4deg);
-    }
-}
-
-.contact > p {
-    color: #999;
-
-    font-size: 18px;
-}
-
-.contact-info {
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 35px;
-}
-
-.contact-info p {
-    margin: 15px 0;
-
-    color: #ddd;
-}
-
-/* =========================================================
-   CHECKOUT
-========================================================= */
-
-.checkout {
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 100px 20px;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(255,0,70,.08),
-            transparent 35%
-        ),
-        #050507;
-}
-
-.checkout.active {
-    display: block;
-
-    animation:
-        detailOpen .4s ease;
-}
-
-.checkout-container {
-    max-width: 650px;
-
-    margin: auto;
-
-    padding: 45px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.5);
-}
-
-.checkout-container h2 {
-    text-align: center;
-
-    font-size: 42px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 40px;
-}
-
-#checkout-form label {
-    display: block;
-
-    margin-top: 20px;
-
-    margin-bottom: 8px;
-
-    color: #888;
-
-    font-size: 13px;
-
-    letter-spacing: 1px;
-}
-
-#checkout-form input,
-#checkout-form select,
-#checkout-form textarea {
-    width: 100%;
-
-    padding: 14px;
-
-    background:
-        rgba(0,0,0,.55);
-
-    color: white;
-
-    border: 1px solid #333;
-
-    outline: none;
-
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
-}
-
-#checkout-form input:focus,
-#checkout-form select:focus,
-#checkout-form textarea:focus {
-    border-color: var(--red);
-
-    box-shadow:
-        0 0 12px rgba(255,23,68,.1);
-}
-
-#checkout-form textarea {
-    min-height: 120px;
-
-    resize: vertical;
-}
-
-#checkout-form button {
-    width: 100%;
-
-    padding: 15px;
-
-    margin-top: 30px;
-
-    border: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--red),
-            var(--pink)
-        );
-
-    color: white;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.checkout-summary {
-    margin-top: 30px;
-
-    padding: 22px;
-
-    border: 1px solid #333;
-
-    background:
-        rgba(0,0,0,.3);
-}
-
-.checkout-summary p {
-    font-size: 24px;
-
-    color: var(--red);
-}
-
-.checkout-item {
-    display: flex;
-
-    justify-content: space-between;
-
-    padding: 15px 0;
-
-    border-bottom:
-        1px solid #29292d;
-}
-
-.checkout-final-total {
-    margin-top: 25px;
-
-    text-align: right;
-
-    font-size: 24px;
-}
-
-#back-to-cart {
-    width: 100%;
-
-    padding: 13px;
-
-    margin-top: 15px;
-
-    background: #222;
-
-    color: white;
-
-    border: none;
-
-    cursor: pointer;
-}
-
-/* =========================================================
-   SUCCESS
-========================================================= */
-
-.order-success {
-    display: none;
-
-    min-height: 80vh;
-
-    padding: 100px 20px;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,200,255,.06),
-            transparent 35%
-        ),
-        #050507;
-}
-
-.order-success.active {
-    display: flex;
-
-    animation:
-        detailOpen .45s ease;
-}
-
-.success-container {
-    max-width: 600px;
-
-    width: 100%;
-
-    padding: 55px 35px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.5);
-}
-
-.success-icon {
-    width: 75px;
-    height: 75px;
-
-    margin: auto;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    border:
-        2px solid var(--red);
-
-    color: var(--red);
-
-    font-size: 38px;
-
-    box-shadow:
-        0 0 20px rgba(255,23,68,.2);
-
-    animation:
-        successPulse 2.5s infinite;
-}
-
-@keyframes successPulse {
-    0%,100% {
-        transform: scale(1);
-
-        box-shadow:
-            0 0 15px rgba(255,23,68,.15);
-    }
-
-    50% {
-        transform: scale(1.05);
-
-        box-shadow:
-            0 0 30px rgba(255,23,68,.35);
-    }
-}
-
-.success-container h2 {
-    margin-top: 25px;
-
-    font-size: 38px;
-
-    letter-spacing: 5px;
-}
-
-.success-message {
-    margin-top: 15px;
-
-    color: #999;
-
-    font-size: 18px;
-}
-
-.order-number {
-    margin-top: 25px;
-
-    color: var(--blue);
-
-    font-size: 22px;
-}
-
-.success-details {
-    margin-top: 30px;
-
-    padding: 22px;
-
-    border: 1px solid #333;
-
-    text-align: left;
-}
-
-.success-details p {
-    margin: 12px 0;
-
-    color: #999;
-}
-
-.success-details strong {
-    color: white;
-}
-
-#continue-shopping {
-    width: 100%;
-
-    padding: 15px;
-
-    margin-top: 30px;
-
-    border: none;
-
-    background: white;
-
-    color: black;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition:
-        background .2s ease,
-        color .2s ease;
-}
-
-#continue-shopping:hover {
-    background: var(--red);
-
-    color: white;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 90px 30px 35px;
-
-    text-align: center;
-
-    background: #020204;
-
-    border-top:
-        1px solid rgba(255,255,255,.08);
-}
-
-footer::before {
-    content: "魂";
-
-    position: absolute;
-
-    left: 50%;
-    top: -40px;
-
-    transform:
-        translate3d(-50%,0,0);
-
-    font-size: 230px;
-    font-weight: 900;
-
-    color: rgba(255,23,68,.018);
-
-    pointer-events: none;
-}
-
-.footer-logo {
-    position: relative;
-
-    font-size: 35px;
-
-    font-weight: 900;
-
-    letter-spacing: 10px;
-
-    background:
-        linear-gradient(
-            90deg,
-            white,
-            var(--red),
-            var(--blue),
-            white
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation:
-        titleGradient 8s linear infinite;
-}
-
-footer > p {
-    margin-top: 18px;
-
-    color: #666;
-}
-
-.footer-links,
-.social-links {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 30px;
-
-    flex-wrap: wrap;
-
-    margin-top: 35px;
-}
-
-.footer-links a,
-.social-links a {
-    color: #777;
-
-    text-decoration: none;
-
-    transition:
-        color .2s ease,
-        transform .2s ease;
-}
-
-.footer-links a:hover,
-.social-links a:hover {
-    color: white;
-
-    transform:
-        translate3d(0,-2px,0);
-}
-
-.copyright {
-    margin-top: 55px !important;
-
-    padding-top: 25px;
-
-    border-top:
-        1px solid #17171b;
-
-    color: #444 !important;
-
-    font-size: 12px;
-}
-
-/* =========================================================
-   POWER CLICK
-========================================================= */
-
-.power-effect {
-    position: fixed;
-
-    width: 15px;
-    height: 15px;
-
-    border:
-        2px solid white;
-
-    border-radius: 50%;
-
-    transform:
-        translate3d(-50%,-50%,0);
-
-    pointer-events: none;
-
-    z-index: 99999;
-
-    animation:
-        powerBurst .55s ease-out forwards;
-}
-
-.power-effect::before,
-.power-effect::after {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: 120px;
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--red),
-            var(--blue),
-            transparent
-        );
-
-    box-shadow:
-        0 0 8px var(--red);
-}
-
-.power-effect::before {
-    transform:
-        translate(-50%,-50%)
-        rotate(45deg);
-}
-
-.power-effect::after {
-    transform:
-        translate(-50%,-50%)
-        rotate(-45deg);
-}
-
-@keyframes powerBurst {
-    from {
-        width: 10px;
-        height: 10px;
-        opacity: 1;
-    }
-
-    to {
-        width: 180px;
-        height: 180px;
-        opacity: 0;
-    }
-}
-
-/* =========================================================
-   CINEMATIC INTRO
-========================================================= */
-
-#intro-screen {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 999999;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #16161d 0%,
-            #050507 45%,
-            #000 100%
-        );
-
-    overflow: hidden;
-
-    animation:
-        introExit .8s ease 3.8s forwards;
-
-    pointer-events: none;
-}
-
-#intro-screen::before {
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-    height: 450px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,0,60,.18),
-            transparent 70%
-        );
-
-    animation:
-        introEnergy 2.5s ease-in-out infinite;
-}
-
-#intro-screen::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,190,255,.13),
-            transparent 70%
-        );
-
-    right: -80px;
-    bottom: -80px;
-
-    animation:
-        blueEnergy 3.5s ease-in-out infinite;
-}
-
-.intro-kanji {
-    position: absolute;
-
-    font-size: 420px;
-
-    font-weight: 900;
-
-    color:
-        rgba(255,255,255,.02);
-
-    animation:
-        kanjiIntro 3s ease forwards;
-
-    user-select: none;
-
-    will-change: transform;
-}
-
-.intro-logo {
-    position: relative;
-
-    z-index: 5;
-
-    font-size:
-        clamp(55px, 10vw, 130px);
-
-    font-weight: 900;
-
-    letter-spacing: 18px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ff1744,
-            #00c8ff,
-            #fff
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation:
-        introLogo 1.5s cubic-bezier(.17,.67,.3,1.3),
-        titleGradient 5s linear infinite;
-}
-
-.intro-line {
-    position: relative;
-
-    z-index: 5;
-
-    width: 0;
-    height: 3px;
-
-    margin: 25px 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #ff1744,
-            #00c8ff,
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px #ff1744;
-
-    animation:
-        introLine 1.3s ease .8s forwards;
-}
-
-.intro-subtitle {
-    position: relative;
-
-    z-index: 5;
-
-    color: #888;
-
-    font-size: 13px;
-
-    letter-spacing: 6px;
-
-    opacity: 0;
-
-    animation:
-        introSubtitle .8s ease 1.5s forwards;
-}
-
-@keyframes introLogo {
-    0% {
-        opacity: 0;
-
-        transform:
-            scale(.4)
-            translate3d(0,35px,0);
-    }
-
-    60% {
-        transform:
-            scale(1.06)
-            translate3d(0,-3px,0);
-    }
-
-    100% {
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translate3d(0,0,0);
-    }
-}
-
-@keyframes introLine {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-
-    to {
-        width: 260px;
-        opacity: 1;
-    }
-}
-
-@keyframes introSubtitle {
-    from {
-        opacity: 0;
-
-        transform:
-            translate3d(0,15px,0);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translate3d(0,0,0);
-    }
-}
-
-@keyframes kanjiIntro {
-    0% {
-        opacity: 0;
-
-        transform:
-            scale(.5)
-            rotate(-20deg);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform:
-            scale(1.05)
-            rotate(-5deg);
-    }
-
-    100% {
-        opacity: .45;
-
-        transform:
-            scale(1)
-            rotate(5deg);
-    }
-}
-
-@keyframes introEnergy {
-    0%,100% {
-        transform: scale(.8);
-        opacity: .4;
-    }
-
-    50% {
-        transform: scale(1.2);
-        opacity: .8;
-    }
-}
-
-@keyframes blueEnergy {
-    0%,100% {
-        transform: scale(.8);
-        opacity: .3;
-    }
-
-    50% {
-        transform: scale(1.2);
-        opacity: .65;
-    }
-}
-
-@keyframes introExit {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    70% {
-        opacity: 1;
-        transform: scale(1.02);
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(1.05);
-        visibility: hidden;
-    }
-}
-
-/* =========================================================
-   CURSOR ENERGY
-========================================================= */
-
-.cursor-glow {
-    position: fixed;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: 99998;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,23,68,.055),
-            transparent 70%
-        );
-
-    transform:
-        translate3d(-50%,-50%,0);
-
-    mix-blend-mode: screen;
-
-    will-change: transform;
-
-    transition:
-        width .2s ease,
-        height .2s ease;
-}
-
-.cursor-large {
-    width: 210px;
-    height: 210px;
-}
-
-/* =========================================================
-   MOUSE PARALLAX
-========================================================= */
-
-.hero h2,
-.hero p,
-.hero .shop-btn {
-    will-change: transform;
-}
-
-/* =========================================================
-   HERO ANIME CHARACTER
-========================================================= */
-
-.anime-character {
-    position: absolute;
-
-    z-index: 1;
-
-    width: 430px;
-    height: 600px;
-
-    left: 7%;
-    bottom: -40px;
-
-    pointer-events: none;
-
-    animation:
-        characterFloat 7s ease-in-out infinite;
-
-    filter:
-        drop-shadow(
-            0 0 20px rgba(255,0,50,.18)
-        );
-
-    will-change: transform;
-}
-
-.anime-head {
-    position: absolute;
-
-    width: 250px;
-    height: 330px;
-
-    left: 70px;
-    top: 100px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e8e8f0,
-            #8d8d9b 45%,
-            #252530 90%
-        );
-
-    border-radius:
-        48% 52% 45% 45%;
-
-    transform: rotate(-8deg);
-
-    box-shadow:
-        inset -20px -12px 35px rgba(0,0,0,.5),
-        0 0 30px rgba(255,255,255,.06);
-}
-
-.anime-hair {
-    position: absolute;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7f7ff,
-            #9696a5 35%,
-            #282832 80%
-        );
-
-    transform-origin:
-        bottom center;
-
-    filter:
-        drop-shadow(
-            0 0 5px rgba(255,255,255,.1)
-        );
-}
-
-.hair-1 {
-    width: 125px;
-    height: 280px;
-
-    left: -55px;
-    top: -105px;
-
-    clip-path:
-        polygon(
-            100% 100%,
-            70% 55%,
-            50% 10%,
-            42% 55%,
-            18% 0%,
-            30% 65%,
-            0% 35%,
-            28% 100%
-        );
-
-    transform: rotate(-20deg);
-}
-
-.hair-2 {
-    width: 150px;
-    height: 300px;
-
-    left: 5px;
-    top: -145px;
-
-    clip-path:
-        polygon(
-            50% 100%,
-            30% 55%,
-            10% 5%,
-            45% 45%,
-            50% 0%,
-            65% 50%,
-            100% 20%,
-            75% 100%
-        );
-
-    transform: rotate(-5deg);
-}
-
-.hair-3 {
-    width: 130px;
-    height: 270px;
-
-    right: -50px;
-    top: -105px;
-
-    clip-path:
-        polygon(
-            0 100%,
-            25% 50%,
-            20% 5%,
-            55% 48%,
-            75% 0,
-            70% 55%,
-            100% 30%,
-            72% 100%
-        );
-
-    transform: rotate(20deg);
-}
-
-.hair-4 {
-    width: 170px;
-    height: 260px;
-
-    left: 45px;
-    top: -70px;
-
-    clip-path:
-        polygon(
-            50% 100%,
-            0 20%,
-            35% 50%,
-            45% 0,
-            60% 55%,
-            100% 15%,
-            75% 100%
-        );
-
-    opacity: .8;
-}
-
-.anime-eye {
-    position: absolute;
-
-    width: 38px;
-    height: 18px;
-
-    right: 35px;
-    top: 145px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff003c,
-            #ff6a00,
-            #ff003c
-        );
-
-    border-radius: 100%;
-
-    transform: rotate(-8deg);
-
-    box-shadow:
-        0 0 8px #ff1744;
-
-    animation:
-        eyeGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes eyeGlow {
-    from {
-        opacity: .7;
-        box-shadow:
-            0 0 6px #ff1744;
-    }
-
-    to {
-        opacity: 1;
-        box-shadow:
-            0 0 15px #ff1744,
-            0 0 25px #ff1744;
-    }
-}
-
-@keyframes characterFloat {
-    0%,100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(-1deg);
-    }
-
-    50% {
-        transform:
-            translate3d(0,-10px,0)
-            rotate(1deg);
-    }
-}
-
-/* =========================================================
-   HERO KANJI
-========================================================= */
-
-.hero-kanji {
-    position: absolute;
-
-    z-index: 0;
-
-    font-family:
-        "Noto Sans CJK JP",
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(250px, 30vw, 500px);
-
-    font-weight: 900;
-
-    line-height: 1;
-
-    user-select: none;
-    pointer-events: none;
-
-    will-change: transform;
-}
-
-.hero-kanji-left {
-    left: -20px;
-    top: 5%;
-
-    color:
-        rgba(255,0,55,.12);
-
-    text-shadow:
-        0 0 20px rgba(255,0,55,.12);
-
-    animation:
-        kanjiLeft 9s ease-in-out infinite;
-}
-
-.hero-kanji-right {
-    right: -30px;
-    bottom: 0;
-
-    color:
-        rgba(0,195,255,.12);
-
-    text-shadow:
-        0 0 20px rgba(0,195,255,.12);
-
-    animation:
-        kanjiRight 10s ease-in-out infinite;
-}
-
-@keyframes kanjiLeft {
-    0%,100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(-8deg);
-    }
-
-    50% {
-        transform:
-            translate3d(0,-12px,0)
-            rotate(-3deg);
-    }
-}
-
-@keyframes kanjiRight {
-    0%,100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(8deg);
-    }
-
-    50% {
-        transform:
-            translate3d(0,12px,0)
-            rotate(3deg);
-    }
-}
-
-/* =========================================================
-   HERO ENERGY
-========================================================= */
-
-.hero-energy {
-    position: absolute;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    filter: blur(7px);
-
-    will-change: transform;
-}
-
-.energy-red {
-    width: 500px;
-    height: 500px;
-
-    left: -150px;
-    top: 20%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,0,55,.20),
-            transparent 68%
-        );
-
-    animation:
-        redPulse 6s ease-in-out infinite;
-}
-
-.energy-blue {
-    width: 450px;
-    height: 450px;
-
-    right: -150px;
-    top: 20%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,195,255,.17),
-            transparent 68%
-        );
-
-    animation:
-        bluePulse 7s ease-in-out infinite;
-}
-
-@keyframes redPulse {
-    0%,100% {
-        transform: scale(.9);
-        opacity: .5;
-    }
-
-    50% {
-        transform: scale(1.1);
-        opacity: .8;
-    }
-}
-
-@keyframes bluePulse {
-    0%,100% {
-        transform: scale(1);
-        opacity: .5;
-    }
-
-    50% {
-        transform: scale(1.12);
-        opacity: .8;
-    }
-}
-
-/* =========================================================
-   SECTION TOP BAR
-========================================================= */
-
-.products::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-
-    top: 0;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #ff1744,
-            #00c8ff,
-            #8a2be2,
-            transparent
-        );
-
-    background-size: 300%;
-
-    animation:
-        movingBar 8s linear infinite;
-}
-
-@keyframes movingBar {
-    from {
-        background-position: 0%;
-    }
-
-    to {
-        background-position: 300%;
-    }
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    body {
-        background:
-            radial-gradient(
-                circle at 50% 10%,
-                rgba(255,0,70,.06),
-                transparent 30%
-            ),
-            #030305;
-
-        animation: none;
-    }
-
-    /* إلغاء الخلفية المتحركة الثقيلة */
-    body::before {
-        position: absolute;
-        filter: none;
-        animation: none;
-
-        opacity: .5;
-    }
-
-    body::after {
-        position: absolute;
-
-        font-size: 75px;
-
-        letter-spacing: 10px;
-
-        animation: none;
-
-        color:
-            rgba(255,255,255,.012);
-    }
-
-    /* HEADER */
-
-    header {
-        padding: 20px 18px;
-
-        flex-direction: column;
-
-        gap: 18px;
-
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-
-        background:
-            rgba(5,5,8,.94);
-    }
-
-    header h1 {
-        font-size: 27px;
-        letter-spacing: 6px;
-
-        animation: none;
-    }
-
-    nav {
-        gap: 14px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    /* HERO */
-
-    .hero {
-        min-height: 75vh;
-
-        padding: 40px 18px;
-    }
-
-    .hero::before {
-        animation: none;
-
-        background-size:
-            80px 80px;
-    }
-
-    .hero::after {
-        font-size: 190px;
-
-        right: -50px;
-
-        animation: none;
-    }
-
-    .hero h2 {
-        font-size: 43px;
-
-        letter-spacing: 4px;
-
-        filter:
-            drop-shadow(
-                0 0 10px rgba(255,0,70,.1)
-            );
-
-        animation: heroTitle 1s ease;
-    }
-
-    .hero p {
-        font-size: 15px;
-
-        letter-spacing: 1px;
-
-        line-height: 1.7;
-    }
-
-    .hero h2::after {
-        animation: none;
-
-        width: 150px;
-    }
-
-    .shop-btn {
-        padding: 16px 40px;
-
-        margin-top: 28px;
-    }
-
-    /* CHARACTER */
-
-    .anime-character {
-        width: 280px;
-        height: 400px;
-
-        left: 50%;
-        bottom: -20px;
-
-        transform:
-            translate3d(-50%,0,0)
-            scale(.7);
-
-        opacity: .25;
-
-        filter:
-            drop-shadow(
-                0 0 12px rgba(255,0,50,.12)
-            );
-
-        animation: none;
-    }
-
-    .hero-kanji {
-        font-size: 220px;
-
-        opacity: .5;
-
-        animation: none;
-
-        filter: none;
-        text-shadow: none;
-    }
-
-    .hero-kanji-left {
-        left: -60px;
-    }
-
-    .hero-kanji-right {
-        right: -60px;
-    }
-
-    .hero-energy {
-        filter: blur(3px);
-
-        animation: none;
-
-        opacity: .35;
-    }
-
-    .energy-red,
-    .energy-blue {
-        width: 300px;
-        height: 300px;
-    }
-
-    /* PRODUCTS */
-
-    .products {
-        padding: 90px 18px;
-    }
-
-    .products h2 {
-        font-size: 31px;
-
-        letter-spacing: 4px;
-
-        animation: none;
-    }
-
-    .products::before {
-        font-size: 250px;
-
-        animation: none;
-    }
-
-    .products::after {
-        animation: none;
-    }
-
-    .product-container {
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 25px;
-    }
-
-    .product-card {
-        width: 100%;
-
-        max-width: 360px;
-
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-
-        background:
-            linear-gradient(
-                145deg,
-                rgba(255,255,255,.055),
-                rgba(255,255,255,.012)
-            );
-
-        box-shadow:
-            0 15px 35px rgba(0,0,0,.4);
-
-        transform-style: flat;
-
-        animation: cardAppear .5s ease both;
-    }
-
-    /* إلغاء 3D/hover على التليفون */
-
-    .product-card:hover {
-        transform: none;
-
-        box-shadow:
-            0 15px 35px rgba(0,0,0,.4);
-    }
-
-    .product-card:hover::before {
-        opacity: 0;
-    }
-
-    .product-card:hover .product-image img {
-        transform: none;
-    }
-
-    .product-image {
-        height: 400px;
-    }
-
-    .product-image::after {
-        display: none;
-    }
-
-    /* DETAILS */
-
-    .product-details {
-        padding: 80px 18px;
-    }
-
-    .details-container {
-        flex-direction: column;
-
-        gap: 35px;
-    }
-
-    .details-image,
-    .details-info {
-        width: 100%;
-    }
-
-    .details-image {
-        height: 450px;
-
-        box-shadow:
-            0 20px 45px rgba(0,0,0,.5);
-    }
-
-    .details-info h2 {
-        font-size: 34px;
-    }
-
-    /* CART */
-
-    .cart-box {
-        width: 100%;
-
-        right: -100%;
-
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-
-        background:
-            rgba(5,5,8,.98);
-    }
-
-    /* ABOUT / CONTACT */
-
-    .about,
-    .contact {
-        padding: 100px 20px;
-    }
-
-    .about h2,
-    .contact h2 {
-        font-size: 35px;
-    }
-
-    .about::before,
-    .contact::after {
-        font-size: 120px;
-
-        animation: none;
-    }
-
-    /* CHECKOUT */
-
-    .checkout {
-        padding: 80px 15px;
-    }
-
-    .checkout-container {
-        padding: 28px 20px;
-
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-
-        background:
-            rgba(255,255,255,.025);
-    }
-
-    .checkout-container h2 {
-        font-size: 30px;
-    }
-
-    /* SUCCESS */
-
-    .success-container {
-        padding: 40px 20px;
-
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-    }
-
-    /* INTRO */
-
-    #intro-screen::before {
-        width: 350px;
-        height: 350px;
-    }
-
-    #intro-screen::after {
-        width: 220px;
-        height: 220px;
-    }
-
-    .intro-logo {
-        font-size: 52px;
-
-        letter-spacing: 8px;
-
-        animation:
-            introLogo 1.2s ease,
-            titleGradient 6s linear infinite;
-    }
-
-    .intro-kanji {
-        font-size: 250px;
-
-        animation:
-            kanjiIntro 2s ease forwards;
-    }
-
-    .intro-subtitle {
-        font-size: 10px;
-
-        letter-spacing: 3px;
-    }
-
-    /* CURSOR */
-
-    .cursor-glow {
-        display: none;
-    }
-}
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-    }
-
-    body::before,
-    body::after,
-    .hero::before,
-    .hero::after,
-    .products::before,
-    .products::after,
-    .about::before,
-    .contact::after {
-        animation: none !important;
-    }
-
-    .cursor-glow {
-        display: none;
-    }
-}
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 420px) {
-
-    header h1 {
-        font-size: 23px;
-        letter-spacing: 5px;
-    }
-
-    nav {
-        gap: 10px;
-    }
-
-    nav a {
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
-
-    .hero h2 {
-        font-size: 35px;
-        letter-spacing: 3px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .product-image {
-        height: 350px;
-    }
-
-    .intro-logo {
-        font-size: 43px;
-    }
-
-    .intro-line {
-        max-width: 200px;
-    }
-}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZAMALEK — More Than A Style</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- INTRO -->
+    <div id="intro-screen">
+        <div class="intro-kanji">魂</div>
+        <div class="intro-line"></div>
+        <div class="intro-logo">ZAMALEK</div>
+        <div class="intro-subtitle">ENTER THE NEW ERA</div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <h1>ZAMALEK</h1>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#shop">COLLECTION</a>
+            <a href="#about">STORY</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+
+        <button class="cart" id="cart-button" type="button">
+            🛒 BAG
+            <span id="cart-count">0</span>
+        </button>
+    </header>
+
+    <main id="home">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="anime-character">
+                <div class="anime-head">
+                    <div class="anime-hair hair-1"></div>
+                    <div class="anime-hair hair-2"></div>
+                    <div class="anime-hair hair-3"></div>
+                    <div class="anime-hair hair-4"></div>
+                    <div class="anime-eye"></div>
+                </div>
+            </div>
+
+            <div class="hero-kanji hero-kanji-left">強</div>
+            <div class="hero-kanji hero-kanji-right">永</div>
+
+            <div class="hero-energy energy-red"></div>
+            <div class="hero-energy energy-blue"></div>
+
+            <div class="hero-content">
+                <div class="hero-mini-title">ZAMALEK / 2026</div>
+
+                <h2>OWN THE MOMENT</h2>
+
+                <p>
+                    BORN FROM THE STREETS.<br>
+                    BUILT FOR THOSE WHO REFUSE TO BLEND IN.
+                </p>
+
+                <p class="hero-arabic">
+                    الزمالك ليس مجرد اسم...<br>
+                    الزمالك حكاية تُرتدى.
+                </p>
+
+                <button class="shop-btn" type="button" id="hero-shop-btn">
+                    ENTER THE COLLECTION →
+                </button>
+            </div>
+
+            <div class="hero-bottom-mark">
+                <span>ZAMALEK</span>
+                <b>✦</b>
+                <span>MORE THAN STYLE</span>
+                <b>✦</b>
+                <span>ZAMALEK</span>
+            </div>
+
+        </section>
+
+        <!-- COLLECTION -->
+        <section class="products" id="shop">
+
+            <div class="collection-heading">
+                <span>FEATURED COLLECTION</span>
+                <h2>THE NEW ERA</h2>
+                <p>WEAR THE PRIDE. LIVE THE LEGEND.</p>
+            </div>
+
+            <div class="product-container">
+
+                <!-- T-SHIRT -->
+                <div class="product-card"
+                     data-description="Clean silhouette. Heavy attitude. Designed for everyday domination.">
+
+                    <div class="product-badge">NEW</div>
+
+                    <div class="product-image product-click">
+                        <img
+                            src="./images/tshirt.jpg"
+                            alt="Zamalek Basic T-Shirt"
+                            width="600"
+                            height="780"
+                            loading="eager"
+                            decoding="async"
+                        >
+                    </div>
+
+                    <div class="product-meta">
+                        <span>ZMK / 001</span>
+                        <span>ESSENTIAL</span>
+                    </div>
+
+                    <h3>Zamalek Basic T-Shirt</h3>
+                    <p>EGP 599</p>
+
+                    <div class="product-options">
+
+                        <div class="quantity-selector">
+                            <label>Quantity</label>
+                            <input
+                                type="number"
+                                class="product-quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                            >
+                        </div>
+
+                        <label>Size</label>
+                        <select class="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                        <label>Color</label>
+                        <select class="color">
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                        </select>
+
+                    </div>
+
+                    <button class="add-to-cart" type="button">
+                        ADD TO BAG
+                    </button>
+
+                    <button class="buy-now" type="button">
+                        BUY IT NOW
+                    </button>
+
+                </div>
+
+                <!-- HOODIE -->
+                <div class="product-card"
+                     data-description="Oversized comfort with a statement built to be seen.">
+
+                    <div class="product-badge">CORE</div>
+
+                    <div class="product-image product-click">
+                        <img
+                            src="./images/hoodie.jpg"
+                            alt="Zamalek Oversized Hoodie"
+                            width="600"
+                            height="780"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </div>
+
+                    <div class="product-meta">
+                        <span>ZMK / 002</span>
+                        <span>OVERSIZED</span>
+                    </div>
+
+                    <h3>Zamalek Oversized Hoodie</h3>
+                    <p>EGP 999</p>
+
+                    <div class="product-options">
+
+                        <div class="quantity-selector">
+                            <label>Quantity</label>
+                            <input
+                                type="number"
+                                class="product-quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                            >
+                        </div>
+
+                        <label>Size</label>
+                        <select class="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                        <label>Color</label>
+                        <select class="color">
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                        </select>
+
+                    </div>
+
+                    <button class="add-to-cart" type="button">
+                        ADD TO BAG
+                    </button>
+
+                    <button class="buy-now" type="button">
+                        BUY IT NOW
+                    </button>
+
+                </div>
+
+                <!-- PANTS -->
+                <div class="product-card"
+                     data-description="Relaxed movement. Sharp structure. Made for the streets.">
+
+                    <div class="product-badge">STREET</div>
+
+                    <div class="product-image product-click">
+                        <img
+                            src="./images/pants.jpg"
+                            alt="Zamalek Wide Pants"
+                            width="600"
+                            height="780"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </div>
+
+                    <div class="product-meta">
+                        <span>ZMK / 003</span>
+                        <span>STREET</span>
+                    </div>
+
+                    <h3>Zamalek Wide Pants</h3>
+                    <p>EGP 799</p>
+
+                    <div class="product-options">
+
+                        <div class="quantity-selector">
+                            <label>Quantity</label>
+                            <input
+                                type="number"
+                                class="product-quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                            >
+                        </div>
+
+                        <label>Size</label>
+                        <select class="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                        <label>Color</label>
+                        <select class="color">
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                        </select>
+
+                    </div>
+
+                    <button class="add-to-cart" type="button">
+                        ADD TO BAG
+                    </button>
+
+                    <button class="buy-now" type="button">
+                        BUY IT NOW
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="collection-ticker">
+                <span>ZAMALEK</span>
+                <b>✦</b>
+                <span>PRIDE</span>
+                <b>✦</b>
+                <span>HISTORY</span>
+                <b>✦</b>
+                <span>FOREVER</span>
+                <b>✦</b>
+                <span>ZAMALEK</span>
+            </div>
+
+        </section>
+
+        <!-- PRODUCT DETAILS -->
+        <section class="product-details" id="product-details">
+
+            <div class="details-container">
+
+                <div class="details-image">
+                    <img
+                        id="details-image"
+                        src=""
+                        alt=""
+                        width="600"
+                        height="780"
+                        decoding="async"
+                    >
+                </div>
+
+                <div class="details-info">
+
+                    <div class="details-label">
+                        ZAMALEK / PRODUCT
+                    </div>
+
+                    <h2 id="details-name"></h2>
+
+                    <p class="details-price">
+                        EGP <span id="details-price"></span>
+                    </p>
+
+                    <p id="details-description"></p>
+
+                    <label for="details-size">SIZE</label>
+                    <select id="details-size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                    <label for="details-color">COLOR</label>
+                    <select id="details-color">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                    </select>
+
+                    <label for="details-quantity">QUANTITY</label>
+                    <input
+                        type="number"
+                        id="details-quantity"
+                        value="1"
+                        min="1"
+                        max="10"
+                    >
+
+                    <button id="details-add" type="button">
+                        ADD TO BAG
+                    </button>
+
+                    <button id="details-buy" type="button">
+                        BUY IT NOW
+                    </button>
+
+                    <button id="close-details" type="button">
+                        ← BACK TO COLLECTION
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+
+            <div class="about-kanji">夢</div>
+
+            <div class="about-content">
+
+                <span class="section-label">OUR STORY</span>
+
+                <h2>
+                    MORE THAN<br>
+                    <span>CLOTHES.</span>
+                </h2>
+
+                <p>
+                    ZAMALEK IS A STATE OF MIND.
+                    A LANGUAGE OF MOVEMENT, ATTITUDE
+                    AND SELF-EXPRESSION.
+                </p>
+
+                <p>
+                    WE DON'T FOLLOW THE STREET.
+                    WE CREATE OUR OWN.
+                </p>
+
+                <button class="story-btn" type="button">
+                    DISCOVER OUR STORY →
+                </button>
+
+            </div>
+
+            <div class="about-side-text">
+                私たちは<br>
+                一つ
+            </div>
+
+        </section>
+
+        <!-- STATS -->
+        <section class="brand-stats">
+
+            <div class="stat">
+                <span class="stat-icon">◇</span>
+                <strong>14</strong>
+                <small>CAF TITLES</small>
+            </div>
+
+            <div class="stat">
+                <span class="stat-icon">♛</span>
+                <strong>7</strong>
+                <small>EGYPTIAN LEAGUE</small>
+            </div>
+
+            <div class="stat">
+                <span class="stat-icon">☆</span>
+                <strong>1</strong>
+                <small>AFRICAN SUPER CUP</small>
+            </div>
+
+            <div class="stat">
+                <span class="stat-icon">♡</span>
+                <strong>FOREVER</strong>
+                <small>ZAMALEK</small>
+            </div>
+
+        </section>
+
+        <!-- COMMUNITY -->
+        <section class="community">
+
+            <div class="community-kanji">強</div>
+
+            <div class="community-content">
+
+                <span>JOIN OUR COMMUNITY</span>
+
+                <h2>
+                    BE PART OF
+                    <strong>THE LEGEND</strong>
+                </h2>
+
+                <form class="subscribe-form">
+                    <input
+                        type="email"
+                        placeholder="YOUR EMAIL ADDRESS"
+                    >
+                    <button type="button">
+                        SUBSCRIBE →
+                    </button>
+                </form>
+
+            </div>
+
+            <div class="community-slogan">
+                強く、<br>
+                一緒に、<br>
+                永遠に
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+
+            <div class="contact-kanji">自</div>
+
+            <span class="section-label">GET IN TOUCH</span>
+
+            <h2>
+                TALK TO <span>ZAMALEK.</span>
+            </h2>
+
+            <p>
+                QUESTIONS, COLLABORATIONS OR JUST
+                WANT TO TALK? WE'RE HERE.
+            </p>
+
+            <div class="contact-info">
+                <p>
+                    📧
+                    <strong>zamalekclothing@gmail.com</strong>
+                </p>
+
+                <p>
+                    📱
+                    <strong>+20 100 000 0000</strong>
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- CART -->
+    <div class="cart-box" id="cart-box">
+
+        <div class="cart-header">
+            <span>YOUR BAG</span>
+            <span>ZMK</span>
+        </div>
+
+        <h2>YOUR SELECTION</h2>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+            TOTAL:
+            <span>EGP</span>
+            <strong id="cart-total">0</strong>
+        </div>
+
+        <button id="checkout-btn" type="button">
+            PROCEED TO CHECKOUT →
+        </button>
+
+        <button id="close-cart" type="button">
+            CONTINUE SHOPPING
+        </button>
+
+    </div>
+
+    <!-- CHECKOUT -->
+    <section class="checkout" id="checkout">
+
+        <div class="checkout-container">
+
+            <div class="checkout-top-label">
+                ZAMALEK / SECURE CHECKOUT
+            </div>
+
+            <h2>
+                COMPLETE
+                <span>YOUR ORDER</span>
+            </h2>
+
+            <form id="checkout-form">
+
+                <label>FULL NAME</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label>PHONE NUMBER</label>
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    placeholder="01XXXXXXXXX"
+                    required
+                >
+
+                <label>GOVERNORATE</label>
+
+                <select id="governorate" required>
+                    <option value="">Choose Governorate</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Giza">Giza</option>
+                    <option value="Alexandria">Alexandria</option>
+                    <option value="Fayoum">Fayoum</option>
+                    <option value="Beni Suef">Beni Suef</option>
+                    <option value="Qalyubia">Qalyubia</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label>DELIVERY ADDRESS</label>
+
+                <textarea
+                    id="customer-address"
+                    placeholder="Enter your full address"
+                    required
+                ></textarea>
+
+                <label>PAYMENT METHOD</label>
+
+                <select id="payment-method" required>
+                    <option value="">Choose Payment Method</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Card">Card</option>
+                </select>
+
+                <div class="checkout-summary">
+
+                    <h3>YOUR ORDER</h3>
+
+                    <div id="checkout-items"></div>
+
+                    <div class="checkout-final-total">
+                        TOTAL: EGP
+                        <span id="checkout-total">0</span>
+                    </div>
+
+                </div>
+
+                <button type="submit">
+                    PLACE ORDER →
+                </button>
+
+            </form>
+
+            <button id="back-to-cart" type="button">
+                ← BACK TO BAG
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SUCCESS -->
+    <section class="order-success" id="order-success">
+
+        <div class="success-container">
+
+            <div class="success-icon">✓</div>
+
+            <div class="success-label">
+                ZAMALEK / ORDER
+            </div>
+
+            <h2>
+                ORDER <span>CONFIRMED</span>
+            </h2>
+
+            <p class="success-message">
+                YOUR ORDER IS IN.
+                WELCOME TO THE ZAMALEK ERA.
+            </p>
+
+            <div class="order-number">
+                ORDER # <span id="order-number"></span>
+            </div>
+
+            <div class="success-details">
+
+                <p>
+                    CUSTOMER:
+                    <strong id="success-name"></strong>
+                </p>
+
+                <p>
+                    TOTAL:
+                    <strong>
+                        EGP <span id="success-total"></span>
+                    </strong>
+                </p>
+
+            </div>
+
+            <button id="continue-shopping" type="button">
+                CONTINUE SHOPPING →
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-kanji">魂</div>
+
+        <div class="footer-logo">ZAMALEK</div>
+
+        <p>PRIDE · HISTORY · FOREVER</p>
+
+        <div class="footer-links">
+            <a href="#home">HOME</a>
+            <a href="#shop">COLLECTION</a>
+            <a href="#about">STORY</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+        </div>
+
+        <div class="footer-bottom">
+            <span>ZAMALEK</span>
+            <span>© 2026 ALL RIGHTS RESERVED</span>
+            <span>MADE FOR THE LEGEND</span>
+        </div>
+
+        <p class="copyright">
+            ZAMALEK — MORE THAN A CLUB. MORE THAN A STYLE.
+        </p>
+
+    </footer>
+
+    <script src="./script.js" defer></script>
+
+</body>
+</html>

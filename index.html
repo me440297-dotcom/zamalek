@@ -1,1253 +1,1307 @@
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ZAMALEK — More Than A Style</title>
-
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-
-    <!-- ==================================================
-         CINEMATIC INTRO
-    ================================================== -->
-
-    <div id="intro-screen">
-
-        <div class="intro-kanji">魂</div>
-
-        <div class="intro-line"></div>
-
-        <div class="intro-logo">
-            ZAMALEK
-        </div>
-
-        <div class="intro-subtitle">
-            ENTER THE NEW ERA
-        </div>
-
-    </div>
-
-
-    <!-- ==================================================
-         HEADER
-    ================================================== -->
-
-    <header>
-
-        <h1>ZAMALEK</h1>
-
-        <nav>
-
-            <a href="#home">HOME</a>
-
-            <a href="#shop">COLLECTION</a>
-
-            <a href="#about">STORY</a>
-
-            <a href="#contact">CONTACT</a>
-
-        </nav>
-
-
-        <div class="cart" id="cart-button">
-
-            🛒 BAG
-
-            <span id="cart-count">
-                0
-            </span>
-
-        </div>
-
-    </header>
-
-
-    <!-- ==================================================
-         MAIN
-    ================================================== -->
-
-    <main id="home">
-
-
-        <!-- ==================================================
-             HERO
-        ================================================== -->
-
-        <section class="hero">
-
-            <!-- ANIME CHARACTER -->
-
-            <div class="anime-character">
-
-                <div class="anime-head">
-
-                    <div class="anime-hair hair-1"></div>
-                    <div class="anime-hair hair-2"></div>
-                    <div class="anime-hair hair-3"></div>
-                    <div class="anime-hair hair-4"></div>
-
-                    <div class="anime-eye"></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- HUGE BACKGROUND CHARACTERS -->
-
-            <div class="hero-kanji hero-kanji-left">
-                強
-            </div>
-
-            <div class="hero-kanji hero-kanji-right">
-                永
-            </div>
-
-
-            <!-- ENERGY -->
-
-            <div class="hero-energy energy-red"></div>
-
-            <div class="hero-energy energy-blue"></div>
-
-
-            <!-- HERO CONTENT -->
-
-            <div class="hero-content">
-
-                <div class="hero-mini-title">
-                    ZAMALEK / 2026
-                </div>
-
-                <h2>
-                    OWN THE MOMENT
-                </h2>
-
-                <p>
-                    BORN FROM THE STREETS.<br>
-                    BUILT FOR THOSE WHO REFUSE TO BLEND IN.
-                </p>
-
-                <p class="hero-arabic">
-                    الزمالك ليس مجرد اسم...<br>
-                    الزمالك حكاية تُرتدى.
-                </p>
-
-                <button
-                    class="shop-btn"
-                    type="button"
-                    onclick="document.querySelector('.products').scrollIntoView({ behavior: 'smooth' })"
-                >
-                    ENTER THE COLLECTION →
-                </button>
-
-            </div>
-
-
-            <!-- HERO BOTTOM MARK -->
-
-            <div class="hero-bottom-mark">
-
-                <span>ZAMALEK</span>
-
-                <b>✦</b>
-
-                <span>MORE THAN STYLE</span>
-
-                <b>✦</b>
-
-                <span>ZAMALEK</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             COLLECTION
-        ================================================== -->
-
-        <section class="products" id="shop">
-
-            <div class="collection-heading">
-
-                <span>
-                    FEATURED COLLECTION
-                </span>
-
-                <h2>
-                    THE NEW ERA
-                </h2>
-
-                <p>
-                    WEAR THE PRIDE. LIVE THE LEGEND.
-                </p>
-
-            </div>
-
-
-            <div class="product-container">
-
-
-                <!-- ==================================================
-                     T-SHIRT
-                ================================================== -->
-
-                <div
-                    class="product-card"
-                    data-description="Clean silhouette. Heavy attitude. Designed for everyday domination."
-                >
-
-                    <div class="product-badge">
-                        NEW
-                    </div>
-
-
-                    <div class="product-image product-click">
-
-                        <img
-                            src="./images/tshirt.jpg"
-                            alt="Zamalek Basic T-Shirt"
-                            width="600"
-                            height="780"
-                            loading="eager"
-                            fetchpriority="high"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-meta">
-
-                        <span>ZMK / 001</span>
-
-                        <span>ESSENTIAL</span>
-
-                    </div>
-
-
-                    <h3>
-                        Zamalek Basic T-Shirt
-                    </h3>
-
-                    <p>
-                        EGP 599
-                    </p>
-
-
-                    <div class="product-options">
-
-                        <div class="quantity-selector">
-
-                            <label>
-                                Quantity
-                            </label>
-
-                            <input
-                                type="number"
-                                class="product-quantity"
-                                value="1"
-                                min="1"
-                                max="10"
-                            >
-
-                        </div>
-
-
-                        <label>
-                            Size
-                        </label>
-
-                        <select class="size">
-
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-
-                        </select>
-
-
-                        <label>
-                            Color
-                        </label>
-
-                        <select class="color">
-
-                            <option value="Black">
-                                Black
-                            </option>
-
-                            <option value="White">
-                                White
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <button class="add-to-cart" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button class="buy-now" type="button">
-                        BUY IT NOW
-                    </button>
-
-                </div>
-
-
-                <!-- ==================================================
-                     HOODIE
-                ================================================== -->
-
-                <div
-                    class="product-card"
-                    data-description="Oversized comfort with a statement built to be seen."
-                >
-
-                    <div class="product-badge">
-                        CORE
-                    </div>
-
-
-                    <div class="product-image product-click">
-
-                        <img
-                            src="./images/hoodie.jpg"
-                            alt="Zamalek Oversized Hoodie"
-                            width="600"
-                            height="780"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-meta">
-
-                        <span>ZMK / 002</span>
-
-                        <span>OVERSIZED</span>
-
-                    </div>
-
-
-                    <h3>
-                        Zamalek Oversized Hoodie
-                    </h3>
-
-                    <p>
-                        EGP 999
-                    </p>
-
-
-                    <div class="product-options">
-
-                        <div class="quantity-selector">
-
-                            <label>
-                                Quantity
-                            </label>
-
-                            <input
-                                type="number"
-                                class="product-quantity"
-                                value="1"
-                                min="1"
-                                max="10"
-                            >
-
-                        </div>
-
-
-                        <label>
-                            Size
-                        </label>
-
-                        <select class="size">
-
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-
-                        </select>
-
-
-                        <label>
-                            Color
-                        </label>
-
-                        <select class="color">
-
-                            <option value="Black">
-                                Black
-                            </option>
-
-                            <option value="White">
-                                White
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <button class="add-to-cart" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button class="buy-now" type="button">
-                        BUY IT NOW
-                    </button>
-
-                </div>
-
-
-                <!-- ==================================================
-                     PANTS
-                ================================================== -->
-
-                <div
-                    class="product-card"
-                    data-description="Relaxed movement. Sharp structure. Made for the streets."
-                >
-
-                    <div class="product-badge">
-                        STREET
-                    </div>
-
-
-                    <div class="product-image product-click">
-
-                        <img
-                            src="./images/pants.jpg"
-                            alt="Zamalek Wide Pants"
-                            width="600"
-                            height="780"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-meta">
-
-                        <span>ZMK / 003</span>
-
-                        <span>STREET</span>
-
-                    </div>
-
-
-                    <h3>
-                        Zamalek Wide Pants
-                    </h3>
-
-                    <p>
-                        EGP 799
-                    </p>
-
-
-                    <div class="product-options">
-
-                        <div class="quantity-selector">
-
-                            <label>
-                                Quantity
-                            </label>
-
-                            <input
-                                type="number"
-                                class="product-quantity"
-                                value="1"
-                                min="1"
-                                max="10"
-                            >
-
-                        </div>
-
-
-                        <label>
-                            Size
-                        </label>
-
-                        <select class="size">
-
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-
-                        </select>
-
-
-                        <label>
-                            Color
-                        </label>
-
-                        <select class="color">
-
-                            <option value="Black">
-                                Black
-                            </option>
-
-                            <option value="White">
-                                White
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <button class="add-to-cart" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button class="buy-now" type="button">
-                        BUY IT NOW
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- COLLECTION TICKER -->
-
-            <div class="collection-ticker">
-
-                <span>ZAMALEK</span>
-                <b>✦</b>
-                <span>PRIDE</span>
-                <b>✦</b>
-                <span>HISTORY</span>
-                <b>✦</b>
-                <span>FOREVER</span>
-                <b>✦</b>
-                <span>ZAMALEK</span>
-                <b>✦</b>
-                <span>PRIDE</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             PRODUCT DETAILS
-        ================================================== -->
-
-        <section
-            class="product-details"
-            id="product-details"
-        >
-
-            <div class="details-container">
-
-                <div class="details-image">
-
-                    <img
-                        id="details-image"
-                        src=""
-                        alt=""
-                        width="600"
-                        height="780"
-                        decoding="async"
-                    >
-
-                </div>
-
-
-                <div class="details-info">
-
-                    <div class="details-label">
-                        ZAMALEK / PRODUCT
-                    </div>
-
-
-                    <h2 id="details-name"></h2>
-
-
-                    <p class="details-price">
-                        EGP
-                        <span id="details-price"></span>
-                    </p>
-
-
-                    <p id="details-description"></p>
-
-
-                    <label for="details-size">
-                        SIZE
-                    </label>
-
-                    <select id="details-size">
-
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-
-                    </select>
-
-
-                    <label for="details-color">
-                        COLOR
-                    </label>
-
-                    <select id="details-color">
-
-                        <option value="Black">
-                            Black
-                        </option>
-
-                        <option value="White">
-                            White
-                        </option>
-
-                    </select>
-
-
-                    <label for="details-quantity">
-                        QUANTITY
-                    </label>
-
-                    <input
-                        type="number"
-                        id="details-quantity"
-                        value="1"
-                        min="1"
-                        max="10"
-                    >
-
-
-                    <button id="details-add" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button id="details-buy" type="button">
-                        BUY IT NOW
-                    </button>
-
-                    <button id="close-details" type="button">
-                        ← BACK TO COLLECTION
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             ABOUT
-        ================================================== -->
-
-        <section class="about" id="about">
-
-            <div class="about-kanji">
-                夢
-            </div>
-
-
-            <div class="about-content">
-
-                <span class="section-label">
-                    OUR STORY
-                </span>
-
-                <h2>
-                    MORE THAN<br>
-                    <span>CLOTHES.</span>
-                </h2>
-
-                <p>
-                    ZAMALEK IS A STATE OF MIND.
-                    A LANGUAGE OF MOVEMENT, ATTITUDE
-                    AND SELF-EXPRESSION.
-                </p>
-
-                <p>
-                    WE DON'T FOLLOW THE STREET.
-                    WE CREATE OUR OWN.
-                </p>
-
-
-                <button class="story-btn" type="button">
-                    DISCOVER OUR STORY →
-                </button>
-
-            </div>
-
-
-            <div class="about-side-text">
-                私たちは<br>
-                一つ
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             BRAND STATS
-        ================================================== -->
-
-        <section class="brand-stats">
-
-            <div class="stat">
-
-                <span class="stat-icon">◇</span>
-
-                <strong>14</strong>
-
-                <small>
-                    CAF TITLES
-                </small>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-icon">♛</span>
-
-                <strong>7</strong>
-
-                <small>
-                    EGYPTIAN LEAGUE
-                </small>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-icon">☆</span>
-
-                <strong>1</strong>
-
-                <small>
-                    AFRICAN SUPER CUP
-                </small>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-icon">♡</span>
-
-                <strong>FOREVER</strong>
-
-                <small>
-                    ZAMALEK
-                </small>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             COMMUNITY
-        ================================================== -->
-
-        <section class="community">
-
-            <div class="community-kanji">
-                強
-            </div>
-
-
-            <div class="community-content">
-
-                <span>
-                    JOIN OUR COMMUNITY
-                </span>
-
-                <h2>
-                    BE PART OF
-                    <strong>
-                        THE LEGEND
-                    </strong>
-                </h2>
-
-
-                <form class="subscribe-form">
-
-                    <input
-                        type="email"
-                        placeholder="YOUR EMAIL ADDRESS"
-                    >
-
-                    <button type="button">
-                        SUBSCRIBE →
-                    </button>
-
-                </form>
-
-            </div>
-
-
-            <div class="community-slogan">
-
-                強く、<br>
-                一緒に、<br>
-                永遠に
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             CONTACT
-        ================================================== -->
-
-        <section class="contact" id="contact">
-
-            <div class="contact-kanji">
-                自
-            </div>
-
-
-            <span class="section-label">
-                GET IN TOUCH
-            </span>
-
-            <h2>
-                TALK TO
-                <span>ZAMALEK.</span>
-            </h2>
-
-            <p>
-                QUESTIONS, COLLABORATIONS OR JUST
-                WANT TO TALK? WE'RE HERE.
-            </p>
-
-
-            <div class="contact-info">
-
-                <p>
-                    📧
-                    <strong>
-                        zamalekclothing@gmail.com
-                    </strong>
-                </p>
-
-                <p>
-                    📱
-                    <strong>
-                        +20 100 000 0000
-                    </strong>
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ==================================================
-         CART
-    ================================================== -->
-
-    <div
-        class="cart-box"
-        id="cart-box"
-    >
-
-        <div class="cart-header">
-
-            <span>
-                YOUR BAG
-            </span>
-
-            <span>
-                ZMK
-            </span>
-
-        </div>
-
-
-        <h2>
-            YOUR SELECTION
-        </h2>
-
-
-        <div id="cart-items"></div>
-
-
-        <div class="cart-total">
-
-            TOTAL:
-
-            <span>
-                EGP
-            </span>
-
-            <strong id="cart-total">
-                0
-            </strong>
-
-        </div>
-
-
-        <button id="checkout-btn" type="button">
-            PROCEED TO CHECKOUT →
-        </button>
-
-
-        <button id="close-cart" type="button">
-            CONTINUE SHOPPING
-        </button>
-
-    </div>
-
-
-    <!-- ==================================================
-         CHECKOUT
-    ================================================== -->
-
-    <section
-        class="checkout"
-        id="checkout"
-    >
-
-        <div class="checkout-container">
-
-            <div class="checkout-top-label">
-                ZAMALEK / SECURE CHECKOUT
-            </div>
-
-
-            <h2>
-                COMPLETE
-                <span>YOUR ORDER</span>
-            </h2>
-
-
-            <form id="checkout-form">
-
-
-                <label>
-                    FULL NAME
-                </label>
-
-                <input
-                    type="text"
-                    id="customer-name"
-                    placeholder="Enter your name"
-                    required
-                >
-
-
-                <label>
-                    PHONE NUMBER
-                </label>
-
-                <input
-                    type="tel"
-                    id="customer-phone"
-                    placeholder="01XXXXXXXXX"
-                    required
-                >
-
-
-                <label>
-                    GOVERNORATE
-                </label>
-
-                <select
-                    id="governorate"
-                    required
-                >
-
-                    <option value="">
-                        Choose Governorate
-                    </option>
-
-                    <option value="Cairo">
-                        Cairo
-                    </option>
-
-                    <option value="Giza">
-                        Giza
-                    </option>
-
-                    <option value="Alexandria">
-                        Alexandria
-                    </option>
-
-                    <option value="Fayoum">
-                        Fayoum
-                    </option>
-
-                    <option value="Beni Suef">
-                        Beni Suef
-                    </option>
-
-                    <option value="Qalyubia">
-                        Qalyubia
-                    </option>
-
-                    <option value="Other">
-                        Other
-                    </option>
-
-                </select>
-
-
-                <label>
-                    DELIVERY ADDRESS
-                </label>
-
-                <textarea
-                    id="customer-address"
-                    placeholder="Enter your full address"
-                    required
-                ></textarea>
-
-
-                <label>
-                    PAYMENT METHOD
-                </label>
-
-                <select
-                    id="payment-method"
-                    required
-                >
-
-                    <option value="">
-                        Choose Payment Method
-                    </option>
-
-                    <option value="Cash on Delivery">
-                        Cash on Delivery
-                    </option>
-
-                    <option value="Card">
-                        Card
-                    </option>
-
-                </select>
-
-
-                <div class="checkout-summary">
-
-                    <h3>
-                        YOUR ORDER
-                    </h3>
-
-
-                    <div id="checkout-items"></div>
-
-
-                    <div class="checkout-final-total">
-
-                        TOTAL:
-                        EGP
-
-                        <span id="checkout-total">
-                            0
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <button type="submit">
-                    PLACE ORDER →
-                </button>
-
-            </form>
-
-
-            <button id="back-to-cart" type="button">
-                ← BACK TO BAG
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         ORDER SUCCESS
-    ================================================== -->
-
-    <section
-        class="order-success"
-        id="order-success"
-    >
-
-        <div class="success-container">
-
-
-            <div class="success-icon">
-                ✓
-            </div>
-
-
-            <div class="success-label">
-                ZAMALEK / ORDER
-            </div>
-
-
-            <h2>
-                ORDER
-                <span>CONFIRMED</span>
-            </h2>
-
-
-            <p class="success-message">
-                YOUR ORDER IS IN.
-                WELCOME TO THE ZAMALEK ERA.
-            </p>
-
-
-            <div class="order-number">
-
-                ORDER #
-
-                <span id="order-number"></span>
-
-            </div>
-
-
-            <div class="success-details">
-
-                <p>
-                    CUSTOMER:
-                    <strong id="success-name"></strong>
-                </p>
-
-
-                <p>
-                    TOTAL:
-
-                    <strong>
-                        EGP
-                        <span id="success-total"></span>
-                    </strong>
-                </p>
-
-            </div>
-
-
-            <button id="continue-shopping" type="button">
-                CONTINUE SHOPPING →
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         FOOTER
-    ================================================== -->
-
-    <footer>
-
-        <div class="footer-kanji">
-            魂
-        </div>
-
-
-        <div class="footer-logo">
-            ZAMALEK
-        </div>
-
-
-        <p>
-            PRIDE · HISTORY · FOREVER
-        </p>
-
-
-        <div class="footer-links">
-
-            <a href="#home">
-                HOME
-            </a>
-
-            <a href="#shop">
-                COLLECTION
-            </a>
-
-            <a href="#about">
-                STORY
-            </a>
-
-            <a href="#contact">
-                CONTACT
-            </a>
-
-        </div>
-
-
-        <div class="social-links">
-
-            <a href="#">
-                Instagram
-            </a>
-
-            <a href="#">
-                Facebook
-            </a>
-
-            <a href="#">
-                TikTok
-            </a>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <span>
-                ZAMALEK
-            </span>
-
-            <span>
-                © 2026 ALL RIGHTS RESERVED
-            </span>
-
-            <span>
-                MADE FOR THE LEGEND
-            </span>
-
-        </div>
-
-
-        <p class="copyright">
-            ZAMALEK — MORE THAN A CLUB. MORE THAN A STYLE.
-        </p>
-
-    </footer>
-
-
-    <!-- ==================================================
-         SCRIPT
-    ================================================== -->
-
-    <script src="./script.js" defer></script>
-
-</body>
-
-</html>
+ /* =========================================================
+   ZAMALEK — PERFORMANCE CSS
+   Lightweight version
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --red: #ff1744;
+    --blue: #00c8ff;
+    --purple: #8a2be2;
+    --pink: #ff00a8;
+    --white: #ffffff;
+    --gray: #999;
+    --dark: #030305;
+    --card: #0b0b10;
+    --border: rgba(255,255,255,.12);
+}
+
+body {
+    background: #030305;
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+#intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #030305;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: introOut .8s ease 2.5s forwards;
+    pointer-events: none;
+}
+
+.intro-kanji {
+    font-size: 100px;
+    color: var(--red);
+    opacity: .8;
+}
+
+.intro-line {
+    width: 120px;
+    height: 2px;
+    background: var(--red);
+    margin: 18px 0;
+}
+
+.intro-logo {
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 12px;
+}
+
+.intro-subtitle {
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--gray);
+}
+
+@keyframes introOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    min-height: 75px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(3,3,5,.96);
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    font-size: 25px;
+    letter-spacing: 7px;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a,
+.footer-links a,
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: color .2s ease;
+}
+
+nav a:hover,
+.footer-links a:hover,
+.social-links a:hover {
+    color: var(--red);
+}
+
+.cart {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: white;
+    padding: 11px 15px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+#cart-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 19px;
+    height: 19px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background: var(--red);
+    font-size: 10px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 75px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 6%;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255,23,68,.08), transparent 30%),
+        radial-gradient(circle at 80% 40%, rgba(0,200,255,.06), transparent 30%),
+        #030305;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 750px;
+    text-align: center;
+}
+
+.hero-mini-title {
+    color: var(--red);
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: clamp(45px, 8vw, 100px);
+    line-height: .9;
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+
+.hero-content > p {
+    margin-top: 25px;
+    color: #bbb;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.hero-arabic {
+    direction: rtl;
+    color: white !important;
+    font-size: 17px !important;
+}
+
+.shop-btn,
+.add-to-cart,
+.buy-now,
+#details-add,
+#details-buy,
+#checkout-form > button,
+#checkout-btn,
+#continue-shopping {
+    border: 0;
+    padding: 15px 22px;
+    margin-top: 25px;
+    background: var(--red);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.shop-btn:hover,
+.add-to-cart:hover,
+.buy-now:hover,
+#details-add:hover,
+#details-buy:hover,
+#checkout-form > button:hover,
+#checkout-btn:hover,
+#continue-shopping:hover {
+    transform: translateY(-2px);
+    opacity: .88;
+}
+
+.hero-bottom-mark {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.hero-bottom-mark b {
+    color: var(--red);
+}
+
+/* =========================================================
+   BACKGROUND CHARACTERS
+========================================================= */
+
+.hero-kanji {
+    position: absolute;
+    font-size: min(35vw, 400px);
+    line-height: 1;
+    color: rgba(255,255,255,.025);
+    font-weight: 900;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-kanji-left {
+    left: -5%;
+}
+
+.hero-kanji-right {
+    right: -5%;
+}
+
+/* =========================================================
+   ANIME CHARACTER
+========================================================= */
+
+.anime-character {
+    position: absolute;
+    right: 8%;
+    bottom: 10%;
+    width: 190px;
+    height: 280px;
+    opacity: .65;
+    pointer-events: none;
+}
+
+.anime-head {
+    position: absolute;
+    width: 150px;
+    height: 190px;
+    top: 20px;
+    left: 20px;
+    border-radius: 48% 48% 45% 45%;
+    background: #16161c;
+    border: 2px solid #333;
+}
+
+.anime-hair {
+    position: absolute;
+    background: #050507;
+    border-radius: 50%;
+}
+
+.hair-1 {
+    width: 85px;
+    height: 90px;
+    top: -40px;
+    left: 5px;
+}
+
+.hair-2 {
+    width: 90px;
+    height: 100px;
+    top: -45px;
+    right: 0;
+}
+
+.hair-3 {
+    width: 50px;
+    height: 120px;
+    top: -5px;
+    left: -15px;
+    transform: rotate(25deg);
+}
+
+.hair-4 {
+    width: 55px;
+    height: 130px;
+    top: -10px;
+    right: -20px;
+    transform: rotate(-25deg);
+}
+
+.anime-eye {
+    position: absolute;
+    width: 45px;
+    height: 5px;
+    background: var(--red);
+    top: 95px;
+    left: 53px;
+}
+
+/* =========================================================
+   ENERGY
+========================================================= */
+
+.hero-energy {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.energy-red {
+    left: 5%;
+    top: 20%;
+    background: rgba(255,23,68,.08);
+}
+
+.energy-blue {
+    right: 5%;
+    top: 25%;
+    background: rgba(0,200,255,.06);
+}
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products {
+    position: relative;
+    padding: 110px 6%;
+    background: #050507;
+}
+
+.collection-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.collection-heading > span,
+.section-label,
+.details-label,
+.checkout-top-label,
+.success-label {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.collection-heading h2 {
+    font-size: clamp(40px, 7vw, 80px);
+    margin: 12px 0;
+}
+
+.collection-heading p {
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.product-container {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 15px;
+    overflow: hidden;
+}
+
+.product-badge {
+    position: absolute;
+    z-index: 5;
+    top: 25px;
+    left: 25px;
+    padding: 6px 9px;
+    background: var(--red);
+    color: white;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.product-image {
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    background: #111116;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 18px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+.product-card > p {
+    margin-top: 8px;
+    color: var(--red);
+    font-weight: bold;
+}
+
+.product-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.product-options label,
+.details-info label,
+#checkout-form label {
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.quantity-selector {
+    grid-column: 1 / -1;
+}
+
+.product-options input,
+.product-options select,
+.details-info input,
+.details-info select,
+#checkout-form input,
+#checkout-form select,
+#checkout-form textarea,
+.subscribe-form input {
+    width: 100%;
+    border: 1px solid #25252d;
+    background: #08080c;
+    color: white;
+    padding: 12px;
+    outline: none;
+}
+
+.product-options label {
+    display: block;
+    margin-bottom: -2px;
+}
+
+.add-to-cart,
+.buy-now {
+    width: 100%;
+}
+
+.buy-now {
+    margin-top: 8px;
+    background: transparent;
+    border: 1px solid var(--red);
+}
+
+.collection-ticker {
+    margin-top: 80px;
+    padding: 18px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.collection-ticker b {
+    color: var(--red);
+}
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.product-details {
+    display: none;
+    padding: 100px 6%;
+    background: #030305;
+}
+
+.product-details.active {
+    display: block;
+}
+
+.details-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.details-image {
+    height: 600px;
+    background: #0a0a0e;
+}
+
+.details-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.details-info h2 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.details-price {
+    color: var(--red);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#details-description {
+    color: #999;
+    line-height: 1.7;
+    margin: 20px 0;
+}
+
+.details-info label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+
+.details-info button {
+    width: 100%;
+    display: block;
+}
+
+#close-details {
+    background: transparent;
+    color: #aaa;
+    border: 1px solid #333;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    min-height: 600px;
+    position: relative;
+    padding: 120px 10%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #060608;
+}
+
+.about-kanji,
+.community-kanji,
+.contact-kanji,
+.footer-kanji {
+    position: absolute;
+    font-size: 350px;
+    color: rgba(255,255,255,.025);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.about-kanji {
+    right: 5%;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.about h2 {
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: .95;
+    margin: 20px 0;
+}
+
+.about h2 span {
+    color: var(--red);
+}
+
+.about-content p {
+    color: #999;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.story-btn {
+    margin-top: 25px;
+    background: transparent;
+    border: 1px solid var(--red);
+    color: white;
+    padding: 13px 18px;
+}
+
+.about-side-text {
+    position: absolute;
+    right: 8%;
+    bottom: 50px;
+    writing-mode: vertical-rl;
+    color: #555;
+    letter-spacing: 5px;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.brand-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: #030305;
+}
+
+.stat {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+    text-align: center;
+}
+
+.stat:last-child {
+    border-right: 0;
+}
+
+.stat-icon {
+    color: var(--red);
+    font-size: 25px;
+}
+
+.stat strong {
+    font-size: 35px;
+    margin: 8px 0;
+}
+
+.stat small {
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   COMMUNITY
+========================================================= */
+
+.community {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 6%;
+    overflow: hidden;
+}
+
+.community-content {
+    position: relative;
+    z-index: 2;
+}
+
+.community-content > span {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.community h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    margin: 15px 0 30px;
+}
+
+.community h2 strong {
+    display: block;
+    color: var(--red);
+}
+
+.subscribe-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    gap: 8px;
+}
+
+.subscribe-form button {
+    padding: 0 20px;
+    background: var(--red);
+    border: 0;
+    color: white;
+}
+
+.community-slogan {
+    position: absolute;
+    right: 7%;
+    bottom: 30px;
+    color: #333;
+    writing-mode: vertical-rl;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    position: relative;
+    text-align: center;
+    padding: 120px 6%;
+    overflow: hidden;
+    background: #050507;
+}
+
+.contact > *:not(.contact-kanji) {
+    position: relative;
+    z-index: 2;
+}
+
+.contact h2 {
+    font-size: clamp(45px, 7vw, 85px);
+    margin: 20px 0;
+}
+
+.contact h2 span {
+    color: var(--red);
+}
+
+.contact > p {
+    color: #888;
+    max-width: 550px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.contact-info {
+    margin-top: 35px;
+}
+
+.contact-info p {
+    margin: 12px 0;
+    color: #888;
+}
+
+.contact-info strong {
+    color: white;
+}
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart-box {
+    position: fixed;
+    top: 0;
+    right: -430px;
+    width: min(430px, 100%);
+    height: 100vh;
+    z-index: 5000;
+    background: #08080c;
+    border-left: 1px solid var(--border);
+    padding: 30px;
+    overflow-y: auto;
+    transition: right .25s ease;
+}
+
+.cart-box.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.cart-box h2 {
+    margin: 35px 0 20px;
+}
+
+.cart-item,
+.checkout-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #222;
+}
+
+.cart-item strong {
+    font-size: 14px;
+}
+
+.cart-item p {
+    color: #777;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.quantity-controls button {
+    width: 28px;
+    height: 28px;
+    background: #17171d;
+    color: white;
+    border: 1px solid #333;
+}
+
+.remove-btn {
+    margin-top: 10px;
+    background: transparent;
+    color: var(--red);
+    border: 0;
+    font-size: 10px;
+}
+
+.cart-total {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.cart-total strong {
+    margin-left: auto;
+    color: var(--red);
+    font-size: 22px;
+}
+
+#checkout-btn,
+#close-cart {
+    width: 100%;
+}
+
+#close-cart {
+    margin-top: 8px;
+    padding: 13px;
+    background: transparent;
+    color: #aaa;
+    border: 1px solid #333;
+}
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+.checkout {
+    display: none;
+    padding: 100px 6%;
+    background: #030305;
+}
+
+.checkout.active {
+    display: block;
+}
+
+.checkout-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.checkout h2 {
+    font-size: 55px;
+    margin: 15px 0 40px;
+}
+
+.checkout h2 span {
+    color: var(--red);
+}
+
+#checkout-form label {
+    display: block;
+    margin: 18px 0 7px;
+}
+
+#checkout-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.checkout-summary {
+    margin-top: 35px;
+    border: 1px solid #222;
+    padding: 20px;
+}
+
+.checkout-summary h3 {
+    margin-bottom: 10px;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.checkout-item p {
+    color: #777;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.checkout-final-total {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.checkout-final-total span {
+    color: var(--red);
+}
+
+#back-to-cart {
+    background: transparent;
+    border: 0;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.order-success {
+    display: none;
+    min-height: 600px;
+    padding: 100px 6%;
+    text-align: center;
+    background: #030305;
+}
+
+.order-success.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-container {
+    max-width: 600px;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    color: var(--red);
+    font-size: 30px;
+}
+
+.success-container h2 {
+    font-size: 55px;
+    margin: 20px 0;
+}
+
+.success-container h2 span {
+    display: block;
+    color: var(--red);
+}
+
+.success-message {
+    color: #888;
+    line-height: 1.7;
+}
+
+.order-number {
+    margin: 25px 0;
+    color: #777;
+}
+
+.order-number span {
+    color: white;
+}
+
+.success-details {
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 20px;
+}
+
+.success-details p {
+    margin: 10px 0;
+    color: #777;
+}
+
+.success-details strong {
+    color: white;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 90px 6% 30px;
+    background: #020203;
+    border-top: 1px solid var(--border);
+}
+
+.footer-kanji {
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+}
+
+.footer-logo {
+    position: relative;
+    z-index: 2;
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 9px;
+}
+
+footer > p {
+    position: relative;
+    z-index: 2;
+    color: #666;
+    margin: 15px 0 30px;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.footer-links,
+.social-links {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 70px;
+    padding-top: 20px;
+    border-top: 1px solid #18181c;
+    color: #444;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.copyright {
+    color: #333;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 15px 4%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .cart {
+        position: absolute;
+        right: 4%;
+        top: 48px;
+    }
+
+    .hero {
+        min-height: 700px;
+        padding: 70px 5%;
+    }
+
+    .hero h2 {
+        font-size: 48px;
+    }
+
+    .anime-character {
+        opacity: .25;
+        right: -20px;
+    }
+
+    .hero-kanji {
+        font-size: 50vw;
+    }
+
+    .hero-bottom-mark {
+        font-size: 7px;
+        gap: 8px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .product-image {
+        height: 430px;
+    }
+
+    .details-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .details-image {
+        height: 450px;
+    }
+
+    .details-info h2 {
+        font-size: 35px;
+    }
+
+    .brand-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .about {
+        padding: 90px 7%;
+    }
+
+    .about-side-text {
+        display: none;
+    }
+
+    .community-slogan {
+        display: none;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+    }
+
+    .subscribe-form button {
+        padding: 14px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+
+    header h1 {
+        font-size: 22px;
+        letter-spacing: 5px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .hero-content > p {
+        font-size: 12px;
+    }
+
+    .product-image {
+        height: 350px;
+    }
+
+    .intro-logo {
+        font-size: 40px;
+    }
+
+    .intro-line {
+        max-width: 180px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}

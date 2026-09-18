@@ -7,7 +7,7 @@
 
     <title>ZAMALEK — More Than A Style</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -33,11 +33,6 @@
     </div>
 
 
-    <!-- MOUSE LIGHT -->
-
-    <div class="cursor-glow"></div>
-
-
     <!-- ==================================================
          HEADER
     ================================================== -->
@@ -48,21 +43,13 @@
 
         <nav>
 
-            <a href="#home">
-                HOME
-            </a>
+            <a href="#home">HOME</a>
 
-            <a href="#shop">
-                COLLECTION
-            </a>
+            <a href="#shop">COLLECTION</a>
 
-            <a href="#about">
-                STORY
-            </a>
+            <a href="#about">STORY</a>
 
-            <a href="#contact">
-                CONTACT
-            </a>
+            <a href="#contact">CONTACT</a>
 
         </nav>
 
@@ -93,7 +80,6 @@
 
         <section class="hero">
 
-
             <!-- ANIME CHARACTER -->
 
             <div class="anime-character">
@@ -101,11 +87,8 @@
                 <div class="anime-head">
 
                     <div class="anime-hair hair-1"></div>
-
                     <div class="anime-hair hair-2"></div>
-
                     <div class="anime-hair hair-3"></div>
-
                     <div class="anime-hair hair-4"></div>
 
                     <div class="anime-eye"></div>
@@ -157,6 +140,7 @@
 
                 <button
                     class="shop-btn"
+                    type="button"
                     onclick="document.querySelector('.products').scrollIntoView({ behavior: 'smooth' })"
                 >
                     ENTER THE COLLECTION →
@@ -227,8 +211,13 @@
                     <div class="product-image product-click">
 
                         <img
-                            src="images/tshirt.jpg"
+                            src="./images/tshirt.jpg"
                             alt="Zamalek Basic T-Shirt"
+                            width="600"
+                            height="780"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
                         >
 
                     </div>
@@ -236,13 +225,9 @@
 
                     <div class="product-meta">
 
-                        <span>
-                            ZMK / 001
-                        </span>
+                        <span>ZMK / 001</span>
 
-                        <span>
-                            ESSENTIAL
-                        </span>
+                        <span>ESSENTIAL</span>
 
                     </div>
 
@@ -308,11 +293,11 @@
                     </div>
 
 
-                    <button class="add-to-cart">
+                    <button class="add-to-cart" type="button">
                         ADD TO BAG
                     </button>
 
-                    <button class="buy-now">
+                    <button class="buy-now" type="button">
                         BUY IT NOW
                     </button>
 
@@ -336,8 +321,12 @@
                     <div class="product-image product-click">
 
                         <img
-                            src="images/hoodie.jpg"
+                            src="./images/hoodie.jpg"
                             alt="Zamalek Oversized Hoodie"
+                            width="600"
+                            height="780"
+                            loading="lazy"
+                            decoding="async"
                         >
 
                     </div>
@@ -345,13 +334,9 @@
 
                     <div class="product-meta">
 
-                        <span>
-                            ZMK / 002
-                        </span>
+                        <span>ZMK / 002</span>
 
-                        <span>
-                            OVERSIZED
-                        </span>
+                        <span>OVERSIZED</span>
 
                     </div>
 
@@ -417,11 +402,11 @@
                     </div>
 
 
-                    <button class="add-to-cart">
+                    <button class="add-to-cart" type="button">
                         ADD TO BAG
                     </button>
 
-                    <button class="buy-now">
+                    <button class="buy-now" type="button">
                         BUY IT NOW
                     </button>
 
@@ -445,8 +430,12 @@
                     <div class="product-image product-click">
 
                         <img
-                            src="images/pants.jpg"
+                            src="./images/pants.jpg"
                             alt="Zamalek Wide Pants"
+                            width="600"
+                            height="780"
+                            loading="lazy"
+                            decoding="async"
                         >
 
                     </div>
@@ -454,13 +443,9 @@
 
                     <div class="product-meta">
 
-                        <span>
-                            ZMK / 003
-                        </span>
+                        <span>ZMK / 003</span>
 
-                        <span>
-                            STREET
-                        </span>
+                        <span>STREET</span>
 
                     </div>
 
@@ -526,11 +511,11 @@
                     </div>
 
 
-                    <button class="add-to-cart">
+                    <button class="add-to-cart" type="button">
                         ADD TO BAG
                     </button>
 
-                    <button class="buy-now">
+                    <button class="buy-now" type="button">
                         BUY IT NOW
                     </button>
 
@@ -543,39 +528,17 @@
 
             <div class="collection-ticker">
 
-                <span>
-                    ZAMALEK
-                </span>
-
+                <span>ZAMALEK</span>
                 <b>✦</b>
-
-                <span>
-                    PRIDE
-                </span>
-
+                <span>PRIDE</span>
                 <b>✦</b>
-
-                <span>
-                    HISTORY
-                </span>
-
+                <span>HISTORY</span>
                 <b>✦</b>
-
-                <span>
-                    FOREVER
-                </span>
-
+                <span>FOREVER</span>
                 <b>✦</b>
-
-                <span>
-                    ZAMALEK
-                </span>
-
+                <span>ZAMALEK</span>
                 <b>✦</b>
-
-                <span>
-                    PRIDE
-                </span>
+                <span>PRIDE</span>
 
             </div>
 
@@ -593,13 +556,15 @@
 
             <div class="details-container">
 
-
                 <div class="details-image">
 
                     <img
                         id="details-image"
                         src=""
                         alt=""
+                        width="600"
+                        height="780"
+                        decoding="async"
                     >
 
                 </div>
@@ -630,21 +595,10 @@
 
                     <select id="details-size">
 
-                        <option value="S">
-                            S
-                        </option>
-
-                        <option value="M">
-                            M
-                        </option>
-
-                        <option value="L">
-                            L
-                        </option>
-
-                        <option value="XL">
-                            XL
-                        </option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
 
                     </select>
 
@@ -679,15 +633,15 @@
                     >
 
 
-                    <button id="details-add">
+                    <button id="details-add" type="button">
                         ADD TO BAG
                     </button>
 
-                    <button id="details-buy">
+                    <button id="details-buy" type="button">
                         BUY IT NOW
                     </button>
 
-                    <button id="close-details">
+                    <button id="close-details" type="button">
                         ← BACK TO COLLECTION
                     </button>
 
@@ -732,7 +686,7 @@
                 </p>
 
 
-                <button class="story-btn">
+                <button class="story-btn" type="button">
                     DISCOVER OUR STORY →
                 </button>
 
@@ -755,13 +709,9 @@
 
             <div class="stat">
 
-                <span class="stat-icon">
-                    ◇
-                </span>
+                <span class="stat-icon">◇</span>
 
-                <strong>
-                    14
-                </strong>
+                <strong>14</strong>
 
                 <small>
                     CAF TITLES
@@ -772,13 +722,9 @@
 
             <div class="stat">
 
-                <span class="stat-icon">
-                    ♛
-                </span>
+                <span class="stat-icon">♛</span>
 
-                <strong>
-                    7
-                </strong>
+                <strong>7</strong>
 
                 <small>
                     EGYPTIAN LEAGUE
@@ -789,13 +735,9 @@
 
             <div class="stat">
 
-                <span class="stat-icon">
-                    ☆
-                </span>
+                <span class="stat-icon">☆</span>
 
-                <strong>
-                    1
-                </strong>
+                <strong>1</strong>
 
                 <small>
                     AFRICAN SUPER CUP
@@ -806,13 +748,9 @@
 
             <div class="stat">
 
-                <span class="stat-icon">
-                    ♡
-                </span>
+                <span class="stat-icon">♡</span>
 
-                <strong>
-                    FOREVER
-                </strong>
+                <strong>FOREVER</strong>
 
                 <small>
                     ZAMALEK
@@ -969,12 +907,12 @@
         </div>
 
 
-        <button id="checkout-btn">
+        <button id="checkout-btn" type="button">
             PROCEED TO CHECKOUT →
         </button>
 
 
-        <button id="close-cart">
+        <button id="close-cart" type="button">
             CONTINUE SHOPPING
         </button>
 
@@ -1140,7 +1078,7 @@
             </form>
 
 
-            <button id="back-to-cart">
+            <button id="back-to-cart" type="button">
                 ← BACK TO BAG
             </button>
 
@@ -1195,32 +1133,24 @@
             <div class="success-details">
 
                 <p>
-
                     CUSTOMER:
-
                     <strong id="success-name"></strong>
-
                 </p>
 
 
                 <p>
-
                     TOTAL:
 
                     <strong>
-
                         EGP
-
                         <span id="success-total"></span>
-
                     </strong>
-
                 </p>
 
             </div>
 
 
-            <button id="continue-shopping">
+            <button id="continue-shopping" type="button">
                 CONTINUE SHOPPING →
             </button>
 
@@ -1234,7 +1164,6 @@
     ================================================== -->
 
     <footer>
-
 
         <div class="footer-kanji">
             魂
@@ -1317,7 +1246,7 @@
          SCRIPT
     ================================================== -->
 
-    <script src="script.js"></script>
+    <script src="./script.js" defer></script>
 
 </body>
 

@@ -1,712 +1,925 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ZAMALEK — More Than A Style</title>
-
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-
-    <!-- INTRO -->
-    <div id="intro-screen">
-        <div class="intro-kanji">魂</div>
-        <div class="intro-line"></div>
-        <div class="intro-logo">ZAMALEK</div>
-        <div class="intro-subtitle">ENTER THE NEW ERA</div>
-    </div>
-
-    <!-- HEADER -->
-    <header>
-        <h1>ZAMALEK</h1>
-
-        <nav>
-            <a href="#home">HOME</a>
-            <a href="#shop">COLLECTION</a>
-            <a href="#about">STORY</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
-
-        <button class="cart" id="cart-button" type="button">
-            🛒 BAG
-            <span id="cart-count">0</span>
-        </button>
-    </header>
-
-    <main id="home">
-
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="anime-character">
-                <div class="anime-head">
-                    <div class="anime-hair hair-1"></div>
-                    <div class="anime-hair hair-2"></div>
-                    <div class="anime-hair hair-3"></div>
-                    <div class="anime-hair hair-4"></div>
-                    <div class="anime-eye"></div>
-                </div>
-            </div>
-
-            <div class="hero-kanji hero-kanji-left">強</div>
-            <div class="hero-kanji hero-kanji-right">永</div>
-
-            <div class="hero-energy energy-red"></div>
-            <div class="hero-energy energy-blue"></div>
-
-            <div class="hero-content">
-                <div class="hero-mini-title">ZAMALEK / 2026</div>
-
-                <h2>OWN THE MOMENT</h2>
-
-                <p>
-                    BORN FROM THE STREETS.<br>
-                    BUILT FOR THOSE WHO REFUSE TO BLEND IN.
-                </p>
-
-                <p class="hero-arabic">
-                    الزمالك ليس مجرد اسم...<br>
-                    الزمالك حكاية تُرتدى.
-                </p>
-
-                <button class="shop-btn" type="button" id="hero-shop-btn">
-                    ENTER THE COLLECTION →
-                </button>
-            </div>
-
-            <div class="hero-bottom-mark">
-                <span>ZAMALEK</span>
-                <b>✦</b>
-                <span>MORE THAN STYLE</span>
-                <b>✦</b>
-                <span>ZAMALEK</span>
-            </div>
-
-        </section>
-
-        <!-- COLLECTION -->
-        <section class="products" id="shop">
-
-            <div class="collection-heading">
-                <span>FEATURED COLLECTION</span>
-                <h2>THE NEW ERA</h2>
-                <p>WEAR THE PRIDE. LIVE THE LEGEND.</p>
-            </div>
-
-            <div class="product-container">
-
-                <!-- T-SHIRT -->
-                <div class="product-card"
-                     data-description="Clean silhouette. Heavy attitude. Designed for everyday domination.">
-
-                    <div class="product-badge">NEW</div>
-
-                    <div class="product-image product-click">
-                        <img
-                            src="./images/tshirt.jpg"
-                            alt="Zamalek Basic T-Shirt"
-                            width="600"
-                            height="780"
-                            loading="eager"
-                            decoding="async"
-                        >
-                    </div>
-
-                    <div class="product-meta">
-                        <span>ZMK / 001</span>
-                        <span>ESSENTIAL</span>
-                    </div>
-
-                    <h3>Zamalek Basic T-Shirt</h3>
-                    <p>EGP 599</p>
-
-                    <div class="product-options">
-
-                        <div class="quantity-selector">
-                            <label>Quantity</label>
-                            <input
-                                type="number"
-                                class="product-quantity"
-                                value="1"
-                                min="1"
-                                max="10"
-                            >
-                        </div>
-
-                        <label>Size</label>
-                        <select class="size">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-
-                        <label>Color</label>
-                        <select class="color">
-                            <option value="Black">Black</option>
-                            <option value="White">White</option>
-                        </select>
-
-                    </div>
-
-                    <button class="add-to-cart" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button class="buy-now" type="button">
-                        BUY IT NOW
-                    </button>
-
-                </div>
-
-                <!-- HOODIE -->
-                <div class="product-card"
-                     data-description="Oversized comfort with a statement built to be seen.">
-
-                    <div class="product-badge">CORE</div>
-
-                    <div class="product-image product-click">
-                        <img
-                            src="./images/hoodie.jpg"
-                            alt="Zamalek Oversized Hoodie"
-                            width="600"
-                            height="780"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                    </div>
-
-                    <div class="product-meta">
-                        <span>ZMK / 002</span>
-                        <span>OVERSIZED</span>
-                    </div>
-
-                    <h3>Zamalek Oversized Hoodie</h3>
-                    <p>EGP 999</p>
-
-                    <div class="product-options">
-
-                        <div class="quantity-selector">
-                            <label>Quantity</label>
-                            <input
-                                type="number"
-                                class="product-quantity"
-                                value="1"
-                                min="1"
-                                max="10"
-                            >
-                        </div>
-
-                        <label>Size</label>
-                        <select class="size">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-
-                        <label>Color</label>
-                        <select class="color">
-                            <option value="Black">Black</option>
-                            <option value="White">White</option>
-                        </select>
-
-                    </div>
-
-                    <button class="add-to-cart" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button class="buy-now" type="button">
-                        BUY IT NOW
-                    </button>
-
-                </div>
-
-                <!-- PANTS -->
-                <div class="product-card"
-                     data-description="Relaxed movement. Sharp structure. Made for the streets.">
-
-                    <div class="product-badge">STREET</div>
-
-                    <div class="product-image product-click">
-                        <img
-                            src="./images/pants.jpg"
-                            alt="Zamalek Wide Pants"
-                            width="600"
-                            height="780"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                    </div>
-
-                    <div class="product-meta">
-                        <span>ZMK / 003</span>
-                        <span>STREET</span>
-                    </div>
-
-                    <h3>Zamalek Wide Pants</h3>
-                    <p>EGP 799</p>
-
-                    <div class="product-options">
-
-                        <div class="quantity-selector">
-                            <label>Quantity</label>
-                            <input
-                                type="number"
-                                class="product-quantity"
-                                value="1"
-                                min="1"
-                                max="10"
-                            >
-                        </div>
-
-                        <label>Size</label>
-                        <select class="size">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-
-                        <label>Color</label>
-                        <select class="color">
-                            <option value="Black">Black</option>
-                            <option value="White">White</option>
-                        </select>
-
-                    </div>
-
-                    <button class="add-to-cart" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button class="buy-now" type="button">
-                        BUY IT NOW
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="collection-ticker">
-                <span>ZAMALEK</span>
-                <b>✦</b>
-                <span>PRIDE</span>
-                <b>✦</b>
-                <span>HISTORY</span>
-                <b>✦</b>
-                <span>FOREVER</span>
-                <b>✦</b>
-                <span>ZAMALEK</span>
-            </div>
-
-        </section>
-
-        <!-- PRODUCT DETAILS -->
-        <section class="product-details" id="product-details">
-
-            <div class="details-container">
-
-                <div class="details-image">
-                    <img
-                        id="details-image"
-                        src=""
-                        alt=""
-                        width="600"
-                        height="780"
-                        decoding="async"
-                    >
-                </div>
-
-                <div class="details-info">
-
-                    <div class="details-label">
-                        ZAMALEK / PRODUCT
-                    </div>
-
-                    <h2 id="details-name"></h2>
-
-                    <p class="details-price">
-                        EGP <span id="details-price"></span>
-                    </p>
-
-                    <p id="details-description"></p>
-
-                    <label for="details-size">SIZE</label>
-                    <select id="details-size">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-
-                    <label for="details-color">COLOR</label>
-                    <select id="details-color">
-                        <option value="Black">Black</option>
-                        <option value="White">White</option>
-                    </select>
-
-                    <label for="details-quantity">QUANTITY</label>
-                    <input
-                        type="number"
-                        id="details-quantity"
-                        value="1"
-                        min="1"
-                        max="10"
-                    >
-
-                    <button id="details-add" type="button">
-                        ADD TO BAG
-                    </button>
-
-                    <button id="details-buy" type="button">
-                        BUY IT NOW
-                    </button>
-
-                    <button id="close-details" type="button">
-                        ← BACK TO COLLECTION
-                    </button>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section class="about" id="about">
-
-            <div class="about-kanji">夢</div>
-
-            <div class="about-content">
-
-                <span class="section-label">OUR STORY</span>
-
-                <h2>
-                    MORE THAN<br>
-                    <span>CLOTHES.</span>
-                </h2>
-
-                <p>
-                    ZAMALEK IS A STATE OF MIND.
-                    A LANGUAGE OF MOVEMENT, ATTITUDE
-                    AND SELF-EXPRESSION.
-                </p>
-
-                <p>
-                    WE DON'T FOLLOW THE STREET.
-                    WE CREATE OUR OWN.
-                </p>
-
-                <button class="story-btn" type="button">
-                    DISCOVER OUR STORY →
-                </button>
-
-            </div>
-
-            <div class="about-side-text">
-                私たちは<br>
-                一つ
-            </div>
-
-        </section>
-
-        <!-- STATS -->
-        <section class="brand-stats">
-
-            <div class="stat">
-                <span class="stat-icon">◇</span>
-                <strong>14</strong>
-                <small>CAF TITLES</small>
-            </div>
-
-            <div class="stat">
-                <span class="stat-icon">♛</span>
-                <strong>7</strong>
-                <small>EGYPTIAN LEAGUE</small>
-            </div>
-
-            <div class="stat">
-                <span class="stat-icon">☆</span>
-                <strong>1</strong>
-                <small>AFRICAN SUPER CUP</small>
-            </div>
-
-            <div class="stat">
-                <span class="stat-icon">♡</span>
-                <strong>FOREVER</strong>
-                <small>ZAMALEK</small>
-            </div>
-
-        </section>
-
-        <!-- COMMUNITY -->
-        <section class="community">
-
-            <div class="community-kanji">強</div>
-
-            <div class="community-content">
-
-                <span>JOIN OUR COMMUNITY</span>
-
-                <h2>
-                    BE PART OF
-                    <strong>THE LEGEND</strong>
-                </h2>
-
-                <form class="subscribe-form">
-                    <input
-                        type="email"
-                        placeholder="YOUR EMAIL ADDRESS"
-                    >
-                    <button type="button">
-                        SUBSCRIBE →
-                    </button>
-                </form>
-
-            </div>
-
-            <div class="community-slogan">
-                強く、<br>
-                一緒に、<br>
-                永遠に
-            </div>
-
-        </section>
-
-        <!-- CONTACT -->
-        <section class="contact" id="contact">
-
-            <div class="contact-kanji">自</div>
-
-            <span class="section-label">GET IN TOUCH</span>
-
-            <h2>
-                TALK TO <span>ZAMALEK.</span>
-            </h2>
-
-            <p>
-                QUESTIONS, COLLABORATIONS OR JUST
-                WANT TO TALK? WE'RE HERE.
-            </p>
-
-            <div class="contact-info">
-                <p>
-                    📧
-                    <strong>zamalekclothing@gmail.com</strong>
-                </p>
-
-                <p>
-                    📱
-                    <strong>+20 100 000 0000</strong>
-                </p>
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- CART -->
-    <div class="cart-box" id="cart-box">
-
-        <div class="cart-header">
-            <span>YOUR BAG</span>
-            <span>ZMK</span>
-        </div>
-
-        <h2>YOUR SELECTION</h2>
-
-        <div id="cart-items"></div>
-
-        <div class="cart-total">
-            TOTAL:
-            <span>EGP</span>
-            <strong id="cart-total">0</strong>
-        </div>
-
-        <button id="checkout-btn" type="button">
-            PROCEED TO CHECKOUT →
-        </button>
-
-        <button id="close-cart" type="button">
-            CONTINUE SHOPPING
-        </button>
-
-    </div>
-
-    <!-- CHECKOUT -->
-    <section class="checkout" id="checkout">
-
-        <div class="checkout-container">
-
-            <div class="checkout-top-label">
-                ZAMALEK / SECURE CHECKOUT
-            </div>
-
-            <h2>
-                COMPLETE
-                <span>YOUR ORDER</span>
-            </h2>
-
-            <form id="checkout-form">
-
-                <label>FULL NAME</label>
-                <input
-                    type="text"
-                    id="customer-name"
-                    placeholder="Enter your name"
-                    required
-                >
-
-                <label>PHONE NUMBER</label>
-                <input
-                    type="tel"
-                    id="customer-phone"
-                    placeholder="01XXXXXXXXX"
-                    required
-                >
-
-                <label>GOVERNORATE</label>
-
-                <select id="governorate" required>
-                    <option value="">Choose Governorate</option>
-                    <option value="Cairo">Cairo</option>
-                    <option value="Giza">Giza</option>
-                    <option value="Alexandria">Alexandria</option>
-                    <option value="Fayoum">Fayoum</option>
-                    <option value="Beni Suef">Beni Suef</option>
-                    <option value="Qalyubia">Qalyubia</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <label>DELIVERY ADDRESS</label>
-
-                <textarea
-                    id="customer-address"
-                    placeholder="Enter your full address"
-                    required
-                ></textarea>
-
-                <label>PAYMENT METHOD</label>
-
-                <select id="payment-method" required>
-                    <option value="">Choose Payment Method</option>
-                    <option value="Cash on Delivery">Cash on Delivery</option>
-                    <option value="Card">Card</option>
-                </select>
-
-                <div class="checkout-summary">
-
-                    <h3>YOUR ORDER</h3>
-
-                    <div id="checkout-items"></div>
-
-                    <div class="checkout-final-total">
-                        TOTAL: EGP
-                        <span id="checkout-total">0</span>
-                    </div>
-
-                </div>
-
-                <button type="submit">
-                    PLACE ORDER →
-                </button>
-
-            </form>
-
-            <button id="back-to-cart" type="button">
-                ← BACK TO BAG
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- SUCCESS -->
-    <section class="order-success" id="order-success">
-
-        <div class="success-container">
-
-            <div class="success-icon">✓</div>
-
-            <div class="success-label">
-                ZAMALEK / ORDER
-            </div>
-
-            <h2>
-                ORDER <span>CONFIRMED</span>
-            </h2>
-
-            <p class="success-message">
-                YOUR ORDER IS IN.
-                WELCOME TO THE ZAMALEK ERA.
-            </p>
-
-            <div class="order-number">
-                ORDER # <span id="order-number"></span>
-            </div>
-
-            <div class="success-details">
-
-                <p>
-                    CUSTOMER:
-                    <strong id="success-name"></strong>
-                </p>
-
-                <p>
-                    TOTAL:
-                    <strong>
-                        EGP <span id="success-total"></span>
-                    </strong>
-                </p>
-
-            </div>
-
-            <button id="continue-shopping" type="button">
-                CONTINUE SHOPPING →
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-kanji">魂</div>
-
-        <div class="footer-logo">ZAMALEK</div>
-
-        <p>PRIDE · HISTORY · FOREVER</p>
-
-        <div class="footer-links">
-            <a href="#home">HOME</a>
-            <a href="#shop">COLLECTION</a>
-            <a href="#about">STORY</a>
-            <a href="#contact">CONTACT</a>
-        </div>
-
-        <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">TikTok</a>
-        </div>
-
-        <div class="footer-bottom">
-            <span>ZAMALEK</span>
-            <span>© 2026 ALL RIGHTS RESERVED</span>
-            <span>MADE FOR THE LEGEND</span>
-        </div>
-
-        <p class="copyright">
-            ZAMALEK — MORE THAN A CLUB. MORE THAN A STYLE.
-        </p>
-
-    </footer>
-
-    <script src="./script.js" defer></script>
-
-</body>
-</html>
+ /* =========================================================
+   ZAMALEK — LIGHTWEIGHT SCRIPT
+========================================================= */
+
+"use strict";
+
+/* =========================
+   CART
+========================= */
+
+let cart = [];
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const cartButton = document.getElementById("cart-button");
+const cartBox = document.getElementById("cart-box");
+const closeCart = document.getElementById("close-cart");
+
+const cartCount = document.getElementById("cart-count");
+const cartItems = document.getElementById("cart-items");
+const cartTotal = document.getElementById("cart-total");
+
+const checkoutItems = document.getElementById("checkout-items");
+const checkoutButton = document.getElementById("checkout-btn");
+const checkoutSection = document.getElementById("checkout");
+const checkoutTotal = document.getElementById("checkout-total");
+const backToCart = document.getElementById("back-to-cart");
+const checkoutForm = document.getElementById("checkout-form");
+
+const orderSuccess = document.getElementById("order-success");
+const successName = document.getElementById("success-name");
+const successTotal = document.getElementById("success-total");
+const orderNumber = document.getElementById("order-number");
+const continueShopping = document.getElementById("continue-shopping");
+
+const productDetails = document.getElementById("product-details");
+const detailsImage = document.getElementById("details-image");
+const detailsName = document.getElementById("details-name");
+const detailsPrice = document.getElementById("details-price");
+const detailsDescription = document.getElementById("details-description");
+const detailsSize = document.getElementById("details-size");
+const detailsColor = document.getElementById("details-color");
+const detailsQuantity = document.getElementById("details-quantity");
+const detailsAdd = document.getElementById("details-add");
+const detailsBuy = document.getElementById("details-buy");
+const closeDetails = document.getElementById("close-details");
+
+const shopSection = document.getElementById("shop");
+const heroShopButton = document.getElementById("hero-shop-btn");
+
+let currentProduct = null;
+
+/* =========================
+   HELPERS
+========================= */
+
+function scrollToElement(element) {
+
+    if (!element) return;
+
+    element.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function getPrice(element) {
+
+    if (!element) return 0;
+
+    const number = element.textContent.replace(/[^\d]/g, "");
+
+    return parseInt(number, 10) || 0;
+}
+
+function getCartTotal() {
+
+    let total = 0;
+
+    for (const item of cart) {
+        total += item.price * item.quantity;
+    }
+
+    return total;
+}
+
+function getCartCount() {
+
+    let count = 0;
+
+    for (const item of cart) {
+        count += item.quantity;
+    }
+
+    return count;
+}
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+if (heroShopButton) {
+
+    heroShopButton.addEventListener("click", function () {
+        scrollToElement(shopSection);
+    });
+}
+
+/* =========================
+   CART OPEN / CLOSE
+========================= */
+
+if (cartButton) {
+
+    cartButton.addEventListener("click", function () {
+
+        if (cartBox) {
+            cartBox.classList.add("active");
+        }
+
+    });
+}
+
+if (closeCart) {
+
+    closeCart.addEventListener("click", function () {
+
+        if (cartBox) {
+            cartBox.classList.remove("active");
+        }
+
+    });
+}
+
+/* =========================
+   ADD ITEM
+========================= */
+
+function addItemToCart(name, price, size, color, quantity) {
+
+    quantity = Math.max(1, Math.min(10, quantity));
+
+    const existing = cart.find(function (item) {
+
+        return (
+            item.name === name &&
+            item.size === size &&
+            item.color === color
+        );
+
+    });
+
+    if (existing) {
+
+        existing.quantity = Math.min(
+            10,
+            existing.quantity + quantity
+        );
+
+    } else {
+
+        cart.push({
+            name: name,
+            price: price,
+            size: size,
+            color: color,
+            quantity: quantity
+        });
+
+    }
+
+    updateCart();
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+function addProductToCart(card) {
+
+    if (!card) return "";
+
+    const nameElement = card.querySelector("h3");
+    const priceElement = card.querySelector(".product-card > p");
+    const sizeElement = card.querySelector(".size");
+    const colorElement = card.querySelector(".color");
+    const quantityElement = card.querySelector(".product-quantity");
+
+    const name = nameElement
+        ? nameElement.textContent.trim()
+        : "Product";
+
+    const price = getPrice(priceElement);
+
+    const size = sizeElement
+        ? sizeElement.value
+        : "Default";
+
+    const color = colorElement
+        ? colorElement.value
+        : "Default";
+
+    let quantity = quantityElement
+        ? parseInt(quantityElement.value, 10)
+        : 1;
+
+    if (!Number.isFinite(quantity)) {
+        quantity = 1;
+    }
+
+    quantity = Math.max(1, Math.min(10, quantity));
+
+    if (quantityElement) {
+        quantityElement.value = quantity;
+    }
+
+    addItemToCart(
+        name,
+        price,
+        size,
+        color,
+        quantity
+    );
+
+    return name;
+}
+
+/* =========================
+   PRODUCT BUTTONS
+========================= */
+
+const productCards =
+    document.querySelectorAll(".product-card");
+
+productCards.forEach(function (card) {
+
+    const addButton =
+        card.querySelector(".add-to-cart");
+
+    if (addButton) {
+
+        addButton.addEventListener("click", function () {
+
+            const name = addProductToCart(card);
+
+            alert(name + " added to cart 🛒");
+
+        });
+    }
+
+    const buyButton =
+        card.querySelector(".buy-now");
+
+    if (buyButton) {
+
+        buyButton.addEventListener("click", function () {
+
+            addProductToCart(card);
+
+            updateCheckout();
+
+            if (checkoutSection) {
+                checkoutSection.classList.add("active");
+                scrollToElement(checkoutSection);
+            }
+
+        });
+    }
+
+});
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart() {
+
+    if (!cartItems) return;
+
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+
+        const empty = document.createElement("p");
+
+        empty.textContent = "YOUR BAG IS EMPTY.";
+
+        empty.style.color = "#777";
+        empty.style.padding = "25px 0";
+
+        cartItems.appendChild(empty);
+
+    } else {
+
+        cart.forEach(function (item, index) {
+
+            const div =
+                document.createElement("div");
+
+            div.className = "cart-item";
+
+            const wrapper =
+                document.createElement("div");
+
+            const title =
+                document.createElement("strong");
+
+            title.textContent = item.name;
+
+            const price =
+                document.createElement("p");
+
+            price.textContent =
+                "EGP " + item.price;
+
+            const size =
+                document.createElement("p");
+
+            size.textContent =
+                "Size: " + item.size;
+
+            const color =
+                document.createElement("p");
+
+            color.textContent =
+                "Color: " + item.color;
+
+            const controls =
+                document.createElement("div");
+
+            controls.className =
+                "quantity-controls";
+
+            const minus =
+                document.createElement("button");
+
+            minus.type = "button";
+            minus.textContent = "−";
+
+            minus.addEventListener(
+                "click",
+                function () {
+                    decreaseQuantity(index);
+                }
+            );
+
+            const number =
+                document.createElement("span");
+
+            number.textContent =
+                item.quantity;
+
+            const plus =
+                document.createElement("button");
+
+            plus.type = "button";
+            plus.textContent = "+";
+
+            plus.addEventListener(
+                "click",
+                function () {
+                    increaseQuantity(index);
+                }
+            );
+
+            controls.appendChild(minus);
+            controls.appendChild(number);
+            controls.appendChild(plus);
+
+            const remove =
+                document.createElement("button");
+
+            remove.type = "button";
+            remove.className = "remove-btn";
+            remove.textContent = "Remove";
+
+            remove.addEventListener(
+                "click",
+                function () {
+                    removeItem(index);
+                }
+            );
+
+            wrapper.appendChild(title);
+            wrapper.appendChild(price);
+            wrapper.appendChild(size);
+            wrapper.appendChild(color);
+            wrapper.appendChild(controls);
+            wrapper.appendChild(remove);
+
+            div.appendChild(wrapper);
+
+            cartItems.appendChild(div);
+
+        });
+    }
+
+    if (cartCount) {
+        cartCount.textContent = getCartCount();
+    }
+
+    if (cartTotal) {
+        cartTotal.textContent = getCartTotal();
+    }
+}
+
+/* =========================
+   QUANTITY
+========================= */
+
+function increaseQuantity(index) {
+
+    if (!cart[index]) return;
+
+    if (cart[index].quantity < 10) {
+        cart[index].quantity++;
+        updateCart();
+    }
+}
+
+function decreaseQuantity(index) {
+
+    if (!cart[index]) return;
+
+    if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+    } else {
+        cart.splice(index, 1);
+    }
+
+    updateCart();
+}
+
+function removeItem(index) {
+
+    if (!cart[index]) return;
+
+    cart.splice(index, 1);
+
+    updateCart();
+}
+
+/* =========================
+   PRODUCT DETAILS
+========================= */
+
+const productClickElements =
+    document.querySelectorAll(".product-click");
+
+productClickElements.forEach(function (element) {
+
+    element.addEventListener("click", function () {
+
+        const card =
+            element.closest(".product-card");
+
+        if (!card) return;
+
+        const image =
+            card.querySelector("img");
+
+        const nameElement =
+            card.querySelector("h3");
+
+        const priceElement =
+            card.querySelector(".product-card > p");
+
+        const sizeElement =
+            card.querySelector(".size");
+
+        const colorElement =
+            card.querySelector(".color");
+
+        currentProduct = {
+
+            name: nameElement
+                ? nameElement.textContent.trim()
+                : "Product",
+
+            price: getPrice(priceElement),
+
+            image: image
+                ? image.currentSrc || image.src
+                : "",
+
+            description:
+                card.dataset.description || ""
+
+        };
+
+        if (detailsImage) {
+
+            detailsImage.src =
+                currentProduct.image;
+
+            detailsImage.alt =
+                currentProduct.name;
+
+        }
+
+        if (detailsName) {
+            detailsName.textContent =
+                currentProduct.name;
+        }
+
+        if (detailsPrice) {
+            detailsPrice.textContent =
+                currentProduct.price;
+        }
+
+        if (detailsDescription) {
+            detailsDescription.textContent =
+                currentProduct.description;
+        }
+
+        if (detailsSize) {
+            detailsSize.value =
+                sizeElement
+                    ? sizeElement.value
+                    : "S";
+        }
+
+        if (detailsColor) {
+            detailsColor.value =
+                colorElement
+                    ? colorElement.value
+                    : "Black";
+        }
+
+        if (detailsQuantity) {
+            detailsQuantity.value = 1;
+        }
+
+        if (productDetails) {
+
+            productDetails.classList.add("active");
+
+            scrollToElement(productDetails);
+
+        }
+
+    });
+
+});
+
+/* =========================
+   DETAILS ADD
+========================= */
+
+if (detailsAdd) {
+
+    detailsAdd.addEventListener("click", function () {
+
+        if (!currentProduct) return;
+
+        let quantity =
+            parseInt(
+                detailsQuantity?.value,
+                10
+            ) || 1;
+
+        quantity =
+            Math.max(
+                1,
+                Math.min(10, quantity)
+            );
+
+        addItemToCart(
+            currentProduct.name,
+            currentProduct.price,
+            detailsSize
+                ? detailsSize.value
+                : "S",
+            detailsColor
+                ? detailsColor.value
+                : "Black",
+            quantity
+        );
+
+        alert(
+            currentProduct.name +
+            " added to cart 🛒"
+        );
+
+    });
+
+}
+
+/* =========================
+   DETAILS BUY
+========================= */
+
+if (detailsBuy) {
+
+    detailsBuy.addEventListener("click", function () {
+
+        if (!currentProduct) return;
+
+        let quantity =
+            parseInt(
+                detailsQuantity?.value,
+                10
+            ) || 1;
+
+        quantity =
+            Math.max(
+                1,
+                Math.min(10, quantity)
+            );
+
+        addItemToCart(
+            currentProduct.name,
+            currentProduct.price,
+            detailsSize
+                ? detailsSize.value
+                : "S",
+            detailsColor
+                ? detailsColor.value
+                : "Black",
+            quantity
+        );
+
+        updateCheckout();
+
+        if (productDetails) {
+            productDetails.classList.remove("active");
+        }
+
+        if (checkoutSection) {
+
+            checkoutSection.classList.add("active");
+
+            scrollToElement(checkoutSection);
+
+        }
+
+    });
+
+}
+
+/* =========================
+   CLOSE DETAILS
+========================= */
+
+if (closeDetails) {
+
+    closeDetails.addEventListener("click", function () {
+
+        if (productDetails) {
+            productDetails.classList.remove("active");
+        }
+
+        scrollToElement(shopSection);
+
+    });
+
+}
+
+/* =========================
+   CHECKOUT
+========================= */
+
+function updateCheckout() {
+
+    if (!checkoutItems) return;
+
+    checkoutItems.innerHTML = "";
+
+    if (cart.length === 0) {
+
+        checkoutItems.textContent =
+            "YOUR BAG IS EMPTY.";
+
+    } else {
+
+        cart.forEach(function (item) {
+
+            const div =
+                document.createElement("div");
+
+            div.className = "checkout-item";
+
+            const info =
+                document.createElement("div");
+
+            const title =
+                document.createElement("strong");
+
+            title.textContent = item.name;
+
+            const size =
+                document.createElement("p");
+
+            size.textContent =
+                "Size: " + item.size;
+
+            const color =
+                document.createElement("p");
+
+            color.textContent =
+                "Color: " + item.color;
+
+            const quantity =
+                document.createElement("p");
+
+            quantity.textContent =
+                "Quantity: " + item.quantity;
+
+            info.appendChild(title);
+            info.appendChild(size);
+            info.appendChild(color);
+            info.appendChild(quantity);
+
+            const price =
+                document.createElement("strong");
+
+            price.textContent =
+                "EGP " +
+                (item.price * item.quantity);
+
+            div.appendChild(info);
+            div.appendChild(price);
+
+            checkoutItems.appendChild(div);
+
+        });
+
+    }
+
+    if (checkoutTotal) {
+        checkoutTotal.textContent =
+            getCartTotal();
+    }
+}
+
+/* =========================
+   OPEN CHECKOUT
+========================= */
+
+if (checkoutButton) {
+
+    checkoutButton.addEventListener("click", function () {
+
+        if (cart.length === 0) {
+
+            alert("Your cart is empty 🛒");
+
+            return;
+        }
+
+        updateCheckout();
+
+        if (cartBox) {
+            cartBox.classList.remove("active");
+        }
+
+        if (checkoutSection) {
+
+            checkoutSection.classList.add("active");
+
+            scrollToElement(checkoutSection);
+
+        }
+
+    });
+
+}
+
+/* =========================
+   BACK TO CART
+========================= */
+
+if (backToCart) {
+
+    backToCart.addEventListener("click", function () {
+
+        if (checkoutSection) {
+            checkoutSection.classList.remove("active");
+        }
+
+        if (cartBox) {
+            cartBox.classList.add("active");
+        }
+
+    });
+
+}
+
+/* =========================
+   PLACE ORDER
+========================= */
+
+if (checkoutForm) {
+
+    checkoutForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        if (cart.length === 0) {
+
+            alert("Your cart is empty 🛒");
+
+            return;
+        }
+
+        const name =
+            document.getElementById("customer-name")
+                ?.value.trim() || "";
+
+        const phone =
+            document.getElementById("customer-phone")
+                ?.value.trim() || "";
+
+        const governorate =
+            document.getElementById("governorate")
+                ?.value || "";
+
+        const address =
+            document.getElementById("customer-address")
+                ?.value.trim() || "";
+
+        const payment =
+            document.getElementById("payment-method")
+                ?.value || "";
+
+        const total = getCartTotal();
+
+        const randomNumber =
+            Math.floor(
+                100000 +
+                Math.random() * 900000
+            );
+
+        let productsMessage = "";
+
+        cart.forEach(function (item, index) {
+
+            productsMessage +=
+                `${index + 1}. ${item.name}\n` +
+                `Size: ${item.size}\n` +
+                `Color: ${item.color}\n` +
+                `Quantity: ${item.quantity}\n` +
+                `Price: EGP ${item.price * item.quantity}\n\n`;
+
+        });
+
+        const message =
+            `🛍️ ZAMALEK NEW ORDER\n\n` +
+            `Order #: ${randomNumber}\n\n` +
+            `👤 Customer:\n${name}\n\n` +
+            `📱 Phone:\n${phone}\n\n` +
+            `📍 Address:\n` +
+            `${governorate}\n${address}\n\n` +
+            `🛒 ORDER DETAILS:\n\n` +
+            productsMessage +
+            `💰 TOTAL: EGP ${total}\n\n` +
+            `💳 Payment: ${payment}`;
+
+        const whatsappURL =
+            "https://wa.me/201227840123?text=" +
+            encodeURIComponent(message);
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener"
+        );
+
+        if (successName) {
+            successName.textContent = name;
+        }
+
+        if (successTotal) {
+            successTotal.textContent = total;
+        }
+
+        if (orderNumber) {
+            orderNumber.textContent = randomNumber;
+        }
+
+        if (checkoutSection) {
+            checkoutSection.classList.remove("active");
+        }
+
+        if (orderSuccess) {
+
+            orderSuccess.classList.add("active");
+
+            scrollToElement(orderSuccess);
+
+        }
+
+        cart = [];
+
+        updateCart();
+
+    });
+
+}
+
+/* =========================
+   CONTINUE SHOPPING
+========================= */
+
+if (continueShopping) {
+
+    continueShopping.addEventListener("click", function () {
+
+        if (orderSuccess) {
+            orderSuccess.classList.remove("active");
+        }
+
+        scrollToElement(shopSection);
+
+    });
+
+}
+
+/* =========================
+   INITIALIZE
+========================= */
+
+updateCart();

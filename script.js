@@ -1,4 +1,14 @@
- let cart = [];
+ /* =========================================================
+   ZAMALEK — LIGHTWEIGHT SCRIPT
+========================================================= */
+
+"use strict";
+
+/* =========================
+   CART
+========================= */
+
+let cart = [];
 
 /* =========================
    ELEMENTS
@@ -38,6 +48,7 @@ const detailsBuy = document.getElementById("details-buy");
 const closeDetails = document.getElementById("close-details");
 
 const shopSection = document.getElementById("shop");
+const heroShopButton = document.getElementById("hero-shop-btn");
 
 let currentProduct = null;
 
@@ -46,6 +57,7 @@ let currentProduct = null;
 ========================= */
 
 function scrollToElement(element) {
+
     if (!element) return;
 
     element.scrollIntoView({
@@ -55,78 +67,90 @@ function scrollToElement(element) {
 }
 
 function getPrice(element) {
+
     if (!element) return 0;
 
-    return parseInt(
-        element.textContent.replace(/\D/g, ""),
-        10
-    ) || 0;
+    const number = element.textContent.replace(/[^\d]/g, "");
+
+    return parseInt(number, 10) || 0;
 }
 
 function getCartTotal() {
+
     let total = 0;
 
-    for (let i = 0; i < cart.length; i++) {
-        total += cart[i].price * cart[i].quantity;
+    for (const item of cart) {
+        total += item.price * item.quantity;
     }
 
     return total;
 }
 
 function getCartCount() {
+
     let count = 0;
 
-    for (let i = 0; i < cart.length; i++) {
-        count += cart[i].quantity;
+    for (const item of cart) {
+        count += item.quantity;
     }
 
     return count;
 }
 
 /* =========================
-   CART
+   HERO BUTTON
 ========================= */
 
-if (cartButton) {
-    cartButton.addEventListener("click", function () {
-        if (cartBox) {
-            cartBox.classList.add("active");
-        }
-    });
-}
+if (heroShopButton) {
 
-if (closeCart) {
-    closeCart.addEventListener("click", function () {
-        if (cartBox) {
-            cartBox.classList.remove("active");
-        }
+    heroShopButton.addEventListener("click", function () {
+        scrollToElement(shopSection);
     });
 }
 
 /* =========================
-   ADD TO CART
+   CART OPEN / CLOSE
 ========================= */
 
-function addItemToCart(
-    name,
-    price,
-    size,
-    color,
-    quantity
-) {
-    let existing = null;
+if (cartButton) {
 
-    for (let i = 0; i < cart.length; i++) {
+    cartButton.addEventListener("click", function () {
 
-        if (
-            cart[i].name === name &&
-            cart[i].size === size &&
-            cart[i].color === color
-        ) {
-            existing = cart[i];
-            break;
+        if (cartBox) {
+            cartBox.classList.add("active");
         }
-    }
+
+    });
+}
+
+if (closeCart) {
+
+    closeCart.addEventListener("click", function () {
+
+        if (cartBox) {
+            cartBox.classList.remove("active");
+        }
+
+    });
+}
+
+/* =========================
+   ADD ITEM
+========================= */
+
+function addItemToCart(name, price, size, color, quantity) {
+
+    quantity = Math.max(1, Math.min(10, quantity));
+
+    const existing = cart.find(function (item) {
+
+        return (
+            item.name === name &&
+            item.size === size &&
+            item.color === color
+        );
+
+    });
 
     if (existing) {
 
@@ -144,59 +168,52 @@ function addItemToCart(
             color: color,
             quantity: quantity
         });
+
     }
 
     updateCart();
 }
 
+/* =========================
+   PRODUCT CARD
+========================= */
+
 function addProductToCart(card) {
 
-    if (!card) return;
+    if (!card) return "";
 
-    const nameElement =
-        card.querySelector("h3");
+    const nameElement = card.querySelector("h3");
+    const priceElement = card.querySelector(".product-card > p");
+    const sizeElement = card.querySelector(".size");
+    const colorElement = card.querySelector(".color");
+    const quantityElement = card.querySelector(".product-quantity");
 
-    const priceElement =
-        card.querySelector("p");
+    const name = nameElement
+        ? nameElement.textContent.trim()
+        : "Product";
 
-    const sizeElement =
-        card.querySelector(".size");
+    const price = getPrice(priceElement);
 
-    const colorElement =
-        card.querySelector(".color");
+    const size = sizeElement
+        ? sizeElement.value
+        : "Default";
 
-    const quantityElement =
-        card.querySelector(".product-quantity");
+    const color = colorElement
+        ? colorElement.value
+        : "Default";
 
-    const name =
-        nameElement ?
-        nameElement.textContent.trim() :
-        "Product";
+    let quantity = quantityElement
+        ? parseInt(quantityElement.value, 10)
+        : 1;
 
-    const price =
-        getPrice(priceElement);
-
-    const size =
-        sizeElement ?
-        sizeElement.value :
-        "Default";
-
-    const color =
-        colorElement ?
-        colorElement.value :
-        "Default";
-
-    let quantity =
-        quantityElement ?
-        parseInt(quantityElement.value, 10) :
-        1;
-
-    if (!quantity || quantity < 1) {
+    if (!Number.isFinite(quantity)) {
         quantity = 1;
     }
 
-    if (quantity > 10) {
-        quantity = 10;
+    quantity = Math.max(1, Math.min(10, quantity));
+
+    if (quantityElement) {
+        quantityElement.value = quantity;
     }
 
     addItemToCart(
@@ -219,20 +236,39 @@ const productCards =
 
 productCards.forEach(function (card) {
 
-    const button =
+    const addButton =
         card.querySelector(".add-to-cart");
 
-    if (!button) return;
+    if (addButton) {
 
-    button.addEventListener("click", function () {
+        addButton.addEventListener("click", function () {
 
-        const name =
+            const name = addProductToCart(card);
+
+            alert(name + " added to cart 🛒");
+
+        });
+    }
+
+    const buyButton =
+        card.querySelector(".buy-now");
+
+    if (buyButton) {
+
+        buyButton.addEventListener("click", function () {
+
             addProductToCart(card);
 
-        alert(
-            name + " added to cart 🛒"
-        );
-    });
+            updateCheckout();
+
+            if (checkoutSection) {
+                checkoutSection.classList.add("active");
+                scrollToElement(checkoutSection);
+            }
+
+        });
+    }
+
 });
 
 /* =========================
@@ -245,66 +281,128 @@ function updateCart() {
 
     cartItems.innerHTML = "";
 
-    for (let i = 0; i < cart.length; i++) {
+    if (cart.length === 0) {
 
-        const item = cart[i];
+        const empty = document.createElement("p");
 
-        const div =
-            document.createElement("div");
+        empty.textContent = "YOUR BAG IS EMPTY.";
 
-        div.className = "cart-item";
+        empty.style.color = "#777";
+        empty.style.padding = "25px 0";
 
-        div.innerHTML = `
-            <div>
-                <strong>${item.name}</strong>
+        cartItems.appendChild(empty);
 
-                <p>EGP ${item.price}</p>
+    } else {
 
-                <p>Size: ${item.size}</p>
+        cart.forEach(function (item, index) {
 
-                <p>Color: ${item.color}</p>
+            const div =
+                document.createElement("div");
 
-                <div class="quantity-controls">
+            div.className = "cart-item";
 
-                    <button
-                        type="button"
-                        onclick="increaseQuantity(${i})"
-                    >
-                        +
-                    </button>
+            const wrapper =
+                document.createElement("div");
 
-                    <span>${item.quantity}</span>
+            const title =
+                document.createElement("strong");
 
-                    <button
-                        type="button"
-                        onclick="decreaseQuantity(${i})"
-                    >
-                        -
-                    </button>
+            title.textContent = item.name;
 
-                </div>
+            const price =
+                document.createElement("p");
 
-                <button
-                    type="button"
-                    class="remove-btn"
-                    onclick="removeItem(${i})"
-                >
-                    Remove
-                </button>
-            </div>
-        `;
+            price.textContent =
+                "EGP " + item.price;
 
-        cartItems.appendChild(div);
+            const size =
+                document.createElement("p");
+
+            size.textContent =
+                "Size: " + item.size;
+
+            const color =
+                document.createElement("p");
+
+            color.textContent =
+                "Color: " + item.color;
+
+            const controls =
+                document.createElement("div");
+
+            controls.className =
+                "quantity-controls";
+
+            const minus =
+                document.createElement("button");
+
+            minus.type = "button";
+            minus.textContent = "−";
+
+            minus.addEventListener(
+                "click",
+                function () {
+                    decreaseQuantity(index);
+                }
+            );
+
+            const number =
+                document.createElement("span");
+
+            number.textContent =
+                item.quantity;
+
+            const plus =
+                document.createElement("button");
+
+            plus.type = "button";
+            plus.textContent = "+";
+
+            plus.addEventListener(
+                "click",
+                function () {
+                    increaseQuantity(index);
+                }
+            );
+
+            controls.appendChild(minus);
+            controls.appendChild(number);
+            controls.appendChild(plus);
+
+            const remove =
+                document.createElement("button");
+
+            remove.type = "button";
+            remove.className = "remove-btn";
+            remove.textContent = "Remove";
+
+            remove.addEventListener(
+                "click",
+                function () {
+                    removeItem(index);
+                }
+            );
+
+            wrapper.appendChild(title);
+            wrapper.appendChild(price);
+            wrapper.appendChild(size);
+            wrapper.appendChild(color);
+            wrapper.appendChild(controls);
+            wrapper.appendChild(remove);
+
+            div.appendChild(wrapper);
+
+            cartItems.appendChild(div);
+
+        });
     }
 
     if (cartCount) {
-        cartCount.textContent =
-            getCartCount();
+        cartCount.textContent = getCartCount();
     }
 
     if (cartTotal) {
-        cartTotal.textContent =
-            getCartTotal();
+        cartTotal.textContent = getCartTotal();
     }
 }
 
@@ -327,11 +425,8 @@ function decreaseQuantity(index) {
     if (!cart[index]) return;
 
     if (cart[index].quantity > 1) {
-
         cart[index].quantity--;
-
     } else {
-
         cart.splice(index, 1);
     }
 
@@ -370,7 +465,7 @@ productClickElements.forEach(function (element) {
             card.querySelector("h3");
 
         const priceElement =
-            card.querySelector("p");
+            card.querySelector(".product-card > p");
 
         const sizeElement =
             card.querySelector(".size");
@@ -380,29 +475,29 @@ productClickElements.forEach(function (element) {
 
         currentProduct = {
 
-            name:
-                nameElement ?
-                nameElement.textContent.trim() :
-                "Product",
+            name: nameElement
+                ? nameElement.textContent.trim()
+                : "Product",
 
-            price:
-                getPrice(priceElement),
+            price: getPrice(priceElement),
 
-            image:
-                image ?
-                image.src :
-                "",
+            image: image
+                ? image.currentSrc || image.src
+                : "",
 
             description:
                 card.dataset.description || ""
+
         };
 
         if (detailsImage) {
+
             detailsImage.src =
                 currentProduct.image;
 
             detailsImage.alt =
                 currentProduct.name;
+
         }
 
         if (detailsName) {
@@ -422,16 +517,16 @@ productClickElements.forEach(function (element) {
 
         if (detailsSize) {
             detailsSize.value =
-                sizeElement ?
-                sizeElement.value :
-                "S";
+                sizeElement
+                    ? sizeElement.value
+                    : "S";
         }
 
         if (detailsColor) {
             detailsColor.value =
-                colorElement ?
-                colorElement.value :
-                "Black";
+                colorElement
+                    ? colorElement.value
+                    : "Black";
         }
 
         if (detailsQuantity) {
@@ -439,10 +534,15 @@ productClickElements.forEach(function (element) {
         }
 
         if (productDetails) {
+
             productDetails.classList.add("active");
+
             scrollToElement(productDetails);
+
         }
+
     });
+
 });
 
 /* =========================
@@ -451,42 +551,41 @@ productClickElements.forEach(function (element) {
 
 if (detailsAdd) {
 
-    detailsAdd.addEventListener(
-        "click",
-        function () {
+    detailsAdd.addEventListener("click", function () {
 
-            if (!currentProduct) return;
+        if (!currentProduct) return;
 
-            let quantity =
-                parseInt(
-                    detailsQuantity.value,
-                    10
-                ) || 1;
+        let quantity =
+            parseInt(
+                detailsQuantity?.value,
+                10
+            ) || 1;
 
-            quantity =
-                Math.max(
-                    1,
-                    Math.min(10, quantity)
-                );
-
-            addItemToCart(
-                currentProduct.name,
-                currentProduct.price,
-                detailsSize ?
-                detailsSize.value :
-                "S",
-                detailsColor ?
-                detailsColor.value :
-                "Black",
-                quantity
+        quantity =
+            Math.max(
+                1,
+                Math.min(10, quantity)
             );
 
-            alert(
-                currentProduct.name +
-                " added to cart 🛒"
-            );
-        }
-    );
+        addItemToCart(
+            currentProduct.name,
+            currentProduct.price,
+            detailsSize
+                ? detailsSize.value
+                : "S",
+            detailsColor
+                ? detailsColor.value
+                : "Black",
+            quantity
+        );
+
+        alert(
+            currentProduct.name +
+            " added to cart 🛒"
+        );
+
+    });
+
 }
 
 /* =========================
@@ -495,55 +594,50 @@ if (detailsAdd) {
 
 if (detailsBuy) {
 
-    detailsBuy.addEventListener(
-        "click",
-        function () {
+    detailsBuy.addEventListener("click", function () {
 
-            if (!currentProduct) return;
+        if (!currentProduct) return;
 
-            let quantity =
-                parseInt(
-                    detailsQuantity.value,
-                    10
-                ) || 1;
+        let quantity =
+            parseInt(
+                detailsQuantity?.value,
+                10
+            ) || 1;
 
-            quantity =
-                Math.max(
-                    1,
-                    Math.min(10, quantity)
-                );
-
-            addItemToCart(
-                currentProduct.name,
-                currentProduct.price,
-                detailsSize ?
-                detailsSize.value :
-                "S",
-                detailsColor ?
-                detailsColor.value :
-                "Black",
-                quantity
+        quantity =
+            Math.max(
+                1,
+                Math.min(10, quantity)
             );
 
-            updateCheckout();
+        addItemToCart(
+            currentProduct.name,
+            currentProduct.price,
+            detailsSize
+                ? detailsSize.value
+                : "S",
+            detailsColor
+                ? detailsColor.value
+                : "Black",
+            quantity
+        );
 
-            if (productDetails) {
-                productDetails.classList.remove(
-                    "active"
-                );
-            }
+        updateCheckout();
 
-            if (checkoutSection) {
-                checkoutSection.classList.add(
-                    "active"
-                );
-
-                scrollToElement(
-                    checkoutSection
-                );
-            }
+        if (productDetails) {
+            productDetails.classList.remove("active");
         }
-    );
+
+        if (checkoutSection) {
+
+            checkoutSection.classList.add("active");
+
+            scrollToElement(checkoutSection);
+
+        }
+
+    });
+
 }
 
 /* =========================
@@ -552,19 +646,16 @@ if (detailsBuy) {
 
 if (closeDetails) {
 
-    closeDetails.addEventListener(
-        "click",
-        function () {
+    closeDetails.addEventListener("click", function () {
 
-            if (productDetails) {
-                productDetails.classList.remove(
-                    "active"
-                );
-            }
-
-            scrollToElement(shopSection);
+        if (productDetails) {
+            productDetails.classList.remove("active");
         }
-    );
+
+        scrollToElement(shopSection);
+
+    });
+
 }
 
 /* =========================
@@ -577,33 +668,65 @@ function updateCheckout() {
 
     checkoutItems.innerHTML = "";
 
-    for (let i = 0; i < cart.length; i++) {
+    if (cart.length === 0) {
 
-        const item = cart[i];
+        checkoutItems.textContent =
+            "YOUR BAG IS EMPTY.";
 
-        const div =
-            document.createElement("div");
+    } else {
 
-        div.className =
-            "checkout-item";
+        cart.forEach(function (item) {
 
-        div.innerHTML = `
-            <div>
-                <strong>${item.name}</strong>
+            const div =
+                document.createElement("div");
 
-                <p>Size: ${item.size}</p>
+            div.className = "checkout-item";
 
-                <p>Color: ${item.color}</p>
+            const info =
+                document.createElement("div");
 
-                <p>Quantity: ${item.quantity}</p>
-            </div>
+            const title =
+                document.createElement("strong");
 
-            <strong>
-                EGP ${item.price * item.quantity}
-            </strong>
-        `;
+            title.textContent = item.name;
 
-        checkoutItems.appendChild(div);
+            const size =
+                document.createElement("p");
+
+            size.textContent =
+                "Size: " + item.size;
+
+            const color =
+                document.createElement("p");
+
+            color.textContent =
+                "Color: " + item.color;
+
+            const quantity =
+                document.createElement("p");
+
+            quantity.textContent =
+                "Quantity: " + item.quantity;
+
+            info.appendChild(title);
+            info.appendChild(size);
+            info.appendChild(color);
+            info.appendChild(quantity);
+
+            const price =
+                document.createElement("strong");
+
+            price.textContent =
+                "EGP " +
+                (item.price * item.quantity);
+
+            div.appendChild(info);
+            div.appendChild(price);
+
+            checkoutItems.appendChild(div);
+
+        });
+
     }
 
     if (checkoutTotal) {
@@ -618,39 +741,31 @@ function updateCheckout() {
 
 if (checkoutButton) {
 
-    checkoutButton.addEventListener(
-        "click",
-        function () {
+    checkoutButton.addEventListener("click", function () {
 
-            if (cart.length === 0) {
+        if (cart.length === 0) {
 
-                alert(
-                    "Your cart is empty 🛒"
-                );
+            alert("Your cart is empty 🛒");
 
-                return;
-            }
-
-            updateCheckout();
-
-            if (cartBox) {
-                cartBox.classList.remove(
-                    "active"
-                );
-            }
-
-            if (checkoutSection) {
-
-                checkoutSection.classList.add(
-                    "active"
-                );
-
-                scrollToElement(
-                    checkoutSection
-                );
-            }
+            return;
         }
-    );
+
+        updateCheckout();
+
+        if (cartBox) {
+            cartBox.classList.remove("active");
+        }
+
+        if (checkoutSection) {
+
+            checkoutSection.classList.add("active");
+
+            scrollToElement(checkoutSection);
+
+        }
+
+    });
+
 }
 
 /* =========================
@@ -659,60 +774,19 @@ if (checkoutButton) {
 
 if (backToCart) {
 
-    backToCart.addEventListener(
-        "click",
-        function () {
+    backToCart.addEventListener("click", function () {
 
-            if (checkoutSection) {
-                checkoutSection.classList.remove(
-                    "active"
-                );
-            }
-
-            if (cartBox) {
-                cartBox.classList.add(
-                    "active"
-                );
-            }
+        if (checkoutSection) {
+            checkoutSection.classList.remove("active");
         }
-    );
+
+        if (cartBox) {
+            cartBox.classList.add("active");
+        }
+
+    });
+
 }
-
-/* =========================
-   BUY NOW
-========================= */
-
-const buyNowButtons =
-    document.querySelectorAll(".buy-now");
-
-buyNowButtons.forEach(function (button) {
-
-    button.addEventListener(
-        "click",
-        function () {
-
-            const card =
-                button.closest(".product-card");
-
-            if (!card) return;
-
-            addProductToCart(card);
-
-            updateCheckout();
-
-            if (checkoutSection) {
-
-                checkoutSection.classList.add(
-                    "active"
-                );
-
-                scrollToElement(
-                    checkoutSection
-                );
-            }
-        }
-    );
-});
 
 /* =========================
    PLACE ORDER
@@ -720,140 +794,110 @@ buyNowButtons.forEach(function (button) {
 
 if (checkoutForm) {
 
-    checkoutForm.addEventListener(
-        "submit",
-        function (event) {
+    checkoutForm.addEventListener("submit", function (event) {
 
-            event.preventDefault();
+        event.preventDefault();
 
-            if (cart.length === 0) {
+        if (cart.length === 0) {
 
-                alert(
-                    "Your cart is empty 🛒"
-                );
+            alert("Your cart is empty 🛒");
 
-                return;
-            }
+            return;
+        }
 
-            const name =
-                document
-                    .getElementById(
-                        "customer-name"
-                    )
-                    ?.value.trim() || "";
+        const name =
+            document.getElementById("customer-name")
+                ?.value.trim() || "";
 
-            const phone =
-                document
-                    .getElementById(
-                        "customer-phone"
-                    )
-                    ?.value.trim() || "";
+        const phone =
+            document.getElementById("customer-phone")
+                ?.value.trim() || "";
 
-            const governorate =
-                document
-                    .getElementById(
-                        "governorate"
-                    )
-                    ?.value || "";
+        const governorate =
+            document.getElementById("governorate")
+                ?.value || "";
 
-            const address =
-                document
-                    .getElementById(
-                        "customer-address"
-                    )
-                    ?.value.trim() || "";
+        const address =
+            document.getElementById("customer-address")
+                ?.value.trim() || "";
 
-            const payment =
-                document
-                    .getElementById(
-                        "payment-method"
-                    )
-                    ?.value || "";
+        const payment =
+            document.getElementById("payment-method")
+                ?.value || "";
 
-            const total =
-                getCartTotal();
+        const total = getCartTotal();
 
-            const randomNumber =
-                Math.floor(
-                    100000 +
-                    Math.random() * 900000
-                );
-
-            let productsMessage = "";
-
-            for (
-                let i = 0;
-                i < cart.length;
-                i++
-            ) {
-
-                const item = cart[i];
-
-                productsMessage +=
-                    `${i + 1}. ${item.name}\n` +
-                    `Size: ${item.size}\n` +
-                    `Color: ${item.color}\n` +
-                    `Quantity: ${item.quantity}\n` +
-                    `Price: EGP ${item.price * item.quantity}\n\n`;
-            }
-
-            const message =
-                `🛍️ ZAMALEK NEW ORDER\n\n` +
-                `Order #: ${randomNumber}\n\n` +
-                `👤 Customer:\n${name}\n\n` +
-                `📱 Phone:\n${phone}\n\n` +
-                `📍 Address:\n` +
-                `${governorate}\n${address}\n\n` +
-                `🛒 ORDER DETAILS:\n\n` +
-                `${productsMessage}` +
-                `💰 TOTAL: EGP ${total}\n\n` +
-                `💳 Payment: ${payment}`;
-
-            const whatsappURL =
-                "https://wa.me/201227840123?text=" +
-                encodeURIComponent(message);
-
-            window.open(
-                whatsappURL,
-                "_blank"
+        const randomNumber =
+            Math.floor(
+                100000 +
+                Math.random() * 900000
             );
 
-            if (successName) {
-                successName.textContent =
-                    name;
-            }
+        let productsMessage = "";
 
-            if (successTotal) {
-                successTotal.textContent =
-                    total;
-            }
+        cart.forEach(function (item, index) {
 
-            if (orderNumber) {
-                orderNumber.textContent =
-                    randomNumber;
-            }
+            productsMessage +=
+                `${index + 1}. ${item.name}\n` +
+                `Size: ${item.size}\n` +
+                `Color: ${item.color}\n` +
+                `Quantity: ${item.quantity}\n` +
+                `Price: EGP ${item.price * item.quantity}\n\n`;
 
-            if (checkoutSection) {
-                checkoutSection.classList.remove(
-                    "active"
-                );
-            }
+        });
 
-            if (orderSuccess) {
-                orderSuccess.classList.add(
-                    "active"
-                );
+        const message =
+            `🛍️ ZAMALEK NEW ORDER\n\n` +
+            `Order #: ${randomNumber}\n\n` +
+            `👤 Customer:\n${name}\n\n` +
+            `📱 Phone:\n${phone}\n\n` +
+            `📍 Address:\n` +
+            `${governorate}\n${address}\n\n` +
+            `🛒 ORDER DETAILS:\n\n` +
+            productsMessage +
+            `💰 TOTAL: EGP ${total}\n\n` +
+            `💳 Payment: ${payment}`;
 
-                scrollToElement(
-                    orderSuccess
-                );
-            }
+        const whatsappURL =
+            "https://wa.me/201227840123?text=" +
+            encodeURIComponent(message);
 
-            cart = [];
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener"
+        );
 
-            updateCart();
+        if (successName) {
+            successName.textContent = name;
         }
-    );
+
+        if (successTotal) {
+            successTotal.textContent = total;
+        }
+
+        if (orderNumber) {
+            orderNumber.textContent = randomNumber;
+        }
+
+        if (checkoutSection) {
+            checkoutSection.classList.remove("active");
+        }
+
+        if (orderSuccess) {
+
+            orderSuccess.classList.add("active");
+
+            scrollToElement(orderSuccess);
+
+        }
+
+        cart = [];
+
+        updateCart();
+
+    });
+
 }
 
 /* =========================
@@ -862,38 +906,17 @@ if (checkoutForm) {
 
 if (continueShopping) {
 
-    continueShopping.addEventListener(
-        "click",
-        function () {
+    continueShopping.addEventListener("click", function () {
 
-            if (orderSuccess) {
-                orderSuccess.classList.remove(
-                    "active"
-                );
-            }
-
-            scrollToElement(shopSection);
+        if (orderSuccess) {
+            orderSuccess.classList.remove("active");
         }
-    );
+
+        scrollToElement(shopSection);
+
+    });
+
 }
-
-/* =========================
-   NO HEAVY ANIMATIONS
-========================= */
-
-/*
-   تم إيقاف:
-   - Mouse Parallax
-   - 3D Product Tilt
-   - Cursor Glow Movement
-   - Power Click Effect
-   - Intersection Observer
-   - Scroll Reveal JS
-
-   السبب:
-   تقليل استهلاك CPU/GPU
-   وتحسين السلاسة على الأجهزة الضعيفة.
-*/
 
 /* =========================
    INITIALIZE

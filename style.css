@@ -1,4 +1,8 @@
- * {
+ /* =========================================================
+   ZAMALEK — PERFORMANCE OPTIMIZED CSS
+========================================================= */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,143 +25,149 @@ html {
 
 body {
     background:
-        radial-gradient(circle at 10% 10%, rgba(255, 0, 80, .13), transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(0, 190, 255, .10), transparent 25%),
-        radial-gradient(circle at 50% 80%, rgba(130, 0, 255, .09), transparent 30%),
+        radial-gradient(circle at 10% 10%, rgba(255, 0, 80, .10), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(0, 190, 255, .07), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(130, 0, 255, .06), transparent 30%),
         #030305;
 
     color: white;
     font-family: Arial, sans-serif;
-
     overflow-x: hidden;
-
     position: relative;
 
-    animation: pageEnter 1s ease;
+    animation: pageEnter .6s ease;
 }
 
+/* =========================================================
+   GLOBAL PERFORMANCE
+========================================================= */
 
-/* ==================================================
-   ANIMATED COLOR ATMOSPHERE
-================================================== */
+img {
+    max-width: 100%;
+}
+
+button,
+a,
+select,
+input,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.anime-character,
+.hero-kanji,
+.hero-energy,
+.cursor-glow,
+.power-effect,
+body::before,
+body::after {
+    will-change: transform;
+}
+
+/* =========================================================
+   BACKGROUND ATMOSPHERE
+========================================================= */
 
 body::before {
-
     content: "";
-
     position: fixed;
-
-    inset: -30%;
-
+    inset: -20%;
     z-index: -10;
 
     background:
         radial-gradient(
             circle at 20% 30%,
-            rgba(255, 0, 70, .18),
+            rgba(255, 0, 70, .14),
             transparent 22%
         ),
         radial-gradient(
             circle at 80% 25%,
-            rgba(0, 180, 255, .15),
+            rgba(0, 180, 255, .11),
             transparent 20%
         ),
         radial-gradient(
             circle at 50% 80%,
-            rgba(140, 0, 255, .13),
+            rgba(140, 0, 255, .09),
             transparent 25%
         );
 
-    filter: blur(50px);
-
-    animation: colorUniverse 12s ease-in-out infinite alternate;
-
+    filter: blur(30px);
+    animation: colorUniverse 18s ease-in-out infinite alternate;
     pointer-events: none;
 }
 
 @keyframes colorUniverse {
-
     0% {
-        transform: translate(-3%, -2%) scale(1);
+        transform: translate3d(-2%, -2%, 0) scale(1);
     }
 
     50% {
-        transform: translate(4%, 3%) scale(1.12);
+        transform: translate3d(2%, 2%, 0) scale(1.05);
     }
 
     100% {
-        transform: translate(-2%, 5%) scale(1.05);
+        transform: translate3d(-1%, 3%, 0) scale(1.03);
     }
 }
 
-
-/* ==================================================
-   HUGE JAPANESE / CHINESE STYLE BACKGROUND
-================================================== */
+/* =========================================================
+   HUGE BACKGROUND CHARACTERS
+========================================================= */
 
 body::after {
-
     content: "力  魂  自由  熱血  無限";
 
     position: fixed;
-
     top: 50%;
     left: 50%;
 
     transform:
-        translate(-50%, -50%)
+        translate3d(-50%, -50%, 0)
         rotate(-8deg);
 
     width: 180%;
-
     white-space: nowrap;
 
     font-size: clamp(100px, 15vw, 260px);
-
     font-weight: 900;
-
     letter-spacing: 45px;
 
-    color: rgba(255,255,255,.025);
+    color: rgba(255,255,255,.018);
 
     z-index: -9;
-
     pointer-events: none;
 
-    animation: kanjiMove 18s linear infinite;
+    animation: kanjiMove 28s linear infinite;
 }
 
 @keyframes kanjiMove {
-
     0% {
         transform:
-            translate(-55%, -50%)
+            translate3d(-55%, -50%, 0)
             rotate(-8deg);
     }
 
     50% {
         transform:
-            translate(-45%, -48%)
+            translate3d(-45%, -48%, 0)
             rotate(-4deg);
     }
 
     100% {
         transform:
-            translate(-55%, -50%)
+            translate3d(-55%, -50%, 0)
             rotate(-8deg);
     }
 }
 
-
-/* ==================================================
+/* =========================================================
    PAGE
-================================================== */
+========================================================= */
 
 @keyframes pageEnter {
-
     from {
         opacity: 0;
-        filter: blur(8px);
+        filter: blur(4px);
     }
 
     to {
@@ -166,57 +176,50 @@ body::after {
     }
 }
 
-
-/* ==================================================
+/* =========================================================
    HEADER
-================================================== */
+========================================================= */
 
 header {
-
     position: relative;
     z-index: 100;
 
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
     padding: 28px 65px;
 
-    background: rgba(5,5,8,.55);
+    background: rgba(5,5,8,.82);
 
-    backdrop-filter: blur(20px);
+    /* أخف من backdrop-filter القديم */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 
     border-bottom: 1px solid rgba(255,255,255,.06);
 
     box-shadow:
-        0 10px 50px rgba(0,0,0,.4);
+        0 8px 30px rgba(0,0,0,.3);
 
-    animation: headerAppear 1s cubic-bezier(.2,.8,.2,1);
+    animation: headerAppear .7s cubic-bezier(.2,.8,.2,1);
 }
 
 @keyframes headerAppear {
-
     from {
         opacity: 0;
-        transform: translateY(-60px);
+        transform: translate3d(0,-40px,0);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0,0,0);
     }
 }
 
-
 header h1 {
-
     font-size: 34px;
-
     letter-spacing: 8px;
-
     font-weight: 900;
-
     position: relative;
 
     background:
@@ -233,11 +236,10 @@ header h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: logoGradient 5s linear infinite;
+    animation: logoGradient 8s linear infinite;
 }
 
 @keyframes logoGradient {
-
     0% {
         background-position: 0%;
     }
@@ -247,45 +249,36 @@ header h1 {
     }
 }
 
-
-/* ==================================================
+/* =========================================================
    NAV
-================================================== */
+========================================================= */
 
 nav {
-
     display: flex;
-
     gap: 35px;
 }
 
 nav a {
-
     color: #aaa;
-
     text-decoration: none;
-
     font-size: 15px;
-
     letter-spacing: 2px;
-
     position: relative;
 
-    transition: .35s;
+    transition:
+        color .25s ease,
+        transform .25s ease;
 }
 
 nav a::before {
-
     content: "";
 
     position: absolute;
 
     width: 0;
-
     height: 1px;
 
     left: 0;
-
     bottom: -8px;
 
     background:
@@ -295,57 +288,47 @@ nav a::before {
             var(--blue)
         );
 
-    transition: .35s;
+    transition: width .25s ease;
 }
 
 nav a:hover {
-
     color: white;
-
-    text-shadow:
-        0 0 15px rgba(255,255,255,.5);
-
-    transform: translateY(-2px);
+    transform: translate3d(0,-2px,0);
 }
 
 nav a:hover::before {
     width: 100%;
 }
 
-
-/* ==================================================
+/* =========================================================
    CART
-================================================== */
+========================================================= */
 
 .cart {
-
     cursor: pointer;
 
     padding: 10px 15px;
 
     border: 1px solid rgba(255,255,255,.1);
-
     border-radius: 30px;
 
-    background: rgba(255,255,255,.03);
+    background: rgba(255,255,255,.04);
 
-    backdrop-filter: blur(10px);
-
-    transition: .3s;
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
 .cart:hover {
-
-    transform: scale(1.08);
-
+    transform: scale(1.05);
     border-color: var(--red);
 
     box-shadow:
-        0 0 25px rgba(255,23,68,.25);
+        0 0 18px rgba(255,23,68,.22);
 }
 
 #cart-count {
-
     display: inline-flex;
 
     align-items: center;
@@ -364,34 +347,27 @@ nav a:hover::before {
     color: white;
 
     border-radius: 50%;
-
     font-size: 12px;
 
     box-shadow:
-        0 0 15px rgba(255,23,68,.5);
+        0 0 10px rgba(255,23,68,.4);
 }
 
-
-/* ==================================================
+/* =========================================================
    HERO
-================================================== */
+========================================================= */
 
 .hero {
-
     min-height: 90vh;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
 
     position: relative;
-
     overflow: hidden;
 
     padding: 50px 20px;
@@ -399,30 +375,31 @@ nav a:hover::before {
     background:
         linear-gradient(
             180deg,
-            rgba(0,0,0,.1),
-            rgba(0,0,0,.7)
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.65)
         );
+
+    isolation: isolate;
 }
 
-
-/* HERO GRID */
+/* =========================================================
+   HERO GRID
+========================================================= */
 
 .hero::before {
-
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
-            rgba(255,255,255,.025) 1px,
+            rgba(255,255,255,.018) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,.025) 1px,
+            rgba(255,255,255,.018) 1px,
             transparent 1px
         );
 
@@ -435,13 +412,12 @@ nav a:hover::before {
             transparent 75%
         );
 
-    animation: gridMove 12s linear infinite;
+    animation: gridMove 22s linear infinite;
 
     pointer-events: none;
 }
 
 @keyframes gridMove {
-
     from {
         background-position: 0 0;
     }
@@ -451,65 +427,57 @@ nav a:hover::before {
     }
 }
 
-
-/* HERO GIANT LETTER */
+/* =========================================================
+   HERO GIANT CHARACTER
+========================================================= */
 
 .hero::after {
-
     content: "影";
 
     position: absolute;
 
     right: 4%;
-
     top: 5%;
 
     font-size: clamp(220px, 35vw, 600px);
-
     font-weight: 900;
 
-    color: rgba(255,23,68,.045);
+    color: rgba(255,23,68,.035);
 
     text-shadow:
-        0 0 100px rgba(255,0,60,.08);
+        0 0 50px rgba(255,0,60,.05);
 
-    animation: giantShadow 7s ease-in-out infinite;
+    animation: giantShadow 12s ease-in-out infinite;
 
     pointer-events: none;
 }
 
 @keyframes giantShadow {
-
     0%,100% {
         transform:
-            rotate(8deg)
-            translateY(0);
+            translate3d(0,0,0)
+            rotate(8deg);
     }
 
     50% {
         transform:
-            rotate(-3deg)
-            translateY(-40px);
+            translate3d(0,-20px,0)
+            rotate(-3deg);
     }
 }
 
-
-/* ==================================================
+/* =========================================================
    HERO TITLE
-================================================== */
+========================================================= */
 
 .hero h2 {
-
     position: relative;
-
     z-index: 5;
 
     font-size: clamp(55px, 9vw, 125px);
-
     font-weight: 900;
 
     letter-spacing: 12px;
-
     line-height: .95;
 
     background:
@@ -525,51 +493,43 @@ nav a:hover::before {
     background-size: 300%;
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
     animation:
-        heroTitle 1.3s cubic-bezier(.17,.67,.3,1.4),
-        titleGradient 5s linear infinite;
+        heroTitle 1s cubic-bezier(.17,.67,.3,1.2),
+        titleGradient 8s linear infinite;
 
     filter:
-        drop-shadow(0 0 30px rgba(255,0,70,.18));
+        drop-shadow(0 0 18px rgba(255,0,70,.14));
+
+    will-change: transform;
 }
 
 @keyframes heroTitle {
-
     0% {
         opacity: 0;
 
         transform:
-            translateY(100px)
-            scale(.4)
-            skewX(10deg);
-
-        filter: blur(20px);
+            translate3d(0,70px,0)
+            scale(.65);
     }
 
     60% {
         transform:
-            translateY(-10px)
-            scale(1.08)
-            skewX(-2deg);
+            translate3d(0,-6px,0)
+            scale(1.04);
     }
 
     100% {
         opacity: 1;
 
         transform:
-            translateY(0)
-            scale(1)
-            skewX(0);
-
-        filter: blur(0);
+            translate3d(0,0,0)
+            scale(1);
     }
 }
 
 @keyframes titleGradient {
-
     0% {
         background-position: 0%;
     }
@@ -579,16 +539,13 @@ nav a:hover::before {
     }
 }
 
-
 .hero h2::after {
-
     content: "";
 
     display: block;
 
     width: 180px;
-
-    height: 4px;
+    height: 3px;
 
     margin: 30px auto;
 
@@ -602,30 +559,26 @@ nav a:hover::before {
         );
 
     box-shadow:
-        0 0 15px var(--red),
-        0 0 35px var(--blue);
+        0 0 10px var(--red);
 
-    animation: linePower 2s ease infinite alternate;
+    animation:
+        linePower 3s ease infinite alternate;
 }
 
 @keyframes linePower {
-
     from {
-        width: 100px;
-        opacity: .5;
+        width: 120px;
+        opacity: .6;
     }
 
     to {
-        width: 240px;
+        width: 210px;
         opacity: 1;
     }
 }
 
-
 .hero p {
-
     position: relative;
-
     z-index: 5;
 
     max-width: 650px;
@@ -633,36 +586,30 @@ nav a:hover::before {
     color: #aaa;
 
     font-size: 20px;
-
     line-height: 1.8;
-
     letter-spacing: 3px;
 
-    animation: heroText 1.8s ease;
+    animation: heroText 1.2s ease;
 }
 
 @keyframes heroText {
-
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translate3d(0,20px,0);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0,0,0);
     }
 }
 
-
-/* ==================================================
-   PREMIUM BUTTON
-================================================== */
+/* =========================================================
+   SHOP BUTTON
+========================================================= */
 
 .shop-btn {
-
     position: relative;
-
     z-index: 5;
 
     margin-top: 35px;
@@ -681,53 +628,46 @@ nav a:hover::before {
     color: black;
 
     font-size: 15px;
-
     font-weight: 900;
-
     letter-spacing: 3px;
 
     cursor: pointer;
-
     overflow: hidden;
 
-    transition: .4s;
-
-    box-shadow:
-        0 0 0 transparent;
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
 }
 
 .shop-btn::before {
-
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.8),
+            rgba(255,255,255,.7),
             transparent
         );
 
     transform:
-        translateX(-120%)
+        translate3d(-120%,0,0)
         skewX(-20deg);
 
-    transition: .7s;
+    transition: transform .5s ease;
 }
 
 .shop-btn:hover::before {
-
     transform:
-        translateX(120%)
+        translate3d(120%,0,0)
         skewX(-20deg);
 }
 
 .shop-btn:hover {
-
     background:
         linear-gradient(
             135deg,
@@ -738,21 +678,18 @@ nav a:hover::before {
     color: white;
 
     transform:
-        translateY(-5px)
-        scale(1.05);
+        translate3d(0,-4px,0)
+        scale(1.03);
 
     box-shadow:
-        0 15px 50px rgba(255,23,68,.35),
-        0 0 30px rgba(255,23,68,.25);
+        0 12px 35px rgba(255,23,68,.25);
 }
 
-
-/* ==================================================
-   PRODUCTS SECTION
-================================================== */
+/* =========================================================
+   PRODUCTS
+========================================================= */
 
 .products {
-
     position: relative;
 
     padding: 130px 60px;
@@ -763,15 +700,16 @@ nav a:hover::before {
         linear-gradient(
             180deg,
             transparent,
-            rgba(255,0,70,.035),
+            rgba(255,0,70,.025),
             transparent
         );
+
+    border-top:
+        1px solid rgba(255,255,255,.04);
 }
 
 .products h2 {
-
     position: relative;
-
     z-index: 5;
 
     text-align: center;
@@ -798,19 +736,18 @@ nav a:hover::before {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: titleGradient 6s linear infinite;
+    animation:
+        titleGradient 9s linear infinite;
 }
 
 .products h2::after,
 .about h2::after,
 .contact h2::after {
-
     content: "";
 
     display: block;
 
     width: 80px;
-
     height: 3px;
 
     margin: 20px auto;
@@ -823,53 +760,52 @@ nav a:hover::before {
         );
 
     box-shadow:
-        0 0 20px var(--red);
+        0 0 10px var(--red);
 }
 
-
-/* BIG BACKGROUND */
+/* =========================================================
+   PRODUCTS BACKGROUND
+========================================================= */
 
 .products::before {
-
     content: "戦";
 
     position: absolute;
 
     right: -100px;
-
     top: 20px;
 
     font-size: 600px;
-
     font-weight: 900;
 
-    color: rgba(0,200,255,.025);
+    color: rgba(0,200,255,.018);
 
-    animation: battleFloat 8s ease-in-out infinite;
+    animation:
+        battleFloat 14s ease-in-out infinite;
 
     pointer-events: none;
 }
 
 @keyframes battleFloat {
-
     0%,100% {
-        transform: rotate(5deg) scale(1);
+        transform:
+            translate3d(0,0,0)
+            rotate(5deg);
     }
 
     50% {
-        transform: rotate(-5deg) scale(1.08);
+        transform:
+            translate3d(0,-15px,0)
+            rotate(-5deg);
     }
 }
 
-
-/* ==================================================
+/* =========================================================
    PRODUCT CONTAINER
-================================================== */
+========================================================= */
 
 .product-container {
-
     position: relative;
-
     z-index: 5;
 
     display: flex;
@@ -881,13 +817,11 @@ nav a:hover::before {
     flex-wrap: wrap;
 }
 
-
-/* ==================================================
+/* =========================================================
    PRODUCT CARD
-================================================== */
+========================================================= */
 
 .product-card {
-
     width: 300px;
 
     padding: 12px;
@@ -899,66 +833,71 @@ nav a:hover::before {
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.08),
-            rgba(255,255,255,.015)
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.012)
         );
 
     border: 1px solid rgba(255,255,255,.09);
 
-    backdrop-filter: blur(18px);
+    /* أخف بكثير */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.55);
+        0 18px 45px rgba(0,0,0,.45);
 
     transition:
-        .5s cubic-bezier(.17,.67,.3,1.3);
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 
-    animation: cardAppear .9s ease both;
+    animation:
+        cardAppear .7s ease both;
+
+    transform-style: preserve-3d;
+    perspective: 800px;
 }
 
 .product-card:nth-child(1) {
-    animation-delay: .15s;
+    animation-delay: .08s;
 }
 
 .product-card:nth-child(2) {
-    animation-delay: .3s;
+    animation-delay: .16s;
 }
 
 .product-card:nth-child(3) {
-    animation-delay: .45s;
+    animation-delay: .24s;
 }
 
 @keyframes cardAppear {
-
     from {
         opacity: 0;
 
         transform:
-            translateY(80px)
-            rotateX(15deg)
-            scale(.85);
+            translate3d(0,50px,0)
+            scale(.92);
     }
 
     to {
         opacity: 1;
 
         transform:
-            translateY(0)
-            rotateX(0)
+            translate3d(0,0,0)
             scale(1);
     }
 }
 
-
-/* COLOR BORDER */
+/* =========================================================
+   CARD BORDER
+========================================================= */
 
 .product-card::before {
-
     content: "";
 
     position: absolute;
 
-    inset: -2px;
+    inset: -1px;
 
     background:
         linear-gradient(
@@ -973,30 +912,28 @@ nav a:hover::before {
 
     z-index: -1;
 
-    transition: .5s;
+    transition:
+        opacity .3s ease;
 }
 
 .product-card:hover::before {
     opacity: 1;
 }
 
-
-/* NUMBER */
+/* =========================================================
+   CARD NUMBER
+========================================================= */
 
 .product-card::after {
-
     content: "01";
 
     position: absolute;
 
     right: 20px;
-
     top: 15px;
 
     font-size: 14px;
-
     font-weight: 900;
-
     letter-spacing: 3px;
 
     color: rgba(255,255,255,.4);
@@ -1012,35 +949,39 @@ nav a:hover::before {
     content: "03";
 }
 
+/* =========================================================
+   PRODUCT HOVER
+========================================================= */
 
 .product-card:hover {
-
     transform:
-        translateY(-18px)
-        scale(1.035)
-        rotateX(2deg);
+        translate3d(0,-10px,0)
+        scale(1.02);
 
-    border-color: rgba(255,23,68,.5);
+    border-color:
+        rgba(255,23,68,.45);
 
     box-shadow:
-        0 40px 90px rgba(0,0,0,.8),
-        0 0 50px rgba(255,23,68,.12),
-        0 0 80px rgba(0,200,255,.08);
+        0 25px 55px rgba(0,0,0,.65),
+        0 0 30px rgba(255,23,68,.08);
 }
 
+.product-card:hover h3 {
+    color: white;
 
-/* ==================================================
+    text-shadow:
+        0 0 10px rgba(255,23,68,.25);
+}
+
+/* =========================================================
    PRODUCT IMAGE
-================================================== */
+========================================================= */
 
 .product-image {
-
     width: 100%;
-
     height: 390px;
 
     position: relative;
-
     overflow: hidden;
 
     background:
@@ -1052,124 +993,108 @@ nav a:hover::before {
 }
 
 .product-image::before {
-
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,23,68,.15),
+            rgba(255,23,68,.10),
             transparent 40%,
-            rgba(0,200,255,.1)
+            rgba(0,200,255,.07)
         );
 
     z-index: 1;
-
     pointer-events: none;
 }
 
 .product-image::after {
-
     content: "";
 
     position: absolute;
 
     top: -100%;
-
     left: -100%;
 
-    width: 60%;
-
+    width: 50%;
     height: 300%;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.2),
+            rgba(255,255,255,.14),
             transparent
         );
 
     transform: rotate(25deg);
 
-    transition: .8s;
+    transition:
+        left .55s ease,
+        top .55s ease;
 
     z-index: 3;
 }
 
 .product-card:hover .product-image::after {
-
     left: 150%;
-
     top: -50%;
 }
 
 .product-image img {
-
     width: 100%;
-
     height: 100%;
 
     object-fit: contain;
 
     transition:
-        .7s cubic-bezier(.17,.67,.3,1.3);
+        transform .45s ease;
 
     position: relative;
-
     z-index: 2;
+
+    will-change: transform;
 }
 
 .product-card:hover .product-image img {
-
     transform:
-        scale(1.12)
-        translateY(-5px);
+        scale(1.07)
+        translate3d(0,-3px,0);
 }
 
-
-/* ==================================================
+/* =========================================================
    PRODUCT TEXT
-================================================== */
+========================================================= */
 
 .product-card h3 {
-
     margin-top: 22px;
 
     font-size: 20px;
-
     letter-spacing: 1px;
 }
 
 .product-card p {
-
     margin-top: 10px;
 
     color: #aaa;
 
     font-size: 15px;
-
     line-height: 1.6;
 }
 
-
-/* ==================================================
+/* =========================================================
    OPTIONS
-================================================== */
+========================================================= */
 
 .product-options,
 .quantity-selector {
-
     margin-top: 18px;
 }
 
 .product-options label,
 .quantity-selector label {
-
     display: block;
 
     margin-bottom: 7px;
@@ -1177,7 +1102,6 @@ nav a:hover::before {
     color: #888;
 
     font-size: 12px;
-
     letter-spacing: 2px;
 
     text-transform: uppercase;
@@ -1185,13 +1109,12 @@ nav a:hover::before {
 
 .product-options select,
 .product-quantity {
-
     width: 100%;
 
     padding: 12px;
 
     background:
-        rgba(0,0,0,.6);
+        rgba(0,0,0,.7);
 
     color: white;
 
@@ -1199,25 +1122,24 @@ nav a:hover::before {
 
     outline: none;
 
-    transition: .3s;
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
 }
 
 .product-options select:focus,
 .product-quantity:focus {
-
     border-color: var(--red);
 
     box-shadow:
-        0 0 20px rgba(255,23,68,.15);
+        0 0 12px rgba(255,23,68,.12);
 }
 
-
-/* ==================================================
+/* =========================================================
    PRODUCT BUTTONS
-================================================== */
+========================================================= */
 
 .product-card button {
-
     width: 100%;
 
     padding: 14px;
@@ -1236,15 +1158,16 @@ nav a:hover::before {
 
     cursor: pointer;
 
-    transition: .35s;
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
 
     position: relative;
-
     overflow: hidden;
 }
 
 .product-card button:hover {
-
     background:
         linear-gradient(
             90deg,
@@ -1254,23 +1177,23 @@ nav a:hover::before {
 
     color: white;
 
-    transform: translateY(-3px);
+    transform:
+        translate3d(0,-2px,0);
 
     box-shadow:
-        0 12px 35px rgba(255,23,68,.3);
+        0 8px 25px rgba(255,23,68,.22);
 }
 
 .buy-now {
-
     background: #19191d !important;
 
     color: white !important;
 
-    border: 1px solid #333 !important;
+    border:
+        1px solid #333 !important;
 }
 
 .buy-now:hover {
-
     background:
         linear-gradient(
             90deg,
@@ -1279,16 +1202,14 @@ nav a:hover::before {
         ) !important;
 
     box-shadow:
-        0 12px 35px rgba(0,180,255,.25) !important;
+        0 8px 25px rgba(0,180,255,.18) !important;
 }
 
-
-/* ==================================================
+/* =========================================================
    PRODUCT DETAILS
-================================================== */
+========================================================= */
 
 .product-details {
-
     display: none;
 
     min-height: 100vh;
@@ -1298,45 +1219,43 @@ nav a:hover::before {
     background:
         radial-gradient(
             circle at 20% 50%,
-            rgba(255,0,70,.12),
+            rgba(255,0,70,.08),
             transparent 35%
         ),
         radial-gradient(
             circle at 80% 30%,
-            rgba(0,190,255,.1),
+            rgba(0,190,255,.07),
             transparent 30%
         ),
         #050507;
 }
 
 .product-details.active {
-
     display: block;
 
-    animation: detailOpen .7s cubic-bezier(.17,.67,.3,1.3);
+    animation:
+        detailOpen .45s ease;
 }
 
 @keyframes detailOpen {
-
     from {
         opacity: 0;
+
         transform:
-            scale(.92)
-            translateY(40px);
-        filter: blur(10px);
+            translate3d(0,25px,0)
+            scale(.97);
     }
 
     to {
         opacity: 1;
+
         transform:
-            scale(1)
-            translateY(0);
-        filter: blur(0);
+            translate3d(0,0,0)
+            scale(1);
     }
 }
 
 .details-container {
-
     max-width: 1100px;
 
     margin: auto;
@@ -1349,9 +1268,7 @@ nav a:hover::before {
 }
 
 .details-image {
-
     width: 52%;
-
     height: 650px;
 
     background:
@@ -1361,14 +1278,14 @@ nav a:hover::before {
             #08080a
         );
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.08);
 
     box-shadow:
-        0 40px 100px rgba(0,0,0,.7);
+        0 25px 65px rgba(0,0,0,.6);
 }
 
 .details-image img {
-
     width: 100%;
     height: 100%;
 
@@ -1376,13 +1293,12 @@ nav a:hover::before {
 }
 
 .details-info {
-
     width: 48%;
 }
 
 .details-info h2 {
-
-    font-size: clamp(35px, 5vw, 60px);
+    font-size:
+        clamp(35px, 5vw, 60px);
 
     line-height: 1;
 
@@ -1390,7 +1306,6 @@ nav a:hover::before {
 }
 
 .details-price {
-
     font-size: 28px;
 
     font-weight: bold;
@@ -1398,13 +1313,12 @@ nav a:hover::before {
     color: var(--red);
 
     text-shadow:
-        0 0 20px rgba(255,23,68,.25);
+        0 0 12px rgba(255,23,68,.2);
 
     margin-bottom: 25px;
 }
 
 #details-description {
-
     color: #999;
 
     line-height: 1.9;
@@ -1416,7 +1330,6 @@ nav a:hover::before {
 
 .details-info select,
 #details-quantity {
-
     width: 100%;
 
     padding: 14px;
@@ -1431,7 +1344,6 @@ nav a:hover::before {
 }
 
 .details-info button {
-
     width: 100%;
 
     padding: 15px;
@@ -1446,28 +1358,26 @@ nav a:hover::before {
 
     letter-spacing: 2px;
 
-    transition: .3s;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 #details-add {
-
     background: white;
-
     color: black;
 }
 
 #details-add:hover {
-
     background: var(--red);
 
     color: white;
 
     box-shadow:
-        0 0 30px rgba(255,23,68,.3);
+        0 0 20px rgba(255,23,68,.22);
 }
 
 #details-buy {
-
     background:
         linear-gradient(
             90deg,
@@ -1479,46 +1389,42 @@ nav a:hover::before {
 }
 
 #details-buy:hover {
-
-    transform: translateY(-3px);
+    transform:
+        translate3d(0,-2px,0);
 
     box-shadow:
-        0 0 35px rgba(0,200,255,.3);
+        0 0 25px rgba(0,200,255,.22);
 }
 
 #close-details {
-
     background: transparent !important;
 
     color: #888 !important;
 
-    border: 1px solid #333 !important;
+    border:
+        1px solid #333 !important;
 }
 
 #close-details:hover {
-
     color: white !important;
 
     border-color: white !important;
 
-    background: rgba(255,255,255,.04) !important;
+    background:
+        rgba(255,255,255,.04) !important;
 }
 
-
-/* ==================================================
+/* =========================================================
    CART
-================================================== */
+========================================================= */
 
 .cart-box {
-
     position: fixed;
 
     top: 0;
-
     right: -430px;
 
     width: 410px;
-
     height: 100vh;
 
     padding: 35px;
@@ -1530,30 +1436,32 @@ nav a:hover::before {
     background:
         linear-gradient(
             145deg,
-            rgba(30,30,36,.97),
-            rgba(5,5,8,.98)
+            rgba(30,30,36,.98),
+            rgba(5,5,8,.99)
         );
 
-    backdrop-filter: blur(30px);
+    /* تقليل blur */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 
-    border-left: 1px solid rgba(255,255,255,.08);
+    border-left:
+        1px solid rgba(255,255,255,.08);
 
     box-shadow:
-        -30px 0 100px rgba(0,0,0,.7);
+        -20px 0 60px rgba(0,0,0,.55);
 
-    transition: .5s cubic-bezier(.17,.67,.3,1.3);
+    transition:
+        right .35s cubic-bezier(.17,.67,.3,1.2);
 }
 
 .cart-box.active {
-
     right: 0;
 
     box-shadow:
-        -20px 0 100px rgba(255,0,70,.08);
+        -15px 0 60px rgba(255,0,70,.06);
 }
 
 .cart-box h2 {
-
     font-size: 32px;
 
     letter-spacing: 4px;
@@ -1562,14 +1470,13 @@ nav a:hover::before {
 }
 
 .cart-item {
-
     padding: 18px 0;
 
-    border-bottom: 1px solid #29292d;
+    border-bottom:
+        1px solid #29292d;
 }
 
 .cart-total {
-
     margin-top: 30px;
 
     font-size: 23px;
@@ -1578,7 +1485,6 @@ nav a:hover::before {
 }
 
 .quantity-controls {
-
     display: flex;
 
     align-items: center;
@@ -1589,7 +1495,6 @@ nav a:hover::before {
 }
 
 .quantity-controls button {
-
     width: auto;
 
     padding: 6px 12px;
@@ -1606,7 +1511,6 @@ nav a:hover::before {
 }
 
 .remove-btn {
-
     width: auto !important;
 
     padding: 7px 12px !important;
@@ -1619,7 +1523,6 @@ nav a:hover::before {
 }
 
 #checkout-btn {
-
     width: 100%;
 
     margin-top: 18px;
@@ -1641,19 +1544,20 @@ nav a:hover::before {
 
     cursor: pointer;
 
-    transition: .3s;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 #checkout-btn:hover {
-
-    transform: translateY(-3px);
+    transform:
+        translate3d(0,-2px,0);
 
     box-shadow:
-        0 15px 40px rgba(255,23,68,.3);
+        0 10px 30px rgba(255,23,68,.22);
 }
 
 #close-cart {
-
     width: 100%;
 
     margin-top: 25px;
@@ -1669,13 +1573,11 @@ nav a:hover::before {
     cursor: pointer;
 }
 
-
-/* ==================================================
+/* =========================================================
    ABOUT
-================================================== */
+========================================================= */
 
 .about {
-
     position: relative;
 
     overflow: hidden;
@@ -1690,43 +1592,46 @@ nav a:hover::before {
             #0c0c10,
             #08080b
         );
+
+    border-top:
+        1px solid rgba(255,255,255,.04);
 }
 
 .about::before {
-
     content: "無限";
 
     position: absolute;
 
     left: -30px;
-
     top: 10px;
 
     font-size: 300px;
-
     font-weight: 900;
 
-    color: rgba(255,0,70,.025);
+    color: rgba(255,0,70,.018);
 
-    animation: infinityMove 8s ease-in-out infinite;
+    animation:
+        infinityMove 14s ease-in-out infinite;
 
     pointer-events: none;
 }
 
 @keyframes infinityMove {
-
     0%,100% {
-        transform: rotate(-10deg) translateY(0);
+        transform:
+            translate3d(0,0,0)
+            rotate(-10deg);
     }
 
     50% {
-        transform: rotate(-5deg) translateY(-30px);
+        transform:
+            translate3d(0,-15px,0)
+            rotate(-5deg);
     }
 }
 
 .about h2,
 .contact h2 {
-
     position: relative;
 
     font-size: 50px;
@@ -1737,7 +1642,6 @@ nav a:hover::before {
 }
 
 .about p {
-
     position: relative;
 
     max-width: 750px;
@@ -1751,13 +1655,11 @@ nav a:hover::before {
     line-height: 2;
 }
 
-
-/* ==================================================
+/* =========================================================
    CONTACT
-================================================== */
+========================================================= */
 
 .contact {
-
     position: relative;
 
     overflow: hidden;
@@ -1769,52 +1671,54 @@ nav a:hover::before {
     background:
         radial-gradient(
             circle at 50% 50%,
-            rgba(0,180,255,.06),
+            rgba(0,180,255,.045),
             transparent 35%
         );
+
+    border-top:
+        1px solid rgba(255,255,255,.04);
 }
 
 .contact::after {
-
     content: "自由";
 
     position: absolute;
 
     right: -20px;
-
     bottom: -50px;
 
     font-size: 300px;
-
     font-weight: 900;
 
-    color: rgba(0,200,255,.025);
+    color: rgba(0,200,255,.018);
 
-    animation: freedomMove 8s ease-in-out infinite;
+    animation:
+        freedomMove 14s ease-in-out infinite;
 
     pointer-events: none;
 }
 
 @keyframes freedomMove {
-
     0%,100% {
-        transform: rotate(8deg);
+        transform:
+            translate3d(0,0,0)
+            rotate(8deg);
     }
 
     50% {
-        transform: rotate(-4deg) translateY(-25px);
+        transform:
+            translate3d(0,-15px,0)
+            rotate(-4deg);
     }
 }
 
 .contact > p {
-
     color: #999;
 
     font-size: 18px;
 }
 
 .contact-info {
-
     position: relative;
 
     z-index: 2;
@@ -1823,19 +1727,16 @@ nav a:hover::before {
 }
 
 .contact-info p {
-
     margin: 15px 0;
 
     color: #ddd;
 }
 
-
-/* ==================================================
+/* =========================================================
    CHECKOUT
-================================================== */
+========================================================= */
 
 .checkout {
-
     display: none;
 
     min-height: 100vh;
@@ -1845,21 +1746,20 @@ nav a:hover::before {
     background:
         radial-gradient(
             circle at 50% 20%,
-            rgba(255,0,70,.12),
+            rgba(255,0,70,.08),
             transparent 35%
         ),
         #050507;
 }
 
 .checkout.active {
-
     display: block;
 
-    animation: detailOpen .6s ease;
+    animation:
+        detailOpen .4s ease;
 }
 
 .checkout-container {
-
     max-width: 650px;
 
     margin: auto;
@@ -1869,16 +1769,17 @@ nav a:hover::before {
     background:
         rgba(255,255,255,.035);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.08);
 
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
 
     box-shadow:
-        0 30px 90px rgba(0,0,0,.6);
+        0 25px 60px rgba(0,0,0,.5);
 }
 
 .checkout-container h2 {
-
     text-align: center;
 
     font-size: 42px;
@@ -1889,7 +1790,6 @@ nav a:hover::before {
 }
 
 #checkout-form label {
-
     display: block;
 
     margin-top: 20px;
@@ -1906,12 +1806,12 @@ nav a:hover::before {
 #checkout-form input,
 #checkout-form select,
 #checkout-form textarea {
-
     width: 100%;
 
     padding: 14px;
 
-    background: rgba(0,0,0,.5);
+    background:
+        rgba(0,0,0,.55);
 
     color: white;
 
@@ -1919,28 +1819,27 @@ nav a:hover::before {
 
     outline: none;
 
-    transition: .3s;
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
 }
 
 #checkout-form input:focus,
 #checkout-form select:focus,
 #checkout-form textarea:focus {
-
     border-color: var(--red);
 
     box-shadow:
-        0 0 20px rgba(255,23,68,.12);
+        0 0 12px rgba(255,23,68,.1);
 }
 
 #checkout-form textarea {
-
     min-height: 120px;
 
     resize: vertical;
 }
 
 #checkout-form button {
-
     width: 100%;
 
     padding: 15px;
@@ -1964,36 +1863,34 @@ nav a:hover::before {
 }
 
 .checkout-summary {
-
     margin-top: 30px;
 
     padding: 22px;
 
     border: 1px solid #333;
 
-    background: rgba(0,0,0,.3);
+    background:
+        rgba(0,0,0,.3);
 }
 
 .checkout-summary p {
-
     font-size: 24px;
 
     color: var(--red);
 }
 
 .checkout-item {
-
     display: flex;
 
     justify-content: space-between;
 
     padding: 15px 0;
 
-    border-bottom: 1px solid #29292d;
+    border-bottom:
+        1px solid #29292d;
 }
 
 .checkout-final-total {
-
     margin-top: 25px;
 
     text-align: right;
@@ -2002,7 +1899,6 @@ nav a:hover::before {
 }
 
 #back-to-cart {
-
     width: 100%;
 
     padding: 13px;
@@ -2018,13 +1914,11 @@ nav a:hover::before {
     cursor: pointer;
 }
 
-
-/* ==================================================
+/* =========================================================
    SUCCESS
-================================================== */
+========================================================= */
 
 .order-success {
-
     display: none;
 
     min-height: 80vh;
@@ -2040,21 +1934,20 @@ nav a:hover::before {
     background:
         radial-gradient(
             circle,
-            rgba(0,200,255,.08),
+            rgba(0,200,255,.06),
             transparent 35%
         ),
         #050507;
 }
 
 .order-success.active {
-
     display: flex;
 
-    animation: detailOpen .7s ease;
+    animation:
+        detailOpen .45s ease;
 }
 
 .success-container {
-
     max-width: 600px;
 
     width: 100%;
@@ -2064,18 +1957,18 @@ nav a:hover::before {
     background:
         rgba(255,255,255,.035);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.08);
 
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
 
     box-shadow:
-        0 30px 100px rgba(0,0,0,.6);
+        0 25px 70px rgba(0,0,0,.5);
 }
 
 .success-icon {
-
     width: 75px;
-
     height: 75px;
 
     margin: auto;
@@ -2083,38 +1976,41 @@ nav a:hover::before {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     border-radius: 50%;
 
-    border: 2px solid var(--red);
+    border:
+        2px solid var(--red);
 
     color: var(--red);
 
     font-size: 38px;
 
     box-shadow:
-        0 0 30px rgba(255,23,68,.25);
+        0 0 20px rgba(255,23,68,.2);
 
-    animation: successPulse 2s infinite;
+    animation:
+        successPulse 2.5s infinite;
 }
 
 @keyframes successPulse {
-
     0%,100% {
         transform: scale(1);
-        box-shadow: 0 0 20px rgba(255,23,68,.2);
+
+        box-shadow:
+            0 0 15px rgba(255,23,68,.15);
     }
 
     50% {
-        transform: scale(1.08);
-        box-shadow: 0 0 50px rgba(255,23,68,.5);
+        transform: scale(1.05);
+
+        box-shadow:
+            0 0 30px rgba(255,23,68,.35);
     }
 }
 
 .success-container h2 {
-
     margin-top: 25px;
 
     font-size: 38px;
@@ -2123,7 +2019,6 @@ nav a:hover::before {
 }
 
 .success-message {
-
     margin-top: 15px;
 
     color: #999;
@@ -2132,7 +2027,6 @@ nav a:hover::before {
 }
 
 .order-number {
-
     margin-top: 25px;
 
     color: var(--blue);
@@ -2141,7 +2035,6 @@ nav a:hover::before {
 }
 
 .success-details {
-
     margin-top: 30px;
 
     padding: 22px;
@@ -2152,7 +2045,6 @@ nav a:hover::before {
 }
 
 .success-details p {
-
     margin: 12px 0;
 
     color: #999;
@@ -2163,7 +2055,6 @@ nav a:hover::before {
 }
 
 #continue-shopping {
-
     width: 100%;
 
     padding: 15px;
@@ -2180,23 +2071,22 @@ nav a:hover::before {
 
     cursor: pointer;
 
-    transition: .3s;
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 #continue-shopping:hover {
-
     background: var(--red);
 
     color: white;
 }
 
-
-/* ==================================================
+/* =========================================================
    FOOTER
-================================================== */
+========================================================= */
 
 footer {
-
     position: relative;
 
     overflow: hidden;
@@ -2207,32 +2097,30 @@ footer {
 
     background: #020204;
 
-    border-top: 1px solid rgba(255,255,255,.08);
+    border-top:
+        1px solid rgba(255,255,255,.08);
 }
 
 footer::before {
-
     content: "魂";
 
     position: absolute;
 
     left: 50%;
-
     top: -40px;
 
-    transform: translateX(-50%);
+    transform:
+        translate3d(-50%,0,0);
 
     font-size: 230px;
-
     font-weight: 900;
 
-    color: rgba(255,23,68,.025);
+    color: rgba(255,23,68,.018);
 
     pointer-events: none;
 }
 
 .footer-logo {
-
     position: relative;
 
     font-size: 35px;
@@ -2253,14 +2141,13 @@ footer::before {
     background-size: 300%;
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
-    animation: titleGradient 5s linear infinite;
+    animation:
+        titleGradient 8s linear infinite;
 }
 
 footer > p {
-
     margin-top: 18px;
 
     color: #666;
@@ -2268,7 +2155,6 @@ footer > p {
 
 .footer-links,
 .social-links {
-
     display: flex;
 
     justify-content: center;
@@ -2282,63 +2168,64 @@ footer > p {
 
 .footer-links a,
 .social-links a {
-
     color: #777;
 
     text-decoration: none;
 
-    transition: .3s;
+    transition:
+        color .2s ease,
+        transform .2s ease;
 }
 
 .footer-links a:hover,
 .social-links a:hover {
-
     color: white;
 
-    transform: translateY(-3px);
+    transform:
+        translate3d(0,-2px,0);
 }
 
 .copyright {
-
     margin-top: 55px !important;
 
     padding-top: 25px;
 
-    border-top: 1px solid #17171b;
+    border-top:
+        1px solid #17171b;
 
     color: #444 !important;
 
     font-size: 12px;
 }
 
-
-/* ==================================================
+/* =========================================================
    POWER CLICK
-================================================== */
+========================================================= */
 
 .power-effect {
-
     position: fixed;
 
     width: 15px;
     height: 15px;
 
-    border: 2px solid white;
+    border:
+        2px solid white;
 
     border-radius: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate3d(-50%,-50%,0);
 
     pointer-events: none;
 
     z-index: 99999;
 
-    animation: powerBurst .7s ease-out forwards;
+    animation:
+        powerBurst .55s ease-out forwards;
 }
 
 .power-effect::before,
 .power-effect::after {
-
     content: "";
 
     position: absolute;
@@ -2346,8 +2233,7 @@ footer > p {
     top: 50%;
     left: 50%;
 
-    width: 150px;
-
+    width: 120px;
     height: 2px;
 
     background:
@@ -2360,25 +2246,22 @@ footer > p {
         );
 
     box-shadow:
-        0 0 15px var(--red);
+        0 0 8px var(--red);
 }
 
 .power-effect::before {
-
     transform:
-        translate(-50%, -50%)
+        translate(-50%,-50%)
         rotate(45deg);
 }
 
 .power-effect::after {
-
     transform:
-        translate(-50%, -50%)
+        translate(-50%,-50%)
         rotate(-45deg);
 }
 
 @keyframes powerBurst {
-
     from {
         width: 10px;
         height: 10px;
@@ -2386,179 +2269,17 @@ footer > p {
     }
 
     to {
-        width: 220px;
-        height: 220px;
+        width: 180px;
+        height: 180px;
         opacity: 0;
     }
 }
 
-
-/* ==================================================
-   MOBILE
-================================================== */
-
-@media (max-width: 768px) {
-
-    header {
-
-        padding: 22px 18px;
-
-        flex-direction: column;
-
-        gap: 20px;
-    }
-
-    header h1 {
-        font-size: 27px;
-    }
-
-    nav {
-
-        gap: 15px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    .hero {
-
-        min-height: 75vh;
-
-        padding: 40px 18px;
-    }
-
-    .hero h2 {
-
-        font-size: 43px;
-
-        letter-spacing: 4px;
-    }
-
-    .hero p {
-
-        font-size: 15px;
-
-        letter-spacing: 1px;
-    }
-
-    .hero::after {
-
-        font-size: 190px;
-
-        right: -50px;
-    }
-
-    body::after {
-
-        font-size: 85px;
-
-        letter-spacing: 10px;
-    }
-
-    .products {
-
-        padding: 90px 18px;
-    }
-
-    .products h2 {
-
-        font-size: 31px;
-
-        letter-spacing: 4px;
-    }
-
-    .products::before {
-
-        font-size: 250px;
-    }
-
-    .product-container {
-
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-    .product-card {
-
-        width: 100%;
-
-        max-width: 360px;
-    }
-
-    .product-image {
-
-        height: 400px;
-    }
-
-    .details-container {
-
-        flex-direction: column;
-
-        gap: 35px;
-    }
-
-    .details-image,
-    .details-info {
-
-        width: 100%;
-    }
-
-    .details-image {
-
-        height: 450px;
-    }
-
-    .details-info h2 {
-
-        font-size: 34px;
-    }
-
-    .cart-box {
-
-        width: 100%;
-
-        right: -100%;
-    }
-
-    .about,
-    .contact {
-
-        padding: 100px 20px;
-    }
-
-    .about h2,
-    .contact h2 {
-
-        font-size: 35px;
-    }
-
-    .about::before,
-    .contact::after {
-
-        font-size: 120px;
-    }
-
-    .checkout-container {
-
-        padding: 28px 20px;
-    }
-
-    .checkout-container h2 {
-
-        font-size: 30px;
-    }
-}/* ==================================================
+/* =========================================================
    CINEMATIC INTRO
-================================================== */
+========================================================= */
 
 #intro-screen {
-
     position: fixed;
 
     inset: 0;
@@ -2570,7 +2291,6 @@ footer > p {
     flex-direction: column;
 
     justify-content: center;
-
     align-items: center;
 
     background:
@@ -2583,91 +2303,82 @@ footer > p {
 
     overflow: hidden;
 
-    animation: introExit 1s ease 3.8s forwards;
+    animation:
+        introExit .8s ease 3.8s forwards;
 
     pointer-events: none;
 }
 
-
-/* INTRO RED LIGHT */
-
 #intro-screen::before {
-
     content: "";
 
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,0,60,.25),
+            rgba(255,0,60,.18),
             transparent 70%
         );
 
-    animation: introEnergy 2s ease-in-out infinite;
+    animation:
+        introEnergy 2.5s ease-in-out infinite;
 }
-
-
-/* INTRO BLUE LIGHT */
 
 #intro-screen::after {
-
     content: "";
 
     position: absolute;
 
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(0,190,255,.18),
+            rgba(0,190,255,.13),
             transparent 70%
         );
 
-    right: -100px;
-    bottom: -100px;
+    right: -80px;
+    bottom: -80px;
 
-    animation: blueEnergy 3s ease-in-out infinite;
+    animation:
+        blueEnergy 3.5s ease-in-out infinite;
 }
 
-
-/* GIANT CHARACTER */
-
 .intro-kanji {
-
     position: absolute;
 
     font-size: 420px;
 
     font-weight: 900;
 
-    color: rgba(255,255,255,.025);
+    color:
+        rgba(255,255,255,.02);
 
     animation:
         kanjiIntro 3s ease forwards;
 
     user-select: none;
+
+    will-change: transform;
 }
 
-
-/* LOGO */
-
 .intro-logo {
-
     position: relative;
 
     z-index: 5;
 
-    font-size: clamp(55px, 10vw, 130px);
+    font-size:
+        clamp(55px, 10vw, 130px);
 
     font-weight: 900;
 
@@ -2685,25 +2396,19 @@ footer > p {
     background-size: 300%;
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
     animation:
-        introLogo 1.8s cubic-bezier(.17,.67,.3,1.4),
-        titleGradient 4s linear infinite;
+        introLogo 1.5s cubic-bezier(.17,.67,.3,1.3),
+        titleGradient 5s linear infinite;
 }
 
-
-/* LINE */
-
 .intro-line {
-
     position: relative;
 
     z-index: 5;
 
     width: 0;
-
     height: 3px;
 
     margin: 25px 0;
@@ -2718,17 +2423,13 @@ footer > p {
         );
 
     box-shadow:
-        0 0 20px #ff1744;
+        0 0 12px #ff1744;
 
     animation:
-        introLine 1.5s ease .8s forwards;
+        introLine 1.3s ease .8s forwards;
 }
 
-
-/* SUBTITLE */
-
 .intro-subtitle {
-
     position: relative;
 
     z-index: 5;
@@ -2742,47 +2443,34 @@ footer > p {
     opacity: 0;
 
     animation:
-        introSubtitle 1s ease 1.5s forwards;
+        introSubtitle .8s ease 1.5s forwards;
 }
 
-
-/* INTRO ANIMATIONS */
-
 @keyframes introLogo {
-
     0% {
-
         opacity: 0;
 
         transform:
-            scale(.3)
-            translateY(50px);
-
-        filter: blur(20px);
+            scale(.4)
+            translate3d(0,35px,0);
     }
 
     60% {
-
         transform:
-            scale(1.1)
-            translateY(-5px);
+            scale(1.06)
+            translate3d(0,-3px,0);
     }
 
     100% {
-
         opacity: 1;
 
         transform:
             scale(1)
-            translateY(0);
-
-        filter: blur(0);
+            translate3d(0,0,0);
     }
 }
 
-
 @keyframes introLine {
-
     from {
         width: 0;
         opacity: 0;
@@ -2794,52 +2482,41 @@ footer > p {
     }
 }
 
-
 @keyframes introSubtitle {
-
     from {
-
         opacity: 0;
 
         transform:
-            translateY(15px);
-
+            translate3d(0,15px,0);
     }
 
     to {
-
         opacity: 1;
 
         transform:
-            translateY(0);
-
+            translate3d(0,0,0);
     }
 }
 
-
 @keyframes kanjiIntro {
-
     0% {
-
         opacity: 0;
 
         transform:
-            scale(.4)
+            scale(.5)
             rotate(-20deg);
     }
 
     50% {
-
         opacity: 1;
 
         transform:
-            scale(1.1)
+            scale(1.05)
             rotate(-5deg);
     }
 
     100% {
-
-        opacity: .5;
+        opacity: .45;
 
         transform:
             scale(1)
@@ -2847,80 +2524,57 @@ footer > p {
     }
 }
 
-
 @keyframes introEnergy {
-
     0%,100% {
-
-        transform: scale(.7);
-
+        transform: scale(.8);
         opacity: .4;
     }
 
     50% {
-
-        transform: scale(1.3);
-
-        opacity: 1;
-    }
-}
-
-
-@keyframes blueEnergy {
-
-    0%,100% {
-
-        transform: scale(.7);
-
-        opacity: .3;
-    }
-
-    50% {
-
-        transform: scale(1.4);
-
+        transform: scale(1.2);
         opacity: .8;
     }
 }
 
+@keyframes blueEnergy {
+    0%,100% {
+        transform: scale(.8);
+        opacity: .3;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: .65;
+    }
+}
 
 @keyframes introExit {
-
     0% {
-
         opacity: 1;
-
         transform: scale(1);
     }
 
     70% {
-
         opacity: 1;
-
-        transform: scale(1.04);
+        transform: scale(1.02);
     }
 
     100% {
-
         opacity: 0;
-
-        transform: scale(1.1);
-
+        transform: scale(1.05);
         visibility: hidden;
     }
 }
 
-
-/* ==================================================
+/* =========================================================
    CURSOR ENERGY
-================================================== */
+========================================================= */
 
 .cursor-glow {
-
     position: fixed;
 
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
 
     border-radius: 50%;
 
@@ -2931,73 +2585,422 @@ footer > p {
     background:
         radial-gradient(
             circle,
-            rgba(255,23,68,.08),
+            rgba(255,23,68,.055),
             transparent 70%
         );
 
     transform:
-        translate(-50%, -50%);
+        translate3d(-50%,-50%,0);
 
     mix-blend-mode: screen;
 
+    will-change: transform;
+
     transition:
-        width .3s,
-        height .3s;
+        width .2s ease,
+        height .2s ease;
 }
 
+.cursor-large {
+    width: 210px;
+    height: 210px;
+}
 
-/* ==================================================
+/* =========================================================
    MOUSE PARALLAX
-================================================== */
+========================================================= */
 
 .hero h2,
 .hero p,
 .hero .shop-btn {
-
-    transition:
-        transform .15s ease-out;
+    will-change: transform;
 }
 
+/* =========================================================
+   HERO ANIME CHARACTER
+========================================================= */
 
-/* ==================================================
-   PREMIUM PRODUCT SHINE
-================================================== */
+.anime-character {
+    position: absolute;
 
-.product-card {
+    z-index: 1;
 
-    transform-style: preserve-3d;
+    width: 430px;
+    height: 600px;
 
-    perspective: 1000px;
+    left: 7%;
+    bottom: -40px;
+
+    pointer-events: none;
+
+    animation:
+        characterFloat 7s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 20px rgba(255,0,50,.18)
+        );
+
+    will-change: transform;
 }
 
-.product-card:hover h3 {
+.anime-head {
+    position: absolute;
 
-    color: white;
+    width: 250px;
+    height: 330px;
+
+    left: 70px;
+    top: 100px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e8e8f0,
+            #8d8d9b 45%,
+            #252530 90%
+        );
+
+    border-radius:
+        48% 52% 45% 45%;
+
+    transform: rotate(-8deg);
+
+    box-shadow:
+        inset -20px -12px 35px rgba(0,0,0,.5),
+        0 0 30px rgba(255,255,255,.06);
+}
+
+.anime-hair {
+    position: absolute;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f7ff,
+            #9696a5 35%,
+            #282832 80%
+        );
+
+    transform-origin:
+        bottom center;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(255,255,255,.1)
+        );
+}
+
+.hair-1 {
+    width: 125px;
+    height: 280px;
+
+    left: -55px;
+    top: -105px;
+
+    clip-path:
+        polygon(
+            100% 100%,
+            70% 55%,
+            50% 10%,
+            42% 55%,
+            18% 0%,
+            30% 65%,
+            0% 35%,
+            28% 100%
+        );
+
+    transform: rotate(-20deg);
+}
+
+.hair-2 {
+    width: 150px;
+    height: 300px;
+
+    left: 5px;
+    top: -145px;
+
+    clip-path:
+        polygon(
+            50% 100%,
+            30% 55%,
+            10% 5%,
+            45% 45%,
+            50% 0%,
+            65% 50%,
+            100% 20%,
+            75% 100%
+        );
+
+    transform: rotate(-5deg);
+}
+
+.hair-3 {
+    width: 130px;
+    height: 270px;
+
+    right: -50px;
+    top: -105px;
+
+    clip-path:
+        polygon(
+            0 100%,
+            25% 50%,
+            20% 5%,
+            55% 48%,
+            75% 0,
+            70% 55%,
+            100% 30%,
+            72% 100%
+        );
+
+    transform: rotate(20deg);
+}
+
+.hair-4 {
+    width: 170px;
+    height: 260px;
+
+    left: 45px;
+    top: -70px;
+
+    clip-path:
+        polygon(
+            50% 100%,
+            0 20%,
+            35% 50%,
+            45% 0,
+            60% 55%,
+            100% 15%,
+            75% 100%
+        );
+
+    opacity: .8;
+}
+
+.anime-eye {
+    position: absolute;
+
+    width: 38px;
+    height: 18px;
+
+    right: 35px;
+    top: 145px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff003c,
+            #ff6a00,
+            #ff003c
+        );
+
+    border-radius: 100%;
+
+    transform: rotate(-8deg);
+
+    box-shadow:
+        0 0 8px #ff1744;
+
+    animation:
+        eyeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes eyeGlow {
+    from {
+        opacity: .7;
+        box-shadow:
+            0 0 6px #ff1744;
+    }
+
+    to {
+        opacity: 1;
+        box-shadow:
+            0 0 15px #ff1744,
+            0 0 25px #ff1744;
+    }
+}
+
+@keyframes characterFloat {
+    0%,100% {
+        transform:
+            translate3d(0,0,0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translate3d(0,-10px,0)
+            rotate(1deg);
+    }
+}
+
+/* =========================================================
+   HERO KANJI
+========================================================= */
+
+.hero-kanji {
+    position: absolute;
+
+    z-index: 0;
+
+    font-family:
+        "Noto Sans CJK JP",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(250px, 30vw, 500px);
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    user-select: none;
+    pointer-events: none;
+
+    will-change: transform;
+}
+
+.hero-kanji-left {
+    left: -20px;
+    top: 5%;
+
+    color:
+        rgba(255,0,55,.12);
 
     text-shadow:
-        0 0 15px rgba(255,23,68,.35);
+        0 0 20px rgba(255,0,55,.12);
+
+    animation:
+        kanjiLeft 9s ease-in-out infinite;
 }
 
+.hero-kanji-right {
+    right: -30px;
+    bottom: 0;
 
-/* ==================================================
-   SECTION DIVIDERS
-================================================== */
+    color:
+        rgba(0,195,255,.12);
 
-.products,
-.about,
-.contact {
+    text-shadow:
+        0 0 20px rgba(0,195,255,.12);
 
-    border-top:
-        1px solid rgba(255,255,255,.04);
+    animation:
+        kanjiRight 10s ease-in-out infinite;
 }
 
+@keyframes kanjiLeft {
+    0%,100% {
+        transform:
+            translate3d(0,0,0)
+            rotate(-8deg);
+    }
 
-/* ==================================================
-   ANIMATED COLOR BAR
-================================================== */
+    50% {
+        transform:
+            translate3d(0,-12px,0)
+            rotate(-3deg);
+    }
+}
+
+@keyframes kanjiRight {
+    0%,100% {
+        transform:
+            translate3d(0,0,0)
+            rotate(8deg);
+    }
+
+    50% {
+        transform:
+            translate3d(0,12px,0)
+            rotate(3deg);
+    }
+}
+
+/* =========================================================
+   HERO ENERGY
+========================================================= */
+
+.hero-energy {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    filter: blur(7px);
+
+    will-change: transform;
+}
+
+.energy-red {
+    width: 500px;
+    height: 500px;
+
+    left: -150px;
+    top: 20%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,0,55,.20),
+            transparent 68%
+        );
+
+    animation:
+        redPulse 6s ease-in-out infinite;
+}
+
+.energy-blue {
+    width: 450px;
+    height: 450px;
+
+    right: -150px;
+    top: 20%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,195,255,.17),
+            transparent 68%
+        );
+
+    animation:
+        bluePulse 7s ease-in-out infinite;
+}
+
+@keyframes redPulse {
+    0%,100% {
+        transform: scale(.9);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: .8;
+    }
+}
+
+@keyframes bluePulse {
+    0%,100% {
+        transform: scale(1);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: .8;
+    }
+}
+
+/* =========================================================
+   SECTION TOP BAR
+========================================================= */
 
 .products::after {
-
     content: "";
 
     position: absolute;
@@ -3022,11 +3025,10 @@ footer > p {
     background-size: 300%;
 
     animation:
-        movingBar 5s linear infinite;
+        movingBar 8s linear infinite;
 }
 
 @keyframes movingBar {
-
     from {
         background-position: 0%;
     }
@@ -3036,490 +3038,173 @@ footer > p {
     }
 }
 
-
-/* ==================================================
-   MOBILE INTRO
-================================================== */
-
-@media (max-width: 768px) {
-
-    .intro-logo {
-
-        font-size: 52px;
-
-        letter-spacing: 8px;
-    }
-
-    .intro-kanji {
-
-        font-size: 250px;
-    }
-
-    .intro-subtitle {
-
-        font-size: 10px;
-
-        letter-spacing: 3px;
-    }
-
-    .cursor-glow {
-
-        display: none;
-    }
-}/* =====================================================
-   ZAMALEK ANIME HERO CHARACTER
-===================================================== */
-
-.hero {
-    isolation: isolate;
-}
-
-
-/* CHARACTER CONTAINER */
-
-.anime-character {
-
-    position: absolute;
-
-    z-index: 1;
-
-    width: 430px;
-    height: 600px;
-
-    left: 7%;
-    bottom: -40px;
-
-    pointer-events: none;
-
-    animation: characterFloat 5s ease-in-out infinite;
-
-    filter:
-        drop-shadow(0 0 30px rgba(255,0,50,.25));
-}
-
-
-/* HEAD */
-
-.anime-head {
-
-    position: absolute;
-
-    width: 250px;
-    height: 330px;
-
-    left: 70px;
-    top: 100px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e8e8f0,
-            #8d8d9b 45%,
-            #252530 90%
-        );
-
-    border-radius:
-        48% 52% 45% 45%;
-
-    transform: rotate(-8deg);
-
-    box-shadow:
-        inset -25px -15px 50px rgba(0,0,0,.6),
-        0 0 50px rgba(255,255,255,.08);
-}
-
-
-/* HAIR */
-
-.anime-hair {
-
-    position: absolute;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7f7ff,
-            #9696a5 35%,
-            #282832 80%
-        );
-
-    transform-origin: bottom center;
-
-    filter:
-        drop-shadow(0 0 8px rgba(255,255,255,.15));
-}
-
-
-/* BIG SPIKES */
-
-.hair-1 {
-
-    width: 125px;
-    height: 280px;
-
-    left: -55px;
-    top: -105px;
-
-    clip-path:
-        polygon(
-            100% 100%,
-            70% 55%,
-            50% 10%,
-            42% 55%,
-            18% 0%,
-            30% 65%,
-            0% 35%,
-            28% 100%
-        );
-
-    transform: rotate(-20deg);
-}
-
-.hair-2 {
-
-    width: 150px;
-    height: 300px;
-
-    left: 5px;
-    top: -145px;
-
-    clip-path:
-        polygon(
-            50% 100%,
-            30% 55%,
-            10% 5%,
-            45% 45%,
-            50% 0%,
-            65% 50%,
-            100% 20%,
-            75% 100%
-        );
-
-    transform: rotate(-5deg);
-}
-
-.hair-3 {
-
-    width: 130px;
-    height: 270px;
-
-    right: -50px;
-    top: -105px;
-
-    clip-path:
-        polygon(
-            0 100%,
-            25% 50%,
-            20% 5%,
-            55% 48%,
-            75% 0,
-            70% 55%,
-            100% 30%,
-            72% 100%
-        );
-
-    transform: rotate(20deg);
-}
-
-.hair-4 {
-
-    width: 170px;
-    height: 260px;
-
-    left: 45px;
-    top: -70px;
-
-    clip-path:
-        polygon(
-            50% 100%,
-            0 20%,
-            35% 50%,
-            45% 0,
-            60% 55%,
-            100% 15%,
-            75% 100%
-        );
-
-    opacity: .8;
-}
-
-
-/* ANIME EYE */
-
-.anime-eye {
-
-    position: absolute;
-
-    width: 38px;
-    height: 18px;
-
-    right: 35px;
-    top: 145px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff003c,
-            #ff6a00,
-            #ff003c
-        );
-
-    border-radius: 100%;
-
-    transform: rotate(-8deg);
-
-    box-shadow:
-        0 0 10px #ff1744,
-        0 0 30px #ff1744;
-
-    animation: eyeGlow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes eyeGlow {
-
-    from {
-        opacity: .65;
-        box-shadow: 0 0 8px #ff1744;
-    }
-
-    to {
-        opacity: 1;
-        box-shadow:
-            0 0 15px #ff1744,
-            0 0 40px #ff1744;
-    }
-}
-
-
-/* CHARACTER MOTION */
-
-@keyframes characterFloat {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(-1deg);
-    }
-
-    50% {
-        transform:
-            translateY(-18px)
-            rotate(1deg);
-    }
-}
-
-
-/* =====================================================
-   HUGE CLEAR BACKGROUND CHARACTERS
-===================================================== */
-
-.hero-kanji {
-
-    position: absolute;
-
-    z-index: 0;
-
-    font-family:
-        "Noto Sans CJK JP",
-        Arial,
-        sans-serif;
-
-    font-size: clamp(250px, 30vw, 500px);
-
-    font-weight: 900;
-
-    line-height: 1;
-
-    user-select: none;
-
-    pointer-events: none;
-
-    filter:
-        drop-shadow(0 0 30px currentColor);
-}
-
-
-/* LEFT RED */
-
-.hero-kanji-left {
-
-    left: -20px;
-    top: 5%;
-
-    color:
-        rgba(255, 0, 55, .16);
-
-    text-shadow:
-        0 0 40px rgba(255,0,55,.2);
-
-    animation:
-        kanjiLeft 6s ease-in-out infinite;
-}
-
-
-/* RIGHT BLUE */
-
-.hero-kanji-right {
-
-    right: -30px;
-    bottom: 0;
-
-    color:
-        rgba(0, 195, 255, .16);
-
-    text-shadow:
-        0 0 40px rgba(0,195,255,.2);
-
-    animation:
-        kanjiRight 7s ease-in-out infinite;
-}
-
-
-@keyframes kanjiLeft {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(-8deg);
-    }
-
-    50% {
-        transform:
-            translateY(-25px)
-            rotate(-3deg);
-    }
-}
-
-
-@keyframes kanjiRight {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(8deg);
-    }
-
-    50% {
-        transform:
-            translateY(25px)
-            rotate(3deg);
-    }
-}
-
-
-/* =====================================================
-   HERO ENERGY
-===================================================== */
-
-.hero-energy {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    filter: blur(10px);
-}
-
-
-.energy-red {
-
-    width: 550px;
-    height: 550px;
-
-    left: -150px;
-    top: 20%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,0,55,.28),
-            transparent 68%
-        );
-
-    animation:
-        redPulse 4s ease-in-out infinite;
-}
-
-
-.energy-blue {
-
-    width: 500px;
-    height: 500px;
-
-    right: -150px;
-    top: 20%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,195,255,.25),
-            transparent 68%
-        );
-
-    animation:
-        bluePulse 5s ease-in-out infinite;
-}
-
-
-@keyframes redPulse {
-
-    0%,100% {
-        transform: scale(.8);
-        opacity: .5;
-    }
-
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-}
-
-
-@keyframes bluePulse {
-
-    0%,100% {
-        transform: scale(1);
-        opacity: .5;
-    }
-
-    50% {
-        transform: scale(1.3);
-        opacity: 1;
-    }
-}
-
-
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 768px) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    body {
+        background:
+            radial-gradient(
+                circle at 50% 10%,
+                rgba(255,0,70,.06),
+                transparent 30%
+            ),
+            #030305;
+
+        animation: none;
+    }
+
+    /* إلغاء الخلفية المتحركة الثقيلة */
+    body::before {
+        position: absolute;
+        filter: none;
+        animation: none;
+
+        opacity: .5;
+    }
+
+    body::after {
+        position: absolute;
+
+        font-size: 75px;
+
+        letter-spacing: 10px;
+
+        animation: none;
+
+        color:
+            rgba(255,255,255,.012);
+    }
+
+    /* HEADER */
+
+    header {
+        padding: 20px 18px;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        background:
+            rgba(5,5,8,.94);
+    }
+
+    header h1 {
+        font-size: 27px;
+        letter-spacing: 6px;
+
+        animation: none;
+    }
+
+    nav {
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 75vh;
+
+        padding: 40px 18px;
+    }
+
+    .hero::before {
+        animation: none;
+
+        background-size:
+            80px 80px;
+    }
+
+    .hero::after {
+        font-size: 190px;
+
+        right: -50px;
+
+        animation: none;
+    }
+
+    .hero h2 {
+        font-size: 43px;
+
+        letter-spacing: 4px;
+
+        filter:
+            drop-shadow(
+                0 0 10px rgba(255,0,70,.1)
+            );
+
+        animation: heroTitle 1s ease;
+    }
+
+    .hero p {
+        font-size: 15px;
+
+        letter-spacing: 1px;
+
+        line-height: 1.7;
+    }
+
+    .hero h2::after {
+        animation: none;
+
+        width: 150px;
+    }
+
+    .shop-btn {
+        padding: 16px 40px;
+
+        margin-top: 28px;
+    }
+
+    /* CHARACTER */
 
     .anime-character {
-
         width: 280px;
         height: 400px;
 
         left: 50%;
-
         bottom: -20px;
 
         transform:
-            translateX(-50%)
+            translate3d(-50%,0,0)
             scale(.7);
 
-        opacity: .35;
+        opacity: .25;
+
+        filter:
+            drop-shadow(
+                0 0 12px rgba(255,0,50,.12)
+            );
+
+        animation: none;
     }
 
     .hero-kanji {
-
         font-size: 220px;
 
-        opacity: .7;
+        opacity: .5;
+
+        animation: none;
+
+        filter: none;
+        text-shadow: none;
     }
 
     .hero-kanji-left {
@@ -3530,10 +3215,301 @@ footer > p {
         right: -60px;
     }
 
+    .hero-energy {
+        filter: blur(3px);
+
+        animation: none;
+
+        opacity: .35;
+    }
+
     .energy-red,
     .energy-blue {
+        width: 300px;
+        height: 300px;
+    }
 
+    /* PRODUCTS */
+
+    .products {
+        padding: 90px 18px;
+    }
+
+    .products h2 {
+        font-size: 31px;
+
+        letter-spacing: 4px;
+
+        animation: none;
+    }
+
+    .products::before {
+        font-size: 250px;
+
+        animation: none;
+    }
+
+    .products::after {
+        animation: none;
+    }
+
+    .product-container {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+    }
+
+    .product-card {
+        width: 100%;
+
+        max-width: 360px;
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.055),
+                rgba(255,255,255,.012)
+            );
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.4);
+
+        transform-style: flat;
+
+        animation: cardAppear .5s ease both;
+    }
+
+    /* إلغاء 3D/hover على التليفون */
+
+    .product-card:hover {
+        transform: none;
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.4);
+    }
+
+    .product-card:hover::before {
+        opacity: 0;
+    }
+
+    .product-card:hover .product-image img {
+        transform: none;
+    }
+
+    .product-image {
+        height: 400px;
+    }
+
+    .product-image::after {
+        display: none;
+    }
+
+    /* DETAILS */
+
+    .product-details {
+        padding: 80px 18px;
+    }
+
+    .details-container {
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .details-image,
+    .details-info {
+        width: 100%;
+    }
+
+    .details-image {
+        height: 450px;
+
+        box-shadow:
+            0 20px 45px rgba(0,0,0,.5);
+    }
+
+    .details-info h2 {
+        font-size: 34px;
+    }
+
+    /* CART */
+
+    .cart-box {
+        width: 100%;
+
+        right: -100%;
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        background:
+            rgba(5,5,8,.98);
+    }
+
+    /* ABOUT / CONTACT */
+
+    .about,
+    .contact {
+        padding: 100px 20px;
+    }
+
+    .about h2,
+    .contact h2 {
+        font-size: 35px;
+    }
+
+    .about::before,
+    .contact::after {
+        font-size: 120px;
+
+        animation: none;
+    }
+
+    /* CHECKOUT */
+
+    .checkout {
+        padding: 80px 15px;
+    }
+
+    .checkout-container {
+        padding: 28px 20px;
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        background:
+            rgba(255,255,255,.025);
+    }
+
+    .checkout-container h2 {
+        font-size: 30px;
+    }
+
+    /* SUCCESS */
+
+    .success-container {
+        padding: 40px 20px;
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    /* INTRO */
+
+    #intro-screen::before {
         width: 350px;
         height: 350px;
+    }
+
+    #intro-screen::after {
+        width: 220px;
+        height: 220px;
+    }
+
+    .intro-logo {
+        font-size: 52px;
+
+        letter-spacing: 8px;
+
+        animation:
+            introLogo 1.2s ease,
+            titleGradient 6s linear infinite;
+    }
+
+    .intro-kanji {
+        font-size: 250px;
+
+        animation:
+            kanjiIntro 2s ease forwards;
+    }
+
+    .intro-subtitle {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    /* CURSOR */
+
+    .cursor-glow {
+        display: none;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    body::before,
+    body::after,
+    .hero::before,
+    .hero::after,
+    .products::before,
+    .products::after,
+    .about::before,
+    .contact::after {
+        animation: none !important;
+    }
+
+    .cursor-glow {
+        display: none;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    header h1 {
+        font-size: 23px;
+        letter-spacing: 5px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .product-image {
+        height: 350px;
+    }
+
+    .intro-logo {
+        font-size: 43px;
+    }
+
+    .intro-line {
+        max-width: 200px;
     }
 }

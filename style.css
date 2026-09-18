@@ -26,7 +26,57 @@ html {
 body {
     background:
         radial-gradient(circle at 10% 10%, rgba(255, 0, 80, .10), transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(0, 190, 255, .07), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(0, 190, 255, .07), transparent 25%),/* ===== FORCE PRODUCT IMAGES ===== */
+
+.product-image {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 390px !important;
+    overflow: hidden !important;
+    background: #111 !important;
+}
+
+.product-image img {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    z-index: 999 !important;
+
+    transform: none !important;
+    filter: none !important;
+}
+
+.product-image::before,
+.product-image::after {
+    display: none !important;
+}
+
+.details-image {
+    display: block !important;
+    position: relative !important;
+}
+
+.details-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
         radial-gradient(circle at 50% 80%, rgba(130, 0, 255, .06), transparent 30%),
         #030305;
 

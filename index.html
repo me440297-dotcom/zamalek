@@ -1,0 +1,1324 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZAMALEK — More Than A Style</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================================================
+         CINEMATIC INTRO
+    ================================================== -->
+
+    <div id="intro-screen">
+
+        <div class="intro-kanji">魂</div>
+
+        <div class="intro-line"></div>
+
+        <div class="intro-logo">
+            ZAMALEK
+        </div>
+
+        <div class="intro-subtitle">
+            ENTER THE NEW ERA
+        </div>
+
+    </div>
+
+
+    <!-- MOUSE LIGHT -->
+
+    <div class="cursor-glow"></div>
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header>
+
+        <h1>ZAMALEK</h1>
+
+        <nav>
+
+            <a href="#home">
+                HOME
+            </a>
+
+            <a href="#shop">
+                COLLECTION
+            </a>
+
+            <a href="#about">
+                STORY
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
+        </nav>
+
+
+        <div class="cart" id="cart-button">
+
+            🛒 BAG
+
+            <span id="cart-count">
+                0
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main id="home">
+
+
+        <!-- ==================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+
+            <!-- ANIME CHARACTER -->
+
+            <div class="anime-character">
+
+                <div class="anime-head">
+
+                    <div class="anime-hair hair-1"></div>
+
+                    <div class="anime-hair hair-2"></div>
+
+                    <div class="anime-hair hair-3"></div>
+
+                    <div class="anime-hair hair-4"></div>
+
+                    <div class="anime-eye"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HUGE BACKGROUND CHARACTERS -->
+
+            <div class="hero-kanji hero-kanji-left">
+                強
+            </div>
+
+            <div class="hero-kanji hero-kanji-right">
+                永
+            </div>
+
+
+            <!-- ENERGY -->
+
+            <div class="hero-energy energy-red"></div>
+
+            <div class="hero-energy energy-blue"></div>
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <div class="hero-mini-title">
+                    ZAMALEK / 2026
+                </div>
+
+                <h2>
+                    OWN THE MOMENT
+                </h2>
+
+                <p>
+                    BORN FROM THE STREETS.<br>
+                    BUILT FOR THOSE WHO REFUSE TO BLEND IN.
+                </p>
+
+                <p class="hero-arabic">
+                    الزمالك ليس مجرد اسم...<br>
+                    الزمالك حكاية تُرتدى.
+                </p>
+
+                <button
+                    class="shop-btn"
+                    onclick="document.querySelector('.products').scrollIntoView({ behavior: 'smooth' })"
+                >
+                    ENTER THE COLLECTION →
+                </button>
+
+            </div>
+
+
+            <!-- HERO BOTTOM MARK -->
+
+            <div class="hero-bottom-mark">
+
+                <span>ZAMALEK</span>
+
+                <b>✦</b>
+
+                <span>MORE THAN STYLE</span>
+
+                <b>✦</b>
+
+                <span>ZAMALEK</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             COLLECTION
+        ================================================== -->
+
+        <section class="products" id="shop">
+
+            <div class="collection-heading">
+
+                <span>
+                    FEATURED COLLECTION
+                </span>
+
+                <h2>
+                    THE NEW ERA
+                </h2>
+
+                <p>
+                    WEAR THE PRIDE. LIVE THE LEGEND.
+                </p>
+
+            </div>
+
+
+            <div class="product-container">
+
+
+                <!-- ==================================================
+                     T-SHIRT
+                ================================================== -->
+
+                <div
+                    class="product-card"
+                    data-description="Clean silhouette. Heavy attitude. Designed for everyday domination."
+                >
+
+                    <div class="product-badge">
+                        NEW
+                    </div>
+
+
+                    <div class="product-image product-click">
+
+                        <img
+                            src="images/tshirt.jpg"
+                            alt="Zamalek Basic T-Shirt"
+                        >
+
+                    </div>
+
+
+                    <div class="product-meta">
+
+                        <span>
+                            ZMK / 001
+                        </span>
+
+                        <span>
+                            ESSENTIAL
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Zamalek Basic T-Shirt
+                    </h3>
+
+                    <p>
+                        EGP 599
+                    </p>
+
+
+                    <div class="product-options">
+
+                        <div class="quantity-selector">
+
+                            <label>
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                class="product-quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                            >
+
+                        </div>
+
+
+                        <label>
+                            Size
+                        </label>
+
+                        <select class="size">
+
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+
+                        </select>
+
+
+                        <label>
+                            Color
+                        </label>
+
+                        <select class="color">
+
+                            <option value="Black">
+                                Black
+                            </option>
+
+                            <option value="White">
+                                White
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button class="add-to-cart">
+                        ADD TO BAG
+                    </button>
+
+                    <button class="buy-now">
+                        BUY IT NOW
+                    </button>
+
+                </div>
+
+
+                <!-- ==================================================
+                     HOODIE
+                ================================================== -->
+
+                <div
+                    class="product-card"
+                    data-description="Oversized comfort with a statement built to be seen."
+                >
+
+                    <div class="product-badge">
+                        CORE
+                    </div>
+
+
+                    <div class="product-image product-click">
+
+                        <img
+                            src="images/hoodie.jpg"
+                            alt="Zamalek Oversized Hoodie"
+                        >
+
+                    </div>
+
+
+                    <div class="product-meta">
+
+                        <span>
+                            ZMK / 002
+                        </span>
+
+                        <span>
+                            OVERSIZED
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Zamalek Oversized Hoodie
+                    </h3>
+
+                    <p>
+                        EGP 999
+                    </p>
+
+
+                    <div class="product-options">
+
+                        <div class="quantity-selector">
+
+                            <label>
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                class="product-quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                            >
+
+                        </div>
+
+
+                        <label>
+                            Size
+                        </label>
+
+                        <select class="size">
+
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+
+                        </select>
+
+
+                        <label>
+                            Color
+                        </label>
+
+                        <select class="color">
+
+                            <option value="Black">
+                                Black
+                            </option>
+
+                            <option value="White">
+                                White
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button class="add-to-cart">
+                        ADD TO BAG
+                    </button>
+
+                    <button class="buy-now">
+                        BUY IT NOW
+                    </button>
+
+                </div>
+
+
+                <!-- ==================================================
+                     PANTS
+                ================================================== -->
+
+                <div
+                    class="product-card"
+                    data-description="Relaxed movement. Sharp structure. Made for the streets."
+                >
+
+                    <div class="product-badge">
+                        STREET
+                    </div>
+
+
+                    <div class="product-image product-click">
+
+                        <img
+                            src="images/pants.jpg"
+                            alt="Zamalek Wide Pants"
+                        >
+
+                    </div>
+
+
+                    <div class="product-meta">
+
+                        <span>
+                            ZMK / 003
+                        </span>
+
+                        <span>
+                            STREET
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Zamalek Wide Pants
+                    </h3>
+
+                    <p>
+                        EGP 799
+                    </p>
+
+
+                    <div class="product-options">
+
+                        <div class="quantity-selector">
+
+                            <label>
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                class="product-quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                            >
+
+                        </div>
+
+
+                        <label>
+                            Size
+                        </label>
+
+                        <select class="size">
+
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+
+                        </select>
+
+
+                        <label>
+                            Color
+                        </label>
+
+                        <select class="color">
+
+                            <option value="Black">
+                                Black
+                            </option>
+
+                            <option value="White">
+                                White
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button class="add-to-cart">
+                        ADD TO BAG
+                    </button>
+
+                    <button class="buy-now">
+                        BUY IT NOW
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- COLLECTION TICKER -->
+
+            <div class="collection-ticker">
+
+                <span>
+                    ZAMALEK
+                </span>
+
+                <b>✦</b>
+
+                <span>
+                    PRIDE
+                </span>
+
+                <b>✦</b>
+
+                <span>
+                    HISTORY
+                </span>
+
+                <b>✦</b>
+
+                <span>
+                    FOREVER
+                </span>
+
+                <b>✦</b>
+
+                <span>
+                    ZAMALEK
+                </span>
+
+                <b>✦</b>
+
+                <span>
+                    PRIDE
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             PRODUCT DETAILS
+        ================================================== -->
+
+        <section
+            class="product-details"
+            id="product-details"
+        >
+
+            <div class="details-container">
+
+
+                <div class="details-image">
+
+                    <img
+                        id="details-image"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="details-info">
+
+                    <div class="details-label">
+                        ZAMALEK / PRODUCT
+                    </div>
+
+
+                    <h2 id="details-name"></h2>
+
+
+                    <p class="details-price">
+                        EGP
+                        <span id="details-price"></span>
+                    </p>
+
+
+                    <p id="details-description"></p>
+
+
+                    <label for="details-size">
+                        SIZE
+                    </label>
+
+                    <select id="details-size">
+
+                        <option value="S">
+                            S
+                        </option>
+
+                        <option value="M">
+                            M
+                        </option>
+
+                        <option value="L">
+                            L
+                        </option>
+
+                        <option value="XL">
+                            XL
+                        </option>
+
+                    </select>
+
+
+                    <label for="details-color">
+                        COLOR
+                    </label>
+
+                    <select id="details-color">
+
+                        <option value="Black">
+                            Black
+                        </option>
+
+                        <option value="White">
+                            White
+                        </option>
+
+                    </select>
+
+
+                    <label for="details-quantity">
+                        QUANTITY
+                    </label>
+
+                    <input
+                        type="number"
+                        id="details-quantity"
+                        value="1"
+                        min="1"
+                        max="10"
+                    >
+
+
+                    <button id="details-add">
+                        ADD TO BAG
+                    </button>
+
+                    <button id="details-buy">
+                        BUY IT NOW
+                    </button>
+
+                    <button id="close-details">
+                        ← BACK TO COLLECTION
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             ABOUT
+        ================================================== -->
+
+        <section class="about" id="about">
+
+            <div class="about-kanji">
+                夢
+            </div>
+
+
+            <div class="about-content">
+
+                <span class="section-label">
+                    OUR STORY
+                </span>
+
+                <h2>
+                    MORE THAN<br>
+                    <span>CLOTHES.</span>
+                </h2>
+
+                <p>
+                    ZAMALEK IS A STATE OF MIND.
+                    A LANGUAGE OF MOVEMENT, ATTITUDE
+                    AND SELF-EXPRESSION.
+                </p>
+
+                <p>
+                    WE DON'T FOLLOW THE STREET.
+                    WE CREATE OUR OWN.
+                </p>
+
+
+                <button class="story-btn">
+                    DISCOVER OUR STORY →
+                </button>
+
+            </div>
+
+
+            <div class="about-side-text">
+                私たちは<br>
+                一つ
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             BRAND STATS
+        ================================================== -->
+
+        <section class="brand-stats">
+
+            <div class="stat">
+
+                <span class="stat-icon">
+                    ◇
+                </span>
+
+                <strong>
+                    14
+                </strong>
+
+                <small>
+                    CAF TITLES
+                </small>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-icon">
+                    ♛
+                </span>
+
+                <strong>
+                    7
+                </strong>
+
+                <small>
+                    EGYPTIAN LEAGUE
+                </small>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-icon">
+                    ☆
+                </span>
+
+                <strong>
+                    1
+                </strong>
+
+                <small>
+                    AFRICAN SUPER CUP
+                </small>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-icon">
+                    ♡
+                </span>
+
+                <strong>
+                    FOREVER
+                </strong>
+
+                <small>
+                    ZAMALEK
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             COMMUNITY
+        ================================================== -->
+
+        <section class="community">
+
+            <div class="community-kanji">
+                強
+            </div>
+
+
+            <div class="community-content">
+
+                <span>
+                    JOIN OUR COMMUNITY
+                </span>
+
+                <h2>
+                    BE PART OF
+                    <strong>
+                        THE LEGEND
+                    </strong>
+                </h2>
+
+
+                <form class="subscribe-form">
+
+                    <input
+                        type="email"
+                        placeholder="YOUR EMAIL ADDRESS"
+                    >
+
+                    <button type="button">
+                        SUBSCRIBE →
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div class="community-slogan">
+
+                強く、<br>
+                一緒に、<br>
+                永遠に
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CONTACT
+        ================================================== -->
+
+        <section class="contact" id="contact">
+
+            <div class="contact-kanji">
+                自
+            </div>
+
+
+            <span class="section-label">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                TALK TO
+                <span>ZAMALEK.</span>
+            </h2>
+
+            <p>
+                QUESTIONS, COLLABORATIONS OR JUST
+                WANT TO TALK? WE'RE HERE.
+            </p>
+
+
+            <div class="contact-info">
+
+                <p>
+                    📧
+                    <strong>
+                        zamalekclothing@gmail.com
+                    </strong>
+                </p>
+
+                <p>
+                    📱
+                    <strong>
+                        +20 100 000 0000
+                    </strong>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         CART
+    ================================================== -->
+
+    <div
+        class="cart-box"
+        id="cart-box"
+    >
+
+        <div class="cart-header">
+
+            <span>
+                YOUR BAG
+            </span>
+
+            <span>
+                ZMK
+            </span>
+
+        </div>
+
+
+        <h2>
+            YOUR SELECTION
+        </h2>
+
+
+        <div id="cart-items"></div>
+
+
+        <div class="cart-total">
+
+            TOTAL:
+
+            <span>
+                EGP
+            </span>
+
+            <strong id="cart-total">
+                0
+            </strong>
+
+        </div>
+
+
+        <button id="checkout-btn">
+            PROCEED TO CHECKOUT →
+        </button>
+
+
+        <button id="close-cart">
+            CONTINUE SHOPPING
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         CHECKOUT
+    ================================================== -->
+
+    <section
+        class="checkout"
+        id="checkout"
+    >
+
+        <div class="checkout-container">
+
+            <div class="checkout-top-label">
+                ZAMALEK / SECURE CHECKOUT
+            </div>
+
+
+            <h2>
+                COMPLETE
+                <span>YOUR ORDER</span>
+            </h2>
+
+
+            <form id="checkout-form">
+
+
+                <label>
+                    FULL NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>
+                    PHONE NUMBER
+                </label>
+
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    placeholder="01XXXXXXXXX"
+                    required
+                >
+
+
+                <label>
+                    GOVERNORATE
+                </label>
+
+                <select
+                    id="governorate"
+                    required
+                >
+
+                    <option value="">
+                        Choose Governorate
+                    </option>
+
+                    <option value="Cairo">
+                        Cairo
+                    </option>
+
+                    <option value="Giza">
+                        Giza
+                    </option>
+
+                    <option value="Alexandria">
+                        Alexandria
+                    </option>
+
+                    <option value="Fayoum">
+                        Fayoum
+                    </option>
+
+                    <option value="Beni Suef">
+                        Beni Suef
+                    </option>
+
+                    <option value="Qalyubia">
+                        Qalyubia
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label>
+                    DELIVERY ADDRESS
+                </label>
+
+                <textarea
+                    id="customer-address"
+                    placeholder="Enter your full address"
+                    required
+                ></textarea>
+
+
+                <label>
+                    PAYMENT METHOD
+                </label>
+
+                <select
+                    id="payment-method"
+                    required
+                >
+
+                    <option value="">
+                        Choose Payment Method
+                    </option>
+
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="Card">
+                        Card
+                    </option>
+
+                </select>
+
+
+                <div class="checkout-summary">
+
+                    <h3>
+                        YOUR ORDER
+                    </h3>
+
+
+                    <div id="checkout-items"></div>
+
+
+                    <div class="checkout-final-total">
+
+                        TOTAL:
+                        EGP
+
+                        <span id="checkout-total">
+                            0
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit">
+                    PLACE ORDER →
+                </button>
+
+            </form>
+
+
+            <button id="back-to-cart">
+                ← BACK TO BAG
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         ORDER SUCCESS
+    ================================================== -->
+
+    <section
+        class="order-success"
+        id="order-success"
+    >
+
+        <div class="success-container">
+
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <div class="success-label">
+                ZAMALEK / ORDER
+            </div>
+
+
+            <h2>
+                ORDER
+                <span>CONFIRMED</span>
+            </h2>
+
+
+            <p class="success-message">
+                YOUR ORDER IS IN.
+                WELCOME TO THE ZAMALEK ERA.
+            </p>
+
+
+            <div class="order-number">
+
+                ORDER #
+
+                <span id="order-number"></span>
+
+            </div>
+
+
+            <div class="success-details">
+
+                <p>
+
+                    CUSTOMER:
+
+                    <strong id="success-name"></strong>
+
+                </p>
+
+
+                <p>
+
+                    TOTAL:
+
+                    <strong>
+
+                        EGP
+
+                        <span id="success-total"></span>
+
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+            <button id="continue-shopping">
+                CONTINUE SHOPPING →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+
+        <div class="footer-kanji">
+            魂
+        </div>
+
+
+        <div class="footer-logo">
+            ZAMALEK
+        </div>
+
+
+        <p>
+            PRIDE · HISTORY · FOREVER
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                HOME
+            </a>
+
+            <a href="#shop">
+                COLLECTION
+            </a>
+
+            <a href="#about">
+                STORY
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                ZAMALEK
+            </span>
+
+            <span>
+                © 2026 ALL RIGHTS RESERVED
+            </span>
+
+            <span>
+                MADE FOR THE LEGEND
+            </span>
+
+        </div>
+
+
+        <p class="copyright">
+            ZAMALEK — MORE THAN A CLUB. MORE THAN A STYLE.
+        </p>
+
+    </footer>
+
+
+    <!-- ==================================================
+         SCRIPT
+    ================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

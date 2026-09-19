@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHANTÉE | شانتيه</title>
+
+<!-- CHANTÉE SEO -->
+<meta name="description" content="CHANTÉE | شانتيه — تجربة فاخرة واستثنائية تجمع القهوة والحلويات والمشروبات في أجواء راقية. اكتشف القائمة واحجز زيارتك.">
+<meta name="keywords" content="CHANTÉE, شانتيه, كافيه شانتيه, cafe, coffee, desserts, مشروبات, حلويات, كافيه">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://chantee-88.vercel.app/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:title" content="CHANTÉE | شانتيه">
+<meta property="og:description" content="تجربة فاخرة واستثنائية في CHANTÉE | شانتيه.">
+<meta property="og:url" content="https://chantee-88.vercel.app/">
+<meta property="og:image" content="https://chantee-88.vercel.app/logo.jpg">
+<meta property="og:site_name" content="CHANTÉE | شانتيه">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CHANTÉE | شانتيه">
+<meta name="twitter:description" content="تجربة فاخرة واستثنائية في CHANTÉE | شانتيه.">
+<meta name="twitter:image" content="https://chantee-88.vercel.app/logo.jpg">
+
+<!-- Structured data: website / organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CHANTÉE",
+  "alternateName": "شانتيه",
+  "url": "https://chantee-88.vercel.app/",
+  "logo": "https://chantee-88.vercel.app/logo.jpg",
+  "image": "https://chantee-88.vercel.app/facade.jpg"
+}
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+ --bg-deep:#061712;--bg-card:#0c2b21;--bg-card-light:#133b2e;
+ --gold-primary:#d4af37;--gold-light:#f7e7a9;--gold-dark:#a17c08;
+ --text-light:#f5f7f6;--text-muted:#9eb5ac;--navy-suit:#101929;
+ --font-ar:'Tajawal',sans-serif;--font-en:'Cinzel',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+html{scroll-padding-top:90px}
+body{background:var(--bg-deep);color:var(--text-light);font-family:var(--font-ar);overflow-x:hidden}
+body.is-owner{padding-bottom:70px}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+#bg-canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none}
+#preloader{position:fixed;inset:0;background:#030d0a;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.8s}
+#preloader.hide{opacity:0;visibility:hidden}
+.loader-logo{width:150px;height:150px;border-radius:50%;border:3px solid var(--gold-primary);padding:5px;box-shadow:0 0 35px #d4af3766;animation:pulse 2s infinite alternate}
+.loader-logo img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.loader-title{margin-top:25px;font:800 2.2rem var(--font-en);letter-spacing:4px;color:var(--gold-light);animation:fade 1.5s infinite alternate}
+@keyframes pulse{to{transform:scale(1.05);box-shadow:0 0 50px #d4af37cc}}
+@keyframes fade{to{opacity:1}from{opacity:.4}}
+
+header{position:fixed;top:0;width:100%;z-index:1000;background:#061712e0;backdrop-filter:blur(15px);border-bottom:1px solid #d4af3740;padding:15px 5%;display:flex;justify-content:space-between;align-items:center}
+.brand-container{display:flex;align-items:center;gap:15px}
+.brand-logo-img{width:50px;height:50px;border-radius:50%;border:2px solid var(--gold-primary);object-fit:cover}
+.brand-text-group{display:flex;align-items:center;gap:12px}
+.brand-title-en{font:800 1.8rem var(--font-en);letter-spacing:2px;background:linear-gradient(135deg,#fff,var(--gold-light),var(--gold-primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.brand-divider{color:var(--gold-primary);font-size:1.4rem}.brand-title-ar{font-size:1.7rem;font-weight:700}
+.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links a{font-size:1.1rem;font-weight:500;position:relative;padding:5px 0;transition:.3s}
+.nav-links a:after{content:"";position:absolute;right:0;bottom:0;width:0;height:2px;background:var(--gold-primary);transition:.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-links a:hover:after,.nav-links a.active:after{width:100%}
+.mobile-toggle{display:none;color:var(--gold-primary);font-size:1.8rem;cursor:pointer}
+
+section{position:relative}
+.hero{min-height:100vh;padding:140px 5% 70px;display:flex;align-items:center;justify-content:space-between;gap:50px}
+.hero-content{flex:1;max-width:650px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:#d4af371f;border:1px solid #d4af3766;border-radius:30px;color:var(--gold-light);margin-bottom:25px}
+.hero-title-main{font:900 4.2rem/1.1 var(--font-en);letter-spacing:3px;background:linear-gradient(135deg,#fff 30%,var(--gold-light) 70%,var(--gold-primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-title-ar-sub{display:block;font-size:3.2rem;font-weight:800;color:#fff;margin-top:8px}
+.hero-description{font-size:1.25rem;line-height:1.8;color:var(--text-muted);margin:25px 0 35px}
+.hero-btns{display:flex;gap:20px;flex-wrap:wrap}
+.btn-primary,.btn-secondary{padding:16px 40px;border-radius:35px;display:inline-flex;align-items:center;gap:10px;font-size:1.1rem;font-weight:700;transition:.3s;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--gold-primary),var(--gold-dark));color:#000;box-shadow:0 10px 25px #d4af3759;border:0}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px #d4af378c}
+.btn-secondary{background:transparent;color:var(--text-light);border:1px solid #d4af3780}
+.btn-secondary:hover{background:#d4af371f;color:var(--gold-light)}
+.hero-image-wrapper{flex:1;display:flex;justify-content:center}
+.facade-card{width:100%;max-width:480px;border-radius:20px;overflow:hidden;border:1px solid #d4af3766;box-shadow:0 20px 50px #000b;transform:perspective(1000px) rotateY(-5deg);transition:.5s}
+.facade-card:hover{transform:perspective(1000px) rotateY(0) translateY(-5px)}
+.facade-card img{width:100%;height:560px;object-fit:cover;display:block}
+.facade-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,#061712f5,transparent);padding:60px 20px 20px;text-align:center}
+.facade-card{position:relative}.facade-overlay h3{font-size:1.4rem}.facade-overlay p{color:var(--text-muted);margin-top:5px}
+
+.owner-section,.menu-section,.reservation-section{padding:100px 5%}
+.owner-section{background:linear-gradient(180deg,var(--bg-deep),#04100c)}
+.section-header{text-align:center;margin-bottom:60px}
+.section-subtitle{display:block;color:var(--gold-primary);font-size:1.1rem;letter-spacing:2px;margin-bottom:10px}
+.section-title{font-size:2.8rem;font-weight:800;display:inline-block;position:relative}
+.section-title:after{content:"";position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:80px;height:3px;background:linear-gradient(90deg,transparent,var(--gold-primary),transparent)}
+.owner-container{max-width:1100px;margin:auto;background:#0c2b21a6;backdrop-filter:blur(15px);border:1px solid #d4af3759;border-radius:25px;padding:45px;display:flex;align-items:center;gap:50px;box-shadow:0 25px 60px #0000008c}
+.owner-image-box{flex:0 0 330px;position:relative}
+.owner-portrait-frame{width:320px;height:420px;border-radius:20px;overflow:hidden;border:2px solid var(--gold-primary);box-shadow:0 15px 40px #000c,0 0 25px #d4af3740;background:#000}
+.owner-portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;transform:scale(1.15);transition:.7s;filter:brightness(1.03) contrast(1.05)}
+.owner-container:hover .owner-portrait-frame img{transform:scale(1.2)}
+.suit-badge{position:absolute;bottom:-15px;right:20px;background:linear-gradient(135deg,var(--navy-suit),#080f1a);border:1px solid var(--gold-primary);padding:8px 20px;border-radius:25px;color:var(--gold-light);font-size:.9rem;font-weight:600;box-shadow:0 5px 15px #0008}
+.owner-name-en{font:800 2.5rem var(--font-en);color:var(--gold-light);margin-bottom:5px}
+.owner-title-badge{display:inline-block;color:var(--text-muted);font-size:1.1rem;margin-bottom:25px;border-bottom:1px dashed #d4af374d;padding-bottom:8px}
+.owner-quote{font-size:1.25rem;line-height:1.9;margin-bottom:30px;padding-right:25px;border-right:3px solid var(--gold-primary);font-style:italic}
+.owner-signature{font:1.6rem 'Playfair Display',serif;color:var(--gold-primary);text-align:left;direction:ltr}
+
+.menu-tabs{display:flex;justify-content:center;gap:15px;margin-bottom:50px;flex-wrap:wrap}
+.tab-btn{padding:12px 30px;background:#0c2b21cc;border:1px solid #d4af374d;color:var(--text-light);border-radius:30px;font-weight:600;cursor:pointer;transition:.3s}
+.tab-btn.active,.tab-btn:hover{background:var(--gold-primary);color:#000;border-color:var(--gold-light)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:30px;max-width:1200px;margin:auto}
+.menu-card{background:var(--bg-card);border:1px solid #d4af3733;border-radius:20px;padding:20px;transition:.3s;position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.menu-card:hover{transform:translateY(-8px);border-color:var(--gold-primary);box-shadow:0 15px 35px #0008}
+.menu-item-img-wrap{height:200px;border-radius:12px;overflow:hidden;margin-bottom:15px;border:1px solid #d4af3733;background:#030a08}
+.menu-item-img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.menu-card:hover .menu-item-img{transform:scale(1.08)}
+.menu-item-header{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:12px}
+.menu-item-title{font-size:1.3rem;font-weight:700}.menu-item-price{font:800 1.3rem var(--font-en);color:var(--gold-light)}
+.menu-item-desc{color:var(--text-muted);font-size:.95rem;line-height:1.6;margin-bottom:20px}
+.tag-badge{align-self:flex-start;padding:4px 12px;background:#d4af3726;color:var(--gold-light);border-radius:12px;font-size:.8rem;border:1px solid #d4af374d}
+
+.reservation-section{background:linear-gradient(180deg,#04100c,var(--bg-deep))}
+.reservation-card{max-width:850px;margin:auto;background:#0c2b21d9;border:1px solid #d4af3759;border-radius:25px;padding:40px;box-shadow:0 25px 60px #0008}
+.reservation-actions{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:8px}.form-group.full{grid-column:1/-1}
+.form-group label{font-weight:600;color:var(--gold-light)}
+.form-group input,.form-group select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid #d4af374d;background:#061712;color:#fff;outline:none}
+.form-group input:focus,.form-group select:focus{border-color:var(--gold-primary)}
+.submit-btn{width:100%;margin-top:25px;justify-content:center}
+
+footer{padding:45px 5%;background:#020907;text-align:center;border-top:1px solid #d4af3733}
+.footer-brand{font:800 1.6rem var(--font-en);color:var(--gold-light);letter-spacing:2px}
+footer p{color:var(--text-muted);margin:10px 0}
+.footer-copy{font-size:.9rem}
+
+.admin-bar{position:fixed;bottom:0;left:0;width:100%;background:#020907;border-top:2px solid var(--gold-primary);padding:12px 20px;z-index:10000;display:none;justify-content:space-between;align-items:center;box-shadow:0 -5px 25px #000c}
+body.is-owner .admin-bar{display:flex}
+.admin-info{display:flex;align-items:center;gap:10px;color:var(--gold-light);font-weight:600}
+.admin-btns{display:flex;gap:10px;flex-wrap:wrap}.btn-admin{padding:8px 16px;border-radius:20px;border:0;cursor:pointer;font-weight:700}
+.btn-toggle-edit{background:#d4af3733;color:var(--gold-light);border:1px solid var(--gold-primary)}
+.btn-toggle-edit.active{background:var(--gold-primary);color:#000}.btn-save-edit{background:#27ae60;color:#fff}.btn-logout-admin{background:#c0392b;color:#fff}.btn-add-item{background:#2980b9;color:#fff}
+body.edit-mode [contenteditable=true]{outline:2px dashed var(--gold-primary)!important;background:#d4af3726!important;padding:2px 5px;border-radius:4px}
+.delete-card-btn{position:absolute;top:8px;left:8px;width:30px;height:30px;border-radius:50%;background:#e74c3c;color:#fff;border:0;display:none;cursor:pointer;z-index:5}
+body.edit-mode .delete-card-btn{display:flex;align-items:center;justify-content:center}
+
+@media(max-width:900px){
+ .hero{flex-direction:column;padding-top:130px}.hero-content{max-width:100%;text-align:center}.hero-btns{justify-content:center}
+ .hero-image-wrapper{width:100%}.facade-card{transform:none}.owner-container{flex-direction:column;text-align:center}.owner-image-box{flex-basis:auto}.owner-signature{text-align:center}
+ .nav-links{display:none;position:absolute;top:80px;right:5%;left:5%;background:#061712f7;padding:20px;border:1px solid #d4af374d;border-radius:15px;flex-direction:column;gap:18px}.nav-links.open{display:flex}
+ .mobile-toggle{display:block}.brand-title-ar{font-size:1.3rem}
+}
+@media(max-width:600px){
+ .brand-title-en{font-size:1.3rem}.brand-divider{font-size:1rem}.brand-logo-img{width:42px;height:42px}
+ .hero-title-main{font-size:3rem}.hero-title-ar-sub{font-size:2.4rem}.hero-description{font-size:1.05rem}
+ .facade-card img{height:460px}.owner-section,.menu-section,.reservation-section{padding:75px 4%}.owner-container{padding:25px 18px}.owner-portrait-frame{width:280px;height:370px}
+ .section-title{font-size:2.2rem}.menu-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}
+ .admin-bar{padding:8px 10px;gap:8px}.admin-info{font-size:.75rem}.admin-btns{gap:5px}.btn-admin{padding:7px 9px;font-size:.72rem}
+}
+</style>
+</head>
+
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<div id="preloader">
+  <div class="loader-logo"><img src="https://chantee.vercel.app/logo.jpg" alt="Chantée Logo"></div>
+  <div class="loader-title">CHANTÉE</div>
+</div>
+
+<header>
+  <a class="brand-container" href="#home">
+    <img class="brand-logo-img" src="https://chantee.vercel.app/logo.jpg" alt="Chantée">
+    <div class="brand-text-group">
+      <span class="brand-title-en">CHANTÉE</span>
+      <span class="brand-divider">|</span>
+      <span class="brand-title-ar">شانتيه</span>
+    </div>
+  </a>
+
+  <nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a class="active" href="#home">الرئيسية</a></li>
+      <li><a href="#owner">كلمة الإدارة</a></li>
+      <li><a href="#menu">قائمة الطعام</a></li>
+      <li><a href="#reservation">حجز طاولتك</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fa-solid fa-crown"></i><span contenteditable="true">تجربة فاخرة واستثنائية</span></div>
+    <div class="hero-title-wrapper">
+      <h1 class="hero-title-main">CHANTÉE</h1>
+      <span class="hero-title-ar-sub">شانتيه</span>
+    </div>
+    <p class="hero-description" contenteditable="true">
+      وجهتك الأولى لعشاق القهوة المختصة والمخبوزات الفرنسية الراقية.
+      أجواء ساحرة تجمع بين الأناقة والدفء لتستمتع بأجمل اللحظات.
+    </p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#reservation"><i class="fa-regular fa-calendar-check"></i> احجز طاولتك الآن</a>
+      <a class="btn-secondary" href="#menu"><i class="fa-solid fa-utensils"></i> استكشف المنيو</a>
+    </div>
+  </div>
+
+  <div class="hero-image-wrapper">
+    <div class="facade-card">
+      <img src="https://chantee.vercel.app/facade.jpg" alt="Chantée Cafe Facade">
+      <div class="facade-overlay">
+        <h3>واجهة كافيه شانتيه</h3>
+        <p>تصميم عصري يفيض بالفخامة والجمال</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="owner-section" id="owner">
+  <div class="section-header">
+    <span class="section-subtitle">قيادة ورؤية</span>
+    <h2 class="section-title">مؤسس شانتيه</h2>
+  </div>
+
+  <div class="owner-container">
+    <div class="owner-image-box">
+      <div class="owner-portrait-frame">
+        <img src="https://chantee.vercel.app/owner.jpg" alt="Mr. Ahmed Mokhtar">
+      </div>
+      <div class="suit-badge"><i class="fa-solid fa-user-tie"></i> Executive Owner</div>
+    </div>
+
+    <div class="owner-info">
+      <h3 class="owner-name-en" contenteditable="true">Mr. Ahmed Mokhtar</h3>
+      <span class="owner-title-badge" contenteditable="true">مؤسس ورئيس مجلس إدارة كافيه شانتيه</span>
+      <p class="owner-quote" contenteditable="true">
+        "في شانتيه، لا نقدم مجرد فنجان قهوة، بل نصنع تجربة متكاملة تعزف على أوتار الذوق الرفيع.
+        نسعى دائماً لأن نكون وجهتكم المفضلة حيث تلتقي الفخامة بالدفء والجودة العالية."
+      </p>
+      <div class="owner-signature">Ahmed Mokhtar</div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="section-header">
+    <span class="section-subtitle">مذاق لا يُنسى</span>
+    <h2 class="section-title">قائمة الطعام والمشروبات</h2>
+  </div>
+
+  <div class="menu-tabs">
+    <button class="tab-btn active" data-filter="all">الكل</button>
+    <button class="tab-btn" data-filter="coffee">القهوة المختصة</button>
+    <button class="tab-btn" data-filter="cold">المشروبات الباردة</button>
+    <button class="tab-btn" data-filter="bakery">المخبوزات والحلويات</button>
+  </div>
+
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<section class="reservation-section" id="reservation">
+  <div class="section-header">
+    <span class="section-subtitle">ضمان أوقاتك السعيدة</span>
+    <h2 class="section-title">حجز طاولة VIP</h2>
+  </div>
+
+  <div class="reservation-card">
+    <div class="reservation-actions">
+      <a class="btn-primary" target="_blank" href="https://wa.me/201227840123">
+        <i class="fa-brands fa-whatsapp"></i> حجز مباشر عبر الواتساب (01227840123)
+      </a>
+      <a class="btn-secondary" href="tel:01227840123">
+        <i class="fa-solid fa-phone"></i> الاتصال الهاتفي للحجز
+      </a>
+    </div>
+
+    <form id="bookingForm">
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>الاسم بالكامل</label>
+          <input id="name" required placeholder="أدخل اسمك الكريم">
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف</label>
+          <input id="phone" required inputmode="tel" placeholder="01XXXXXXXXX">
+        </div>
+        <div class="form-group">
+          <label>تاريخ الحجز</label>
+          <input id="date" required type="date">
+        </div>
+        <div class="form-group">
+          <label>وقت الحجز</label>
+          <input id="time" required type="time">
+        </div>
+        <div class="form-group">
+          <label>عدد الأفراد</label>
+          <select id="people" required>
+            <option value="">اختر العدد</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+            <option>9</option><option>10+</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-primary submit-btn" type="submit">
+        <i class="fa-brands fa-whatsapp"></i> تأكيد وإرسال الحجز للواتساب
+      </button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-brand">CHANTÉE | شانتيه</div>
+  <p>يسعدنا استقبالكم دائماً لتجربة أرقى أنواع القهوة والمخبوزات في أجواء فاخرة.</p>
+  <div class="footer-copy">جميع الحقوق محفوظة © 2026 Chantée Cafe. إدارة Mr. Ahmed Mokhtar.</div>
+</footer>
+
+<div class="admin-bar" id="adminBar">
+  <div class="admin-info"><i class="fa-solid fa-shield-halved"></i> لوحة تحكم المالك (Mr. Ahmed Mokhtar)</div>
+  <div class="admin-btns">
+    <button class="btn-admin btn-add-item" id="addItem">إضافة صنف جديد</button>
+    <button class="btn-admin btn-toggle-edit" id="toggleEdit">تفعيل وضع التعديل</button>
+    <button class="btn-admin btn-save-edit" id="saveEdit">حفظ التغييرات</button>
+    <button class="btn-admin btn-logout-admin" id="logout">خروج الإدارة</button>
+  </div>
+</div>
+
+<script>
+const menuItems = [
+ {title:"إسبراسو شانتيه الخاص",price:"85 EGP",desc:"مزيج فاخر من حبوب البن الكولومبي المحمصة بعناية مع إيحاءات الشوكولاتة الداكنة.",tag:"توقيع شانتيه",cat:"coffee",img:"https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600"},
+ {title:"سبانيش لاتيه ذهبي",price:"110 EGP",desc:"إسبراسو غني مع الحليب المحلى وقليل من السيروب الذهبي الخاص.",tag:"الأكثر طلباً",cat:"coffee",img:"https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600"},
+ {title:"كرواسون الشوكولاتة الفرنسية",price:"95 EGP",desc:"مخبوز طازج يومياً بطبقات هشة ومحشو بشوكولاتة فرنسية فاخرة.",tag:"طازج يومياً",cat:"bakery",img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600"},
+ {title:"موهيتو التوت والنعناع",price:"105 EGP",desc:"مزاج منعش من التوت البري والنعناع الطازج مع قطع الثلج المجروش.",tag:"منعش",cat:"cold",img:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600"},
+ {title:"تشيز كيك التوت الذهبي",price:"130 EGP",desc:"كيك الجبن الفاخر على الطريقة النيويوركية مع صوص التوت الطبيعي.",tag:"حلويات فاخرة",cat:"bakery",img:"https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600"},
+ {title:"آيس كراميل ماكياتو",price:"115 EGP",desc:"قهوة مثلجة مع صوص الكراميل الملكي والحليب البارد.",tag:"مميز",cat:"cold",img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600"}
+];
+
+let currentFilter="all";
+const menuGrid=document.getElementById("menuGrid");
+
+function renderMenu(){
+ menuGrid.innerHTML="";
+ menuItems.filter(x=>currentFilter==="all"||x.cat===currentFilter).forEach((item,index)=>{
+   const card=document.createElement("article");
+   card.className="menu-card";
+   card.innerHTML=`
+    <button class="delete-card-btn" title="حذف"><i class="fa-solid fa-xmark"></i></button>
+    <div class="menu-item-img-wrap"><img class="menu-item-img" src="${item.img}" alt="${item.title}"></div>
+    <div>
+      <div class="menu-item-header"><h3 class="menu-item-title" contenteditable="true">${item.title}</h3><span class="menu-item-price" contenteditable="true">${item.price}</span></div>
+      <p class="menu-item-desc" contenteditable="true">${item.desc}</p>
+      <span class="tag-badge" contenteditable="true">${item.tag}</span>
+    </div>`;
+   card.querySelector(".delete-card-btn").onclick=()=>{menuItems.splice(index,1);renderMenu()};
+   menuGrid.appendChild(card);
+ });
+}
+renderMenu();
+
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  currentFilter=btn.dataset.filter;
+  renderMenu();
+ });
+});
+
+document.getElementById("mobileToggle").onclick=()=>document.getElementById("navLinks").classList.toggle("open");
+document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>document.getElementById("navLinks").classList.remove("open"));
+
+window.addEventListener("load",()=>{
+ setTimeout(()=>document.getElementById("preloader").classList.add("hide"),900);
+});
+
+document.getElementById("bookingForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const name=document.getElementById("name").value;
+ const phone=document.getElementById("phone").value;
+ const date=document.getElementById("date").value;
+ const time=document.getElementById("time").value;
+ const people=document.getElementById("people").value;
+ const msg=`مرحباً Chantée، أريد حجز طاولة VIP.%0A%0Aالاسم: ${encodeURIComponent(name)}%0Aالهاتف: ${encodeURIComponent(phone)}%0Aالتاريخ: ${encodeURIComponent(date)}%0Aالوقت: ${encodeURIComponent(time)}%0Aعدد الأفراد: ${encodeURIComponent(people)}`;
+ window.open("https://wa.me/201227840123?text="+msg,"_blank");
+});
+
+const canvas=document.getElementById("bg-canvas"),ctx=canvas.getContext("2d");
+let particles=[];
+function resizeCanvas(){
+ canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;
+ ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+ particles=Array.from({length:45},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2+.5,dx:(Math.random()-.5)*.25,dy:(Math.random()-.5)*.25}));
+}
+function animate(){
+ ctx.clearRect(0,0,innerWidth,innerHeight);
+ particles.forEach(p=>{
+  p.x+=p.dx;p.y+=p.dy;
+  if(p.x<0||p.x>innerWidth)p.dx*=-1;
+  if(p.y<0||p.y>innerHeight)p.dy*=-1;
+  ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="rgba(212,175,55,.18)";ctx.fill();
+ });
+ requestAnimationFrame(animate);
+}
+addEventListener("resize",resizeCanvas);resizeCanvas();animate();
+
+const toggleEdit=document.getElementById("toggleEdit");
+toggleEdit.onclick=()=>{
+ document.body.classList.toggle("edit-mode");
+ toggleEdit.classList.toggle("active");
+ toggleEdit.textContent=document.body.classList.contains("edit-mode")?"إيقاف وضع التعديل":"تفعيل وضع التعديل";
+};
+document.getElementById("saveEdit").onclick=()=>{
+ localStorage.setItem("chanteeSaved","1");
+ alert("تم حفظ حالة التعديل على هذا الجهاز.");
+};
+document.getElementById("addItem").onclick=()=>{
+ menuItems.push({title:"صنف جديد",price:"0 EGP",desc:"وصف الصنف الجديد.",tag:"جديد",cat:"coffee",img:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600"});
+ renderMenu();
+};
+document.getElementById("logout").onclick=()=>{
+ document.body.classList.remove("is-owner","edit-mode");
+};
+
+document.body.classList.add("is-owner");
+
+const sections=[...document.querySelectorAll("main section")];
+const links=[...document.querySelectorAll(".nav-links a")];
+window.addEventListener("scroll",()=>{
+ let current="home";
+ sections.forEach(s=>{if(scrollY>=s.offsetTop-150)current=s.id});
+ links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
+});
+</script>
+</body>
+</html>
